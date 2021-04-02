@@ -1,0 +1,72 @@
+@import '~reveal.js/css/reveal.scss';
+//@import '~reveal.js/dist/theme/white.css';
+
+// Default mixins and settings -----------------
+@import "~reveal.js/css/theme/template/mixins";
+@import "~reveal.js/css/theme/template/settings";
+// ---------------------------------------------
+
+// Override styles -----------------------------
+
+$backgroundColor: $background-color-base;
+
+$mainColor: $white;
+$headingColor: $white;
+
+$mainFontSize: 36px;
+$mainFont: $font-family-base;
+$headingFont: $font-family-base;
+$headingTextShadow: none;
+$headingLetterSpacing: normal;
+$headingTextTransform: uppercase;
+$headingFontWeight: 600;
+$linkColor: $white;
+$linkColorHover: lighten($linkColor, 15%);
+$selectionBackgroundColor: lighten($linkColor, 25%);
+
+$heading1Size: 2.5em;
+$heading2Size: 1.6em;
+$heading3Size: 1.3em;
+$heading4Size: 1.0em;
+
+// ---------------------------------------------
+
+// Theme template ------------------------------
+@import "~reveal.js/css/theme/template/theme";
+// ---------------------------------------------
+
+@import "~reveal.js-verticator/plugin/verticator/verticator.css";
+
+ul.verticator {
+  right: 2vmin;
+  padding: 0 !important;
+
+  li {
+    width: 24px;
+    height: 24px;
+    margin-bottom: 10px;
+    text-align: center;
+    justify-content: center;
+    display: flex;
+    vertical-align: middle;
+
+    &.active {
+      color: inherit;
+      border: 1px solid white;
+      border-radius: 12px;
+      position: relative;
+      background-color: rgba(255, 255, 255, 0.3);
+    }
+
+    a {
+      width: auto !important;
+      height: auto !important;
+
+      &:after {
+        width: 6px !important;
+        height: 6px !important;
+        transform: translateZ(0) scale(1) !important;
+      }
+    }
+  }
+}
