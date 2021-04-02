@@ -1,7 +1,7 @@
 <template>
   <section id="timeline" title="Time line">
     <flex-col align-h="center" align-v="center" class="vf__flex-nowrap">
-      <h4>Mars Milestone project</h4>
+      <h4>Mars project milestones</h4>
       <TimeLineBlock></TimeLineBlock>
     </flex-col>
   </section>
