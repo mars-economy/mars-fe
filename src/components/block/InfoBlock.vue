@@ -10,7 +10,7 @@
 
 <script>
 export default {
-  name: 'InfoBlock',
+  name: 'InfoBlockHeader',
   props: {
     title: String,
     icon: String,

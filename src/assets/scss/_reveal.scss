@@ -36,6 +36,7 @@ $heading4Size: 1.0em;
 // ---------------------------------------------
 
 @import "~reveal.js-verticator/plugin/verticator/verticator.css";
+//@import "~reveal.js-simplemenu/plugin/highlight/zenburn.css";
 
 ul.verticator {
   right: 2vmin;
@@ -69,4 +70,50 @@ ul.verticator {
       }
     }
   }
+}
+
+.menubar {
+  width: auto;
+  position: inherit;
+  border: none;
+}
+
+.menubar ul.menu, .menubar .menu ul {
+  list-style-type: none;
+  margin-left: 0;
+  text-align: center;
+}
+
+.menubar, .menubar a {
+  //font-size: 1rem;
+}
+
+.menu li {
+  display: inline-block;
+  margin-right: 14px;
+  margin-left: 14px;
+}
+
+.menu a {
+  font-family: Karla;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 16px;
+  /* identical to box height, or 133% */
+
+  letter-spacing: 0.01em;
+  text-transform: uppercase;
+
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.menu a:hover {
+  color: white;
+}
+
+.menu a.active,
+.menu li.active a {
+  color: white;
+  pointer-events: none;
 }

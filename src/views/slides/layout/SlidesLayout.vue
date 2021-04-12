@@ -10,7 +10,9 @@
 <script>
 import Reveal from 'reveal.js/js'
 import Verticator from 'reveal.js-verticator/plugin/verticator/verticator.esm'
+import Simplemenu from '@/plugins/simpleMenu/simplemenu'
 import Header from './header/Header'
+import Vue from 'vue'
 
 export default {
   name: 'SlidesLayout',
@@ -33,9 +35,28 @@ export default {
           skipuncounted: true,
           clickable: true
         },
-        plugins: [Verticator]
+        simplemenu: {
+          menuclass: 'menu',
+          activeclass: 'active',
+          activeelement: 'li',
+          selectby: 'id',
+          auto: true
+        },
+        plugins: [Simplemenu, Verticator]
       }
     )
+    Vue.nextTick(() => {
+      console.log('next tick')
+    })
+    Reveal.on('ready', event => {
+      console.log('ready')
+    })
+    Reveal.on('slidetransitionend', event => {
+      console.log('slidetransitionend', event.currentSlide)
+    })
+    Reveal.on('slidechanged', event => {
+      console.log('slidechanged', event.currentSlide)
+    })
   }
 }
 </script>

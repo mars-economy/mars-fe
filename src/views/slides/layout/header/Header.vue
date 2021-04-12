@@ -2,6 +2,10 @@
   <header class="vf__flex vf__justify-content-center" fill>
     <div class="vf__flex vf__justify-content-between vf__flex-dir--row">
       <div class="header-icon">Mars Economy</div>
+      <div class="menubar vf__flex vf__justify-content-center">
+        <ul class="menu vf__flex vf__align-self-center">
+        </ul>
+      </div>
       <div class="header-application-button">
         <button>GO TO APPLICATION</button>
       </div>

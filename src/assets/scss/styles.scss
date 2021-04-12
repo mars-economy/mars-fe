@@ -10,18 +10,17 @@ html, body {
 
 html {
   min-height: 100vh;
-  background-image: url("~@/../public/images/ellipse.svg"), url("~@/../public/images/noise.svg");
-  background-position: center, top;
-  background-repeat: no-repeat, repeat;
-  background-size: cover, auto;
-
+  background-image: url("~@/../public/images/bg.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 body.reveal-viewport {
   background: transparent !important;
 
   .backgrounds {
-    display: none !important;
+    z-index: -999;
   }
 }
 

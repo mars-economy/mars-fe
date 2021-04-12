@@ -1,5 +1,5 @@
 <template>
-  <section id="timeline" title="Time line">
+  <section id="timeline" name="timeline">
     <flex-col align-h="center" align-v="center" class="vf__flex-nowrap">
       <h4>Mars Economy project milestones</h4>
       <TimeLineBlock></TimeLineBlock>
@@ -20,5 +20,6 @@ export default {
   h4 {
     text-transform: none !important;
     margin-bottom: 50px !important;
+    margin-top: 135px !important;
   }
 </style>

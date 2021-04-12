@@ -1,28 +1,28 @@
 <template>
   <flex-col>
     <flex-row class="vf__justify-content-between vf__flex-nowrap timeline-icons-block">
-      <div v-for="(iconsBlock, index) of iconsBlockArray" v-bind:key="iconsBlock.month" class="vf__flex">
+      <div v-for="(iconsBlock, index) of iconsBlockArray" v-bind:key="index" class="vf__flex">
         <TimeLineIcon :icon="iconsBlock.icon" :is-last="index === iconsBlockArray.length - 1"
                       :month="iconsBlock.month"></TimeLineIcon>
       </div>
     </flex-row>
     <flex-row class="vf__justify-content-between vf__flex-nowrap timeline-block">
       <div v-for="infoBlock of blocksArray" v-bind:key="infoBlock.title" class="vf__flex vf__align-items-start">
-        <InfoBlock :content="infoBlock.content" :icon="infoBlock.icon" :title="infoBlock.title"></InfoBlock>
+        <InfoBlockHeader :content="infoBlock.content" :icon="infoBlock.icon" :title="infoBlock.title"></InfoBlockHeader>
       </div>
     </flex-row>
   </flex-col>
 </template>
 
 <script>
-import InfoBlock from '../../../../../components/block/InfoBlock'
+import InfoBlockHeader from '../../../../../components/block/InfoBlockHeader'
 import TimeLineIcon from './TimeLineIcon'
 
 export default {
   name: 'TimeLineBlock',
   components: {
-    TimeLineIcon,
-    InfoBlock
+    InfoBlockHeader,
+    TimeLineIcon
   },
   data: function () {
     return {
@@ -240,8 +240,6 @@ export default {
 
 <style lang="scss" scoped>
   .timeline-block {
-    margin-top: 15px;
-
     & > div {
       width: 15%;
       text-align: left;
@@ -249,11 +247,8 @@ export default {
   }
 
   .timeline-icons-block {
-
     & > div {
       width: 15%;
     }
-
-    margin-top: 20px;
   }
 </style>

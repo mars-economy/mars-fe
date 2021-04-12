@@ -1,27 +1,8 @@
 <template>
-  <section id="mars-markets" title="Mars Markets">
+  <section id="mars-markets" name="mars markets">
     <flex-row align-h="center" align-v="center" class="vf__flex-nowrap">
       <flex-col class="mars-markets-image">
-        <svg fill="none" height="548" viewBox="0 0 548 548" width="548" xmlns="http://www.w3.org/2000/svg">
-          <g filter="url(#filter0_f)">
-            <circle cx="274" cy="274" fill="url(#paint0_radial)" r="154"/>
-          </g>
-          <defs>
-            <filter id="filter0_f" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse" height="548"
-                    width="548" x="0" y="-3.05176e-05">
-              <feFlood flood-opacity="0" result="BackgroundImageFix"/>
-              <feBlend in="SourceGraphic" in2="BackgroundImageFix" mode="normal" result="shape"/>
-              <feGaussianBlur result="effect1_foregroundBlur" stdDeviation="60"/>
-            </filter>
-            <radialGradient id="paint0_radial" cx="0" cy="0"
-                            gradientTransform="translate(274 274) rotate(90) scale(154)" gradientUnits="userSpaceOnUse"
-                            r="1">
-              <stop stop-color="#FFEE59"/>
-              <stop offset="0.291667" stop-color="#FFEE59"/>
-              <stop offset="1" stop-color="#E15F00" stop-opacity="0"/>
-            </radialGradient>
-          </defs>
-        </svg>
+        <img alt="racket" src="/images/mars-economy-racket.png">
       </flex-col>
       <flex-col class="mars-markets-content">
         <h4>Mars Markets</h4>
@@ -56,12 +37,11 @@ export default {
   }
 
   .mars-markets-image {
-    width: 300px;
-    height: 300px;
+    width: 33%;
 
-    svg {
-      width: 300px;
-      height: 300px;
+    img {
+      //width: 350px;
+      //height: 500px;
     }
   }
 
@@ -69,5 +49,6 @@ export default {
     padding-left: 10%;
     flex-grow: 2;
     text-align: left;
+    width: 66%;
   }
 </style>
