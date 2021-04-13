@@ -29,7 +29,8 @@ export default {
         mouseWheel: true,
         previewLinks: true,
         // disableLayout: true,
-        width: 1100,
+        width: 1440,
+        margin: 0,
         verticator: {
           darktheme: true,
           skipuncounted: true,
