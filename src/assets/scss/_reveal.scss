@@ -43,8 +43,8 @@ ul.verticator {
   padding: 0 !important;
 
   li {
-    width: Max(1.7vw, 12px);
-    height: Max(1.7vw, 12px);;
+    width: Max(1.7vw, 16px);
+    height: Max(1.7vw, 16px);;
     margin-bottom: 10px;
     text-align: center;
     justify-content: center;
@@ -53,11 +53,12 @@ ul.verticator {
     box-sizing: border-box;
 
     &.active {
-      color: inherit;
-      border: 1px solid white;
-      border-radius: 12px;
+      background-color: rgba($white, 0.2);
+      border: 1px solid rgba($white, 0.2);
+      box-sizing: border-box;
+      backdrop-filter: blur(20px);
+      border-radius: 50%;
       position: relative;
-      background-color: rgba(255, 255, 255, 0.3);
     }
 
     a {
@@ -65,8 +66,8 @@ ul.verticator {
       height: auto !important;
 
       &:after {
-        width: 6px !important;
-        height: 6px !important;
+        width: Max(0.4vw, 4px) !important;
+        height: Max(0.4vw, 4px) !important;
         transform: translateZ(0) scale(1) !important;
       }
     }
