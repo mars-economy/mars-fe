@@ -1,6 +1,5 @@
 <template>
-  <header class="vf__flex vf__justify-content-center" fill>
-    <div class="vf__flex vf__justify-content-between vf__flex-dir--row">
+  <header>
       <div class="header-icon">Mars Economy</div>
       <div class="menubar vf__flex vf__justify-content-center">
         <ul class="menu vf__flex vf__align-self-center">
@@ -9,7 +8,6 @@
       <div class="header-application-button">
         <button>GO TO APPLICATION</button>
       </div>
-    </div>
   </header>
 </template>
 
@@ -21,53 +19,48 @@ export default {
 
 <style lang="scss">
   header {
-    top: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    top: 1.6vw;
     position: absolute;
-    width: 100vw;
-    height: 100px;
-
-    & > div {
-      width: 85%;
-      height: 70px;
-    }
+    left: 2.2vw;
+    right: 2.2vw;
 
     .header-icon {
-      font-family: Karla;
+      font-family: $font-family-base;
       font-style: normal;
       font-weight: 800;
-      font-size: 18px;
+      font-size: Max(1.25vw, 12px);
       line-height: 21px;
       letter-spacing: -0.02em;
-      align-self: center;
-      justify-self: center;
+      width: Max(10vw, 85px);
     }
 
     .header-application-button {
       align-self: center;
       justify-self: center;
+      width: Max(10vw, 115px);
 
       button {
-        font-family: Karla;
+        font-family: $font-family-base;
         font-style: normal;
         font-weight: bold;
-        font-size: 12px;
-        line-height: 16px;
-        text-align: center;
+        font-size: Max(0.83vw, 10px);
+        line-height: 1.3em;
         letter-spacing: 0.01em;
         text-transform: uppercase;
-        display: flex;
-        align-self: center;
-        justify-self: center;
-        padding: 8px 12px;
+        padding: 0.66em 1em;
+        white-space: nowrap;
 
         background: rgba(255, 255, 255, 0.05);
         border: 1px solid rgba(255, 255, 255, 0.1);
         box-sizing: border-box;
-        border-radius: 6px;
+        border-radius: 0.5em;
         color: white;
-
+        backdrop-filter: blur(20px);
         &:hover {
-          border: 1px solid rgba(255, 255, 255, 1);
+          border: 1px solid rgba($white, 1);
           cursor: pointer;
         }
       }
