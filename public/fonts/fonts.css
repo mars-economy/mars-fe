@@ -1,4 +1,4 @@
-/* Normal 400 */
+/* Normal 400
 @font-face {
     font-family: 'Karla';
     src: url('Karla-Regular.eot');
@@ -19,6 +19,7 @@
     font-weight: normal;
     font-style: italic;
 }
+*/
 
 /* Bold 700 */
 @font-face {
@@ -94,7 +95,7 @@
     url('Karla-Light.eot?#iefix') format('embedded-opentype'),
     url('Karla-Light.svg') format('svg'),
     url('Karla-Light.ttf') format('truetype');
-    font-weight: 300;
+    font-weight: normal;
     font-style: normal;
 }
 @font-face {
@@ -104,7 +105,7 @@
     url('Karla-LightItalic.eot?#iefix') format('embedded-opentype'),
     url('Karla-LightItalic.svg') format('svg'),
     url('Karla-LightItalic.ttf') format('truetype');
-    font-weight: 300;
+    font-weight: normal;
     font-style: italic;
 }
 

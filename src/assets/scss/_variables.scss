@@ -13,3 +13,12 @@ $heading-shadow-base: 0px 4px 4px rgba(13, 20, 41, 0.2);
 
 // Sizing
 $radius-base: 0.5rem;
+
+%card {
+  background: rgba($white, 0.05);
+  border: 1px solid rgba($white, 0.05);
+  backdrop-filter: blur(20px);
+  padding: 20px;
+  border-radius: $radius-base;
+  box-sizing: border-box;
+}
