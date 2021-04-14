@@ -13,7 +13,7 @@ $backgroundColor: $background-color-base;
 $mainColor: $white;
 $headingColor: $white;
 
-$mainFontSize: 36px;
+$mainFontSize: 28px;
 $mainFont: $font-family-base;
 $headingFont: $font-family-base;
 $headingTextShadow: none;
@@ -24,7 +24,7 @@ $linkColor: $white;
 $linkColorHover: lighten($linkColor, 15%);
 $selectionBackgroundColor: lighten($linkColor, 25%);
 
-$heading1Size: 2.5em;
+$heading1Size: 2.25rem;
 $heading2Size: 1.75rem;
 $heading3Size: 1.3em;
 $heading4Size: 1.0em;
