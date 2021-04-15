@@ -32,6 +32,7 @@ export default {
 
   .tokens-block-card {
     @extend %card;
+    min-height: 100%;
   }
   .card-header {
     font-size: 1rem;
