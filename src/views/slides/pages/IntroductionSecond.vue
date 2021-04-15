@@ -1,35 +1,33 @@
 <template>
   <section id="introduction-second" data-background-image="images/introduction-second-bg.png"
            data-visibility="uncounted">
-    <flex-row align-h="center" align-v="center" class="vf__flex-nowrap">
-      <flex-col class="introduction-text">
-        <h6>
+    <flex-row class="intro-container">
+      <div class="intro-text h3">
           Our belief is that everyone's should be able to play
-          <br/> a role in creating and shaping the future of Mars,
-          <br/> whether or not they travel there themselves.
-        </h6>
-      </flex-col>
-      <flex-col class="introduction-image">
-        <img alt="orbital" src="/images/space-orbital.png">
-      </flex-col>
+          a role in creating and shaping the future of Mars,
+          whether or not they travel there themselves.
+      </div>
+      <IntroductionSecondSvg></IntroductionSecondSvg>
     </flex-row>
 
   </section>
 </template>
 
 <script>
+import IntroductionSecondSvg from '@/components/svgImages/IntroductionSecondSvg'
 export default {
-  name: 'IntroductionSecond'
+  name: 'IntroductionSecond',
+  components: { IntroductionSecondSvg }
 }
 </script>
 
 <style scoped>
-  .introduction-text {
-    flex-grow: 2;
+  .intro-container {
+    margin: 0 7.5rem 0 14rem;
+    flex-wrap: nowrap;
+    align-items: center;
   }
-
-  h6 {
+  .intro-text {
     text-align: left;
-    line-height: 1.8 !important;
   }
 </style>

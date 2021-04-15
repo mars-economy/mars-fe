@@ -4,6 +4,7 @@
     <div class="slides">
       <router-view/>
     </div>
+    <Spaceman></Spaceman>
   </div>
 </template>
 
@@ -13,10 +14,11 @@ import Verticator from 'reveal.js-verticator/plugin/verticator/verticator.esm'
 import Simplemenu from '@/plugins/simpleMenu/simplemenu'
 import Header from './header/Header'
 import Vue from 'vue'
+import Spaceman from '@/views/slides/layout/spaceman/Spaceman'
 
 export default {
   name: 'SlidesLayout',
-  components: { Header },
+  components: { Spaceman, Header },
   mounted () {
     Reveal.initialize(
       {
@@ -75,4 +77,5 @@ export default {
     background-repeat: no-repeat;
     background-image: url("../../../../src/assets/images/stars.svg");
   }
+
 </style>

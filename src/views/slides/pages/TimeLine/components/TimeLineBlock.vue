@@ -66,10 +66,7 @@ export default {
     text-align: left;
 
     .card-header, .card-body {
-      background: rgba($white, 0.05);
-      border: 1px solid rgba($white, 0.05);
-      backdrop-filter: blur(20px);
-      padding: 20px;
+      @extend %card;
     }
 
     .card-header {

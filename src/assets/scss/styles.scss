@@ -30,11 +30,33 @@ h3, h6 {
   text-transform: none !important;
 }
 
+.h1 {
+  font-size: $heading1Size;
+  line-height: 3.6rem;
+  font-weight: normal;
+  letter-spacing: -0.02em;
+  text-shadow: $heading-shadow-base;
+  text-transform: none !important;
+}
+
 .h2 {
   font-size: $heading2Size;
-  line-height: 2rem;
+  line-height: 1.18em;
   font-weight: bold;
   letter-spacing: -0.02em;
   text-shadow: $heading-shadow-base;
   text-transform: none !important;
+}
+
+.h3 {
+  font-size: $heading2Size;
+  line-height: 1.5em;
+  font-weight: normal;
+  letter-spacing: -0.02em;
+  text-shadow: $heading-shadow-base;
+  text-transform: none !important;
+}
+
+.text-muted {
+  opacity: 0.3;
 }

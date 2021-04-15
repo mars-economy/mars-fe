@@ -13,7 +13,7 @@ $backgroundColor: $background-color-base;
 $mainColor: $white;
 $headingColor: $white;
 
-$mainFontSize: 36px;
+$mainFontSize: 20px;
 $mainFont: $font-family-base;
 $headingFont: $font-family-base;
 $headingTextShadow: none;
@@ -24,7 +24,7 @@ $linkColor: $white;
 $linkColorHover: lighten($linkColor, 15%);
 $selectionBackgroundColor: lighten($linkColor, 25%);
 
-$heading1Size: 2.5em;
+$heading1Size: 2.25rem;
 $heading2Size: 1.75rem;
 $heading3Size: 1.3em;
 $heading4Size: 1.0em;
@@ -75,8 +75,8 @@ ul.verticator {
 }
 
 .menubar {
-  width: auto;
-  position: inherit;
+  margin: auto;
+  height: unset;
   border: none;
 }
 
@@ -84,6 +84,7 @@ ul.verticator {
   list-style-type: none;
   margin-left: 0;
   text-align: center;
+  padding-inline-start: unset;
 }
 
 .menubar, .menubar a {
@@ -92,22 +93,20 @@ ul.verticator {
 
 .menu li {
   display: inline-block;
-  margin-right: 14px;
-  margin-left: 14px;
+  + li {
+    margin-left: 2vw;
+  }
 }
 
 .menu a {
-  font-family: Karla;
+  font-family: $font-family-base;
   font-style: normal;
   font-weight: bold;
-  font-size: 12px;
-  line-height: 16px;
-  /* identical to box height, or 133% */
-
+  font-size: Max(0.8vw, 10px);
+  line-height: 1.33em;
   letter-spacing: 0.01em;
   text-transform: uppercase;
-
-  color: rgba(255, 255, 255, 0.5);
+  color: rgba($white, 0.5);
 }
 
 .menu a:hover {
