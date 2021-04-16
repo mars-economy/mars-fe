@@ -5,7 +5,7 @@
 $white: #fff !default;
 $black: #000 !default;
 $background-color-base: #04001C !default;
-$color-primary: #f19204;
+$color-primary: #ffc22e;
 
 // Fonts
 $font-family-base: "Karla", "Helvetica Neue", sans-serif;
@@ -21,6 +21,21 @@ $radius-base: 0.5rem;
   padding: 20px;
   border-radius: $radius-base;
   box-sizing: border-box;
-  display: flex;
-  flex-direction: column;
+  font-size: 0.875rem;
+  line-height: 1.43em;
+  letter-spacing: -0.02em;
+  // font-weight: 300;
+}
+
+%card-label {
+  font-weight: bold;
+  font-size: 0.75rem;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+  padding: 0.5em 1em;
+  background: rgba($white, 0.05);
+  border: 1px solid rgba($white, 0.05);
+  box-sizing: border-box;
+  position: absolute;
 }

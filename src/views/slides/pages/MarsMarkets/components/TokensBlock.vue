@@ -43,11 +43,6 @@ export default {
   .tokens-block-icon {
     margin-right: 0.375rem
   }
-  .card-body {
-    font-size: 0.875rem;
-    line-height: 1.4em;
-    letter-spacing: -0.02em;
-  }
   .tokens-block-card.muted {
     padding-bottom: 40px;
     position: relative;

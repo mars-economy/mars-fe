@@ -2,6 +2,7 @@
   <section class="main-section">
     <Introduction></Introduction>
     <IntroductionSecond></IntroductionSecond>
+    <PredictionMarkets></PredictionMarkets>
     <MarsMarkets></MarsMarkets>
     <TimeLIne></TimeLIne>
     <div class="ellipse"></div>
@@ -14,10 +15,12 @@ import Reveal from 'reveal.js/js'
 import IntroductionSecond from './pages/IntroductionSecond'
 import MarsMarkets from './pages/MarsMarkets/MarsMarkets'
 import TimeLIne from './pages/TimeLine/TimeLIne'
+import PredictionMarkets from '@/views/slides/pages/PredictionMarkets/PredictionMarkets'
 
 export default {
   name: 'Slides',
   components: {
+    PredictionMarkets,
     TimeLIne,
     MarsMarkets,
     IntroductionSecond,
