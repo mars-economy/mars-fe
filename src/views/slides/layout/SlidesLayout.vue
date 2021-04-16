@@ -32,6 +32,7 @@ export default {
         previewLinks: true,
         // disableLayout: true,
         width: 1440,
+        height: 900,
         margin: 0,
         verticator: {
           darktheme: true,

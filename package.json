@@ -10,6 +10,7 @@
   "dependencies": {
     "core-js": "^3.6.5",
     "fitty": "^2.3.3",
+    "moment": "^2.29.1",
     "reveal.js": "^4.1.0",
     "reveal.js-verticator": "^1.0.8",
     "vue": "^2.6.11",
