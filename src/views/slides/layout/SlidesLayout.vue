@@ -76,7 +76,7 @@ export default {
 
     background-position: top 20% left 50%;
     background-repeat: no-repeat;
-    background-image: url("../../../../src/assets/images/stars.svg");
+    //background-image: url("../../../../src/assets/images/stars.svg");
   }
 
 </style>
