@@ -66,6 +66,12 @@ export default {
         opacity: 1;
         text-transform: uppercase;
       }
+      &:focus {
+        outline: none;
+      }
+      &:focus::placeholder {
+       opacity: 0.2;
+      }
     }
   }
 
