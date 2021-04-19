@@ -5,6 +5,7 @@
     <PredictionMarkets></PredictionMarkets>
     <MarsMarkets></MarsMarkets>
     <TimeLIne></TimeLIne>
+    <JoinCommunity></JoinCommunity>
     <div class="ellipse"></div>
   </section>
 </template>
@@ -15,11 +16,13 @@ import Reveal from 'reveal.js/js'
 import IntroductionSecond from './pages/IntroductionSecond'
 import MarsMarkets from './pages/MarsMarkets/MarsMarkets'
 import TimeLIne from './pages/TimeLine/TimeLIne'
-import PredictionMarkets from '@/views/slides/pages/PredictionMarkets/PredictionMarkets'
+import PredictionMarkets from './pages/PredictionMarkets/PredictionMarkets'
+import JoinCommunity from './pages/JoinCommunity/JoinCommunity'
 
 export default {
   name: 'Slides',
   components: {
+    JoinCommunity,
     PredictionMarkets,
     TimeLIne,
     MarsMarkets,
