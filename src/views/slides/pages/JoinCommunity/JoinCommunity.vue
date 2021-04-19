@@ -1,8 +1,8 @@
 <template>
-  <section id="join-the-community" name="join the community">
-    <div class="join-community-container">
+  <section id="community" name="community">
+    <div class="community-container">
       <div class="h2">Join the community</div>
-      <flex-row class="join-community-content">
+      <flex-row class="community-content">
         <div class="subscribe-container">
           <div class="subscribe-text">
             Learn more about Mars Economy, chat with the team and other community members, have a say in shaping the roadmap, and join us on this journey to the Red Planet. Be a part of the future.
@@ -32,7 +32,7 @@ export default {
 
 <style scoped>
 
-  .join-community-container {
+  .community-container {
     padding: 0 17.5rem 0 20.3rem;
     text-align: left;
   }

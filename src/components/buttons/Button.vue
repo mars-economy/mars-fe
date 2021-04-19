@@ -44,6 +44,7 @@ export default {
   display: inline-flex;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
 
   &[color='primary'] {
     background-color: rgba($color-primary, 0.1);

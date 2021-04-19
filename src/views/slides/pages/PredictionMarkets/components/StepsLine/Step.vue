@@ -4,10 +4,10 @@
 
     <div class="step-info">
       <div>
-        <Button :name="'step '+number" color="light" size="small" :link="step.link"></Button>
+        <div class="step-label"> step {{number}}</div>
       </div>
       <flex-row>
-        <span>{{step.description}}</span>
+        <span><a :href="step.link">{{step.description}}</a></span>
         <LinkIcon :link="step.link"></LinkIcon>
       </flex-row>
     </div>
@@ -18,11 +18,9 @@
 
 <script>
 import LinkIcon from '@/components/svgImages/LinkIcon'
-import Button from '@/components/buttons/Button'
 export default {
   name: 'Step',
   components: {
-    Button,
     LinkIcon
   },
   props: {
@@ -52,5 +50,11 @@ export default {
     > div + div {
       margin-top: 0.5rem;
     }
+  }
+  .step-label {
+    @extend %card-label;
+    position: relative;
+    border-radius: $radius-base;
+    display: inline-block;
   }
 </style>
