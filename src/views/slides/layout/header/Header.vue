@@ -26,6 +26,7 @@ export default {
     position: absolute;
     left: 2.2vw;
     right: 2.2vw;
+    z-index: 1024;
 
     .header-icon {
       font-family: $font-family-base;

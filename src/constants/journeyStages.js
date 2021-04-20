@@ -1,6 +1,7 @@
 export const STAGES = [
   {
     name: 'Preparing for Mars',
+    description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
     status: 'passed',
     offsetX: 110,
     offsetY: 314,

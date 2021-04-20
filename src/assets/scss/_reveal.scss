@@ -41,6 +41,7 @@ $heading4Size: 1.0em;
 ul.verticator {
   right: 2.2vw;
   padding: 0 !important;
+  z-index: 1024;
 
   li {
     width: Max(1.7vw, 16px);
@@ -72,6 +73,10 @@ ul.verticator {
       }
     }
   }
+}
+
+.reveal .controls {
+  z-index: 1024;
 }
 
 .menubar {

@@ -1,5 +1,8 @@
 <template>
-  <div class="stage-label" :id="'journey-stage-'+index" :style="{left: stage.offsetX+'px', top: stage.offsetY+'px'}" :class="stage.status">
+  <div class="stage-label" @click="showModal(stage.name, stage.description)"
+       :id="'journey-stage-'+index"
+       :style="{left: stage.offsetX+'px', top: stage.offsetY+'px'}"
+       :class="stage.status">
     <flex-row align-v="center" align-h="start" class="stage-label-body">
       <flex-row align-v="center" align-h="center" class="stage-number">
         {{index}}
@@ -13,11 +16,21 @@
 </template>
 
 <script>
+import StageModal from '@/views/slides/pages/JourneyToMars/components/JourneyStages/StageModal'
 export default {
   name: 'JourneyStage',
   props: {
     stage: Object,
     index: Number
+  },
+  methods: {
+    showModal (name, content) {
+      this.$modal.show(
+        StageModal,
+        { name: name, description: content },
+        { draggable: false, height: 'auto' }
+      )
+    }
   }
 }
 </script>
