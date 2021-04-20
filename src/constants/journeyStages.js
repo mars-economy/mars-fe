@@ -1,68 +1,80 @@
-export const POINTS = [
+export const STAGES = [
   {
-    step: 'Preparing for Mars',
+    name: 'Preparing for Mars',
+    status: 'passed',
+    offsetX: 110,
+    offsetY: 314,
     points: [
       {
-        stage: 'passed',
+        offsetY: 434,
         description: 'Lorem ipsum dolor...'
       }
     ]
   },
   {
-    step: 'Crossing the frontier',
+    name: 'Crossing the frontier',
+    status: 'future',
+    offsetX: 288,
+    offsetY: 248,
     points: [
       {
-        stage: 'future',
+        offsetY: 342,
         description: 'Lorem ipsum dolor...'
       },
       {
-        stage: 'future',
+        offsetY: 397,
         description: 'Crew for first Human Exploration Announced'
       },
       {
-        stage: 'future',
+        offsetY: 452,
         description: 'Lorem ipsum dolor...'
       },
       {
-        stage: 'future',
+        offsetY: 507,
         description: 'Lorem ipsum dolor...'
       }
     ]
   },
   {
-    step: 'Discovering the Red Planet',
+    name: 'Discovering the Red Planet',
+    status: 'future',
+    offsetX: 466,
+    offsetY: 182,
     points: [
       {
-        stage: 'future',
+        offsetY: 301,
         description: 'Lorem ipsum dolor...'
       },
       {
-        stage: 'future',
+        offsetY: 386,
         description: 'Lorem ipsum dolor...'
       },
       {
-        stage: 'future',
+        offsetY: 471,
         description: 'Lorem ipsum dolor...'
       }
     ]
   },
   {
-    step: 'New home',
+    name: 'New home',
+    status: 'future',
+    offsetX: 644,
+    offsetY: 116,
     points: [
       {
-        stage: 'future',
+        offsetY: 218,
         description: 'Lorem ipsum dolor...'
       },
       {
-        stage: 'future',
+        offsetY: 287,
         description: 'Lorem ipsum dolor...'
       },
       {
-        stage: 'future',
+        offsetY: 354,
         description: 'Lorem ipsum dolor...'
       },
       {
-        stage: 'future',
+        offsetY: 425,
         description: 'Lorem ipsum dolor...'
       }
     ]
