@@ -12,7 +12,7 @@
 </template>
 
 <script>
-import StagePointModal from '@/views/slides/pages/JourneyToMars/components/JourneyStages/StagePointModal'
+import StagePointModal from '@/views/slides/pages/JourneyToMars/components/JourneyStages/JourneyStagePoint/StagePointModal'
 
 export default {
   name: 'JourneyStagePoint',

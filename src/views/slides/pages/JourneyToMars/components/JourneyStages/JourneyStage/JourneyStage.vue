@@ -4,9 +4,7 @@
        :style="{left: stage.offsetX+'px', top: stage.offsetY+'px'}"
        :class="stage.status">
     <flex-row align-v="center" align-h="start" class="stage-label-body">
-      <flex-row align-v="center" align-h="center" class="stage-number">
-        {{index}}
-      </flex-row>
+      <NumberCircle :number="index"></NumberCircle>
       <div>
         {{stage.name}}
       </div>
@@ -16,9 +14,13 @@
 </template>
 
 <script>
-import StageModal from '@/views/slides/pages/JourneyToMars/components/JourneyStages/StageModal'
+import StageModal from '@/views/slides/pages/JourneyToMars/components/JourneyStages/JourneyStage/StageModal'
+import NumberCircle from '@/components/block/NumberCircle'
 export default {
   name: 'JourneyStage',
+  components: {
+    NumberCircle
+  },
   props: {
     stage: Object,
     index: Number
@@ -71,13 +73,8 @@ export default {
     letter-spacing: -0.02em;
     flex-grow: 1;
   }
-  .stage-number {
-    height: 24px;
-    width: 24px;
-    border: 1px solid rgba($white, 0.2);
+  .number-circle {
     margin: auto 0.6em;
-    line-height: 0;
-    border-radius: 50%;
   }
 
 </style>

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <ModalLabel :labels="['step', stage]"></ModalLabel>
+    <ModalLabel :labels="['stage', stage]"></ModalLabel>
     <ModalCloseIcon @closeModal="$emit('close')"></ModalCloseIcon>
 
     <div class="modal-content leading">
@@ -19,9 +19,8 @@
     </div>
     <div class="modal-content">
       <ModalHeader header="Predictions:" level="3"></ModalHeader>
-
       <div class="modal-body">
-      {{ point }}
+        <PointPredictionsList :predictions="point.predictions"></PointPredictionsList>
       </div>
       <div class="modal-footer">
         <Button name="predict now" link="" color="primary" icon></Button>
@@ -33,12 +32,12 @@
 
 <script>
 import TextPair from '@/components/block/TextPair'
-import { ICONS } from '@/constants/icons'
 import moment from 'moment'
 import Button from '@/components/buttons/Button'
 import ModalLabel from '@/components/modal/ModalLabel'
 import ModalCloseIcon from '@/components/modal/ModalCloseIcon'
 import ModalHeader from '@/components/modal/ModalHeader'
+import PointPredictionsList from './PointPredictionsList'
 
 export default {
   name: 'StagePointModal',
@@ -47,16 +46,12 @@ export default {
     stage: String
   },
   components: {
+    PointPredictionsList,
     ModalHeader,
     ModalCloseIcon,
     ModalLabel,
     Button,
     TextPair
-  },
-  data: function () {
-    return {
-      icons: ICONS
-    }
   },
   methods: {
     getTime: function (time) {

@@ -19,8 +19,8 @@
 <script>
 import JourneyToMarsGrid from '@/views/slides/pages/JourneyToMars/components/JourneyStages/JourneyToMarsGrid'
 import { STAGES } from '@/constants/journeyStages'
-import JourneyStage from '@/views/slides/pages/JourneyToMars/components/JourneyStages/JourneyStage'
-import JourneyStagePoint from '@/views/slides/pages/JourneyToMars/components/JourneyStages/JourneyStagePoint'
+import JourneyStage from '@/views/slides/pages/JourneyToMars/components/JourneyStages/JourneyStage/JourneyStage'
+import JourneyStagePoint from '@/views/slides/pages/JourneyToMars/components/JourneyStages/JourneyStagePoint/JourneyStagePoint'
 
 export default {
   name: 'SlideImageBlock',

@@ -1,8 +1,8 @@
 <template>
   <section class="main-section">
     <Introduction></Introduction>
-    <JourneyToMars></JourneyToMars>
     <IntroductionSecond></IntroductionSecond>
+    <JourneyToMars></JourneyToMars>
     <PredictionMarkets></PredictionMarkets>
     <MarsMarkets></MarsMarkets>
     <TimeLIne></TimeLIne>

@@ -12,7 +12,11 @@ export const STAGES = [
         description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
         state: 'Current',
         dueTo: '1688862699',
-        predictors: '12456'
+        predictors: '12456',
+        predictions: [
+          { id: 1000, theme: 'Will NASA announce the crew members destined for the first Mars Mission by June 2023?' },
+          { id: 1001, theme: 'Will a human set foot on Mars by June 2023?' }
+        ]
       }
     ]
   },

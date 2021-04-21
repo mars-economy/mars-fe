@@ -1,6 +1,6 @@
 <template>
   <div>
-    <ModalLabel labels="About milestone"></ModalLabel>
+    <ModalLabel labels="About stage"></ModalLabel>
     <ModalCloseIcon @closeModal="$emit('close')"></ModalCloseIcon>
 
     <div class="modal-content">
