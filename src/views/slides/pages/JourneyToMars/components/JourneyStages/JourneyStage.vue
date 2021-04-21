@@ -28,7 +28,7 @@ export default {
       this.$modal.show(
         StageModal,
         { name: name, description: content },
-        { draggable: false, height: 'auto' }
+        { height: 'auto' }
       )
     }
   }
@@ -43,6 +43,7 @@ export default {
     display: flex;
     justify-content: flex-start;
     align-items: stretch;
+    cursor: pointer;
 
     &:after {
       content: '';

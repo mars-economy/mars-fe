@@ -8,7 +8,11 @@ export const STAGES = [
     points: [
       {
         offsetY: 434,
-        description: 'Lorem ipsum dolor...'
+        name: 'Crew for first Human Exploration Announced',
+        description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+        state: 'Current',
+        dueTo: '1688862699',
+        predictors: '12456'
       }
     ]
   },
@@ -20,19 +24,39 @@ export const STAGES = [
     points: [
       {
         offsetY: 342,
-        description: 'Lorem ipsum dolor...'
+        name: 'Milestone name',
+        description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+        state: 'Current',
+        dueTo: '1688862699',
+        predictors: '12456'
+
       },
       {
         offsetY: 397,
-        description: 'Crew for first Human Exploration Announced'
+        name: 'Milestone name',
+        description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+        state: 'Current',
+        dueTo: '1688862699',
+        predictors: '12456'
+
       },
       {
         offsetY: 452,
-        description: 'Lorem ipsum dolor...'
+        name: 'Milestone name',
+        description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+        state: 'Current',
+        dueTo: '1688862699',
+        predictors: '12456'
+
       },
       {
         offsetY: 507,
-        description: 'Lorem ipsum dolor...'
+        name: 'Milestone name',
+        description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+        state: 'Current',
+        dueTo: '1688862699',
+        predictors: '12456'
+
       }
     ]
   },
@@ -44,15 +68,30 @@ export const STAGES = [
     points: [
       {
         offsetY: 301,
-        description: 'Lorem ipsum dolor...'
+        name: 'Milestone name',
+        description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+        state: 'Current',
+        dueTo: '1688862699',
+        predictors: '12456'
+
       },
       {
         offsetY: 386,
-        description: 'Lorem ipsum dolor...'
+        name: 'Milestone name',
+        description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+        state: 'Current',
+        dueTo: '1688862699',
+        predictors: '12456'
+
       },
       {
         offsetY: 471,
-        description: 'Lorem ipsum dolor...'
+        name: 'Milestone name',
+        description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+        state: 'Current',
+        dueTo: '1688862699',
+        predictors: '12456'
+
       }
     ]
   },
@@ -64,19 +103,39 @@ export const STAGES = [
     points: [
       {
         offsetY: 218,
-        description: 'Lorem ipsum dolor...'
+        name: 'Milestone name',
+        description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+        state: 'Current',
+        dueTo: '1688862699',
+        predictors: '12456'
+
       },
       {
         offsetY: 287,
-        description: 'Lorem ipsum dolor...'
+        name: 'Milestone name',
+        description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+        state: 'Current',
+        dueTo: '1688862699',
+        predictors: '12456'
+
       },
       {
         offsetY: 354,
-        description: 'Lorem ipsum dolor...'
+        name: 'Milestone name',
+        description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+        state: 'Current',
+        dueTo: '1688862699',
+        predictors: '12456'
+
       },
       {
         offsetY: 425,
-        description: 'Lorem ipsum dolor...'
+        name: 'Milestone name',
+        description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+        state: 'Current',
+        dueTo: '1688862699',
+        predictors: '12456'
+
       }
     ]
   }

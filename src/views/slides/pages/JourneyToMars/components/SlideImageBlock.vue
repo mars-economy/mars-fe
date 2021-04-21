@@ -4,7 +4,11 @@
     <template v-for="(stage,index) in stages">
       <JourneyStage :stage="stage" :index=index+1 :key="'stage_'+index"></JourneyStage>
       <template v-for="(point, ind) in stage.points">
-        <JourneyStagePoint :point="point" :status="stage.status" :offsetX="stage.offsetX+228" :key="'point_'+index+ind"></JourneyStagePoint>
+        <JourneyStagePoint :stage="stage.name" :point="point"
+                           :status="stage.status"
+                           :offsetX="stage.offsetX+228"
+                           :key="'point_'+index+ind">
+        </JourneyStagePoint>
       </template>
     </template>
 

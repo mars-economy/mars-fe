@@ -1,20 +1,35 @@
 <template>
-  <flex-row noWrap class="stage-point" :style="{left: offsetX+'px', top: point.offsetY+'px'}" :class="status">
+  <flex-row @click="showModal(stage, point)"
+            noWrap class="stage-point"
+            :style="{left: offsetX+'px', top: point.offsetY+'px'}"
+            :class="status">
     <div class="point"></div>
     <div class="stage-point-tooltip">
-      {{point.description}}
+      {{point.name}}
     </div>
   </flex-row>
 
 </template>
 
 <script>
+import StagePointModal from '@/views/slides/pages/JourneyToMars/components/JourneyStages/StagePointModal'
+
 export default {
   name: 'JourneyStagePoint',
   props: {
     point: Object,
     status: String,
+    stage: String,
     offsetX: Number
+  },
+  methods: {
+    showModal (stage, pointData) {
+      this.$modal.show(
+        StagePointModal,
+        { stage: stage, point: pointData },
+        { height: 'auto', classes: 'stage-point-modal' }
+      )
+    }
   }
 }
 </script>
