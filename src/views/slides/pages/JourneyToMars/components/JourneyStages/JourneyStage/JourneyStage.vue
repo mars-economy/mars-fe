@@ -16,6 +16,8 @@
 <script>
 import StageModal from '@/views/slides/pages/JourneyToMars/components/JourneyStages/JourneyStage/StageModal'
 import NumberCircle from '@/components/block/NumberCircle'
+import Reveal from 'reveal.js/js'
+
 export default {
   name: 'JourneyStage',
   components: {
@@ -30,8 +32,18 @@ export default {
       this.$modal.show(
         StageModal,
         { name: name, description: content },
-        { height: 'auto' }
+        { height: 'auto' },
+        { opened: this.isModalOpen, closed: this.isModalClose }
+
       )
+    },
+    isModalOpen () {
+      Reveal.configure({ mouseWheel: false, touch: false, keyboard: false })
+      console.log('opened')
+    },
+    isModalClose () {
+      console.log('closed')
+      Reveal.configure({ mouseWheel: true, touch: true, keyboard: true })
     }
   }
 }

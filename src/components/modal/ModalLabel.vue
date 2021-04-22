@@ -15,9 +15,9 @@
 <script>
 export default {
   name: 'ModalLabel',
-  props: {
-    labels: Array || String
-  }
+  props: [
+    'labels'
+  ]
 }
 </script>
 

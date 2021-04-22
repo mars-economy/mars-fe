@@ -10,7 +10,7 @@
 </template>
 
 <script>
-import NumberCircle from '../../../../../../../components/block/NumberCircle'
+import NumberCircle from '@/components/block/NumberCircle'
 export default {
   name: 'PointPredictionsList',
   components: {

@@ -1,6 +1,7 @@
 .vm--overlay {
   background: none;
-  backdrop-filter: blur(20px);
+  backdrop-filter: blur(16px);
+  transition: all 0.2ms;
 }
 .vm--modal {
   @extend %card;
@@ -10,9 +11,11 @@
   line-height: 1.5em;
   padding: 0;
   letter-spacing: 0.02em;
+  transition:  all 0.5ms 0s;
 
   .modal-content {
     padding: 48px 32px 24px 32px;
+    backdrop-filter: blur(60px);
   }
 
   .modal-header {

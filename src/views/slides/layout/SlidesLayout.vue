@@ -59,6 +59,7 @@ export default {
       console.log('slidetransitionend', event.currentSlide)
     })
     Reveal.on('slidechanged', event => {
+      this.$modal.hideAll()
       console.log('slidechanged', event.currentSlide)
     })
   }
