@@ -32,7 +32,7 @@ export default {
       this.$modal.show(
         StageModal,
         { name: name, description: content },
-        { height: 'auto' },
+        { height: 'auto', classes: 'custom-modal' },
         { opened: this.isModalOpen, closed: this.isModalClose }
       )
     },
