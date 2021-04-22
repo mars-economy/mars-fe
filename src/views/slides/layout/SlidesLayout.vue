@@ -60,6 +60,11 @@ export default {
     })
     Reveal.on('slidechanged', event => {
       this.$modal.hideAll()
+      Reveal.configure({
+        mouseWheel: true,
+        touch: true,
+        keyboard: true
+      })
       console.log('slidechanged', event.currentSlide)
     })
   }
