@@ -28,7 +28,7 @@ export default {
       this.$modal.show(
         StagePointModal,
         { stage: stage, point: pointData },
-        { height: 'auto', classes: 'stage-point-modal' },
+        { height: 'auto', classes: ['stage-point-modal', 'custom-modal'] },
         { opened: this.isModalOpen, closed: this.isModalClose }
       )
     },

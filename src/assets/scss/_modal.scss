@@ -3,7 +3,7 @@
   backdrop-filter: blur(16px);
   transition: all 0.2ms;
 }
-.vm--modal {
+.vm--modal.custom-modal {
   @extend %card;
   font-family: $font-family-base;
   color: $white;
