@@ -4,8 +4,10 @@
       <div class="menubar vf__flex vf__justify-content-center">
         <ul class="menu vf__flex vf__align-self-center">
         </ul>
+        <span class="menu-whitepaper"><a href="">Whitepaper</a></span>
       </div>
-      <div class="header-application-button">
+
+    <div class="header-application-button">
         <button>GO TO APPLICATION</button>
       </div>
   </header>

@@ -34,7 +34,6 @@ export default {
         { name: name, description: content },
         { height: 'auto' },
         { opened: this.isModalOpen, closed: this.isModalClose }
-
       )
     },
     isModalOpen () {

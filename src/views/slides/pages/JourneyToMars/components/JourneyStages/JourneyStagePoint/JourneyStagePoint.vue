@@ -13,6 +13,7 @@
 
 <script>
 import StagePointModal from '@/views/slides/pages/JourneyToMars/components/JourneyStages/JourneyStagePoint/StagePointModal'
+import Reveal from 'reveal.js/js'
 
 export default {
   name: 'JourneyStagePoint',
@@ -27,8 +28,17 @@ export default {
       this.$modal.show(
         StagePointModal,
         { stage: stage, point: pointData },
-        { height: 'auto', classes: 'stage-point-modal' }
+        { height: 'auto', classes: 'stage-point-modal' },
+        { opened: this.isModalOpen, closed: this.isModalClose }
       )
+    },
+    isModalOpen () {
+      Reveal.configure({ mouseWheel: false, touch: false, keyboard: false })
+      console.log('opened')
+    },
+    isModalClose () {
+      console.log('closed')
+      Reveal.configure({ mouseWheel: true, touch: true, keyboard: true })
     }
   }
 }
