@@ -4,8 +4,10 @@
       <div class="menubar vf__flex vf__justify-content-center">
         <ul class="menu vf__flex vf__align-self-center">
         </ul>
+        <span class="menu-whitepaper"><a href="">Whitepaper</a></span>
       </div>
-      <div class="header-application-button">
+
+    <div class="header-application-button">
         <button>GO TO APPLICATION</button>
       </div>
   </header>
@@ -26,6 +28,7 @@ export default {
     position: absolute;
     left: 2.2vw;
     right: 2.2vw;
+    z-index: 1024;
 
     .header-icon {
       font-family: $font-family-base;

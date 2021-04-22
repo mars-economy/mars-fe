@@ -1,0 +1,57 @@
+.vm--overlay {
+  background: none;
+  backdrop-filter: blur(16px);
+  transition: all 0.2ms;
+}
+.vm--modal {
+  @extend %card;
+  font-family: $font-family-base;
+  color: $white;
+  font-size: 1rem;
+  line-height: 1.5em;
+  padding: 0;
+  letter-spacing: 0.02em;
+  transition:  all 0.5ms 0s;
+
+  .modal-content {
+    padding: 48px 32px 24px 32px;
+    backdrop-filter: blur(60px);
+  }
+
+  .modal-header {
+    font-weight: bold;
+    margin-bottom: 0.75em;
+  }
+
+  .modal-footer {
+    margin-top: 1rem;
+    text-align: end;
+  }
+}
+
+.vm--modal.stage-point-modal {
+
+  .modal-content.leading {
+    background: rgba($white, 0.03);
+    border-bottom: 1px solid rgba($white, 0.03);
+  }
+
+  .modal-content:not(.leading) {
+    padding-top: 24px;
+  }
+
+  .modal-header.l1 {
+    font-size: 1.25rem;
+    line-height: 1.15em;
+    letter-spacing: -0.02em;
+  }
+
+  .modal-header.l3 {
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 14px;
+    letter-spacing: -0.02em;
+    text-transform: uppercase;
+    opacity: 0.5;
+  }
+}

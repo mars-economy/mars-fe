@@ -1,5 +1,6 @@
 @import "variables";
 @import "reveal";
+@import "modal";
 
 html, body {
   margin: 0;
@@ -59,4 +60,7 @@ h3, h6 {
 
 .text-muted {
   opacity: 0.3;
+}
+.text-small {
+  font-size: 0.875em;
 }

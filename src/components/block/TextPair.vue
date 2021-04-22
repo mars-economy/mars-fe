@@ -1,9 +1,9 @@
 <template>
 
-  <flex-row align-h="start">
+  <flex-row align-h="start" class="pair">
     <div class="pair-icon" v-if="icon" v-html="icons[icon]"></div>
-    <div class="pair-label">{{label}}:</div>
     <div class="pair-data">{{data}}</div>
+    <div class="pair-label">{{label}}</div>
   </flex-row>
 
 </template>
@@ -27,15 +27,20 @@ export default {
 </script>
 
 <style scoped lang="scss">
+  .pair {
+    font-size: 0.875rem;
+    line-height: 1.4em;
+    letter-spacing: -0.02em;
+  }
   .pair-label {
     opacity: 0.5;
-    margin-right: 1em;
+    margin-left: 0.5rem;
   }
   .pair-data {
     font-weight: 700;
   }
   .pair-icon {
-    margin-right: 0.5em;
+    margin-right: 0.5rem;
   }
 
 </style>

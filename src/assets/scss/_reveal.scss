@@ -41,6 +41,7 @@ $heading4Size: 1.0em;
 ul.verticator {
   right: 2.2vw;
   padding: 0 !important;
+  z-index: 1024;
 
   li {
     width: Max(1.7vw, 16px);
@@ -74,6 +75,10 @@ ul.verticator {
   }
 }
 
+.reveal .controls {
+  z-index: 1024;
+}
+
 .menubar {
   margin: auto;
   height: unset;
@@ -98,7 +103,7 @@ ul.verticator {
   }
 }
 
-.menu a {
+.menu a, .menu-whitepaper a {
   font-family: $font-family-base;
   font-style: normal;
   font-weight: bold;
@@ -109,9 +114,15 @@ ul.verticator {
   color: rgba($white, 0.5);
 }
 
-.menu a:hover {
+.menu a:hover,  .menu-whitepaper:hover {
   color: white;
 }
+
+.menu-whitepaper {
+  display: inline-block;
+  margin-left: 2vw;
+}
+
 
 .menu a.active,
 .menu li.active a {

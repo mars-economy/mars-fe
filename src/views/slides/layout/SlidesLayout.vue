@@ -59,6 +59,12 @@ export default {
       console.log('slidetransitionend', event.currentSlide)
     })
     Reveal.on('slidechanged', event => {
+      this.$modal.hideAll()
+      Reveal.configure({
+        mouseWheel: true,
+        touch: true,
+        keyboard: true
+      })
       console.log('slidechanged', event.currentSlide)
     })
   }
@@ -76,7 +82,7 @@ export default {
 
     background-position: top 20% left 50%;
     background-repeat: no-repeat;
-    background-image: url("../../../../src/assets/images/stars.svg");
+    //background-image: url("../../../../src/assets/images/stars.svg");
   }
 
 </style>

@@ -2,6 +2,7 @@
   <section class="main-section">
     <Introduction></Introduction>
     <IntroductionSecond></IntroductionSecond>
+    <JourneyToMars></JourneyToMars>
     <PredictionMarkets></PredictionMarkets>
     <MarsMarkets></MarsMarkets>
     <TimeLIne></TimeLIne>
@@ -18,10 +19,12 @@ import MarsMarkets from './pages/MarsMarkets/MarsMarkets'
 import TimeLIne from './pages/TimeLine/TimeLIne'
 import PredictionMarkets from './pages/PredictionMarkets/PredictionMarkets'
 import JoinCommunity from './pages/JoinCommunity/JoinCommunity'
+import JourneyToMars from './pages/JourneyToMars/JourneyToMars'
 
 export default {
   name: 'Slides',
   components: {
+    JourneyToMars,
     JoinCommunity,
     PredictionMarkets,
     TimeLIne,
