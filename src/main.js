@@ -11,7 +11,9 @@ Vue.config.productionTip = false
 Vue.use(VueFlex)
 Vue.use(VModal)
 Vue.use(VueGtag, {
-  id: 'G-M1VEG7HVF6',
+  config: {
+    id: 'G-M1VEG7HVF6'
+  },
   router
 })
 
