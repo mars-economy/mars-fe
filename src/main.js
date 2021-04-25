@@ -13,9 +13,8 @@ Vue.use(VModal)
 Vue.use(VueGtag, {
   config: {
     id: 'G-M1VEG7HVF6'
-  },
-  router
-})
+  }
+}, router)
 
 new Vue({
   router,
