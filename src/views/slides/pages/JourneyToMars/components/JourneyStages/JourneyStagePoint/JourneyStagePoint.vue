@@ -12,7 +12,8 @@
 </template>
 
 <script>
-import StagePointModal from '@/views/slides/pages/JourneyToMars/components/JourneyStages/JourneyStagePoint/StagePointModal'
+import StagePointModal
+  from '@/views/slides/pages/JourneyToMars/components/JourneyStages/JourneyStagePoint/StagePointModal'
 import Reveal from 'reveal.js/js'
 
 export default {
@@ -34,10 +35,8 @@ export default {
     },
     isModalOpen () {
       Reveal.configure({ mouseWheel: false, touch: false, keyboard: false })
-      console.log('opened')
     },
     isModalClose () {
-      console.log('closed')
       Reveal.configure({ mouseWheel: true, touch: true, keyboard: true })
     }
   }
@@ -85,13 +84,14 @@ export default {
     }
   }
 
-  .stage-point.future {
+  .stage-point.future, .stage-point.current {
     .point {
       background: rgba($color-primary, 0.3);
       border: 1px solid rgba($color-primary, 0.5);
       box-sizing: border-box;
       box-shadow: 0px 0px 16px rgba(241, 146, 4, 0.5);
     }
+
     .stage-point-tooltip {
       color: $color-primary;
       background: rgba($color-primary, 0.1);

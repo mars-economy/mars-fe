@@ -20,8 +20,10 @@ import TimeLIne from './pages/TimeLine/TimeLIne'
 import PredictionMarkets from './pages/PredictionMarkets/PredictionMarkets'
 import JoinCommunity from './pages/JoinCommunity/JoinCommunity'
 import JourneyToMars from './pages/JourneyToMars/JourneyToMars'
+import apolloMixin from '../../mixins/apollo.mixins'
 
 export default {
+  mixins: [apolloMixin],
   name: 'Slides',
   components: {
     JourneyToMars,

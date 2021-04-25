@@ -13,13 +13,15 @@ import Reveal from 'reveal.js/js'
 import Verticator from 'reveal.js-verticator/plugin/verticator/verticator.esm'
 import Simplemenu from '@/plugins/simpleMenu/simplemenu'
 import Header from './header/Header'
-import Vue from 'vue'
 import Spaceman from '@/views/slides/layout/spaceman/Spaceman'
 
 export default {
   name: 'SlidesLayout',
-  components: { Spaceman, Header },
-  mounted () {
+  components: {
+    Spaceman,
+    Header
+  },
+  async mounted () {
     Reveal.initialize(
       {
         progress: true,
@@ -49,15 +51,6 @@ export default {
         plugins: [Simplemenu, Verticator]
       }
     )
-    Vue.nextTick(() => {
-      console.log('next tick')
-    })
-    Reveal.on('ready', event => {
-      console.log('ready')
-    })
-    Reveal.on('slidetransitionend', event => {
-      console.log('slidetransitionend', event.currentSlide)
-    })
     Reveal.on('slidechanged', event => {
       this.$modal.hideAll()
       Reveal.configure({
@@ -65,7 +58,6 @@ export default {
         touch: true,
         keyboard: true
       })
-      console.log('slidechanged', event.currentSlide)
     })
   }
 }

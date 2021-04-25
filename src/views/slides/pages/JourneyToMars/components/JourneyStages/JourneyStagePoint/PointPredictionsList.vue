@@ -3,7 +3,7 @@
     <flex-row noWrap align-v="center" class="predictions-list-item"
               v-for="(prediction, index) in predictions" :key="index">
       <NumberCircle :number="index+1"></NumberCircle>
-      <div>{{prediction.theme}}</div>
+      <div>{{ prediction.name }}</div>
     </flex-row>
   </div>
 
@@ -11,6 +11,7 @@
 
 <script>
 import NumberCircle from '@/components/block/NumberCircle'
+
 export default {
   name: 'PointPredictionsList',
   components: {

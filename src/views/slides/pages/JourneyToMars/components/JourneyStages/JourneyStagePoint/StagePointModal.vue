@@ -8,9 +8,9 @@
 
       <div class="modal-body">
         <flex-row noWrap align-h="between">
-          <TextPair label="current state" :data="point.state" icon="statePoint"></TextPair>
-          <TextPair label="due date" :data="getTime(point.dueTo)" icon="timePoint"></TextPair>
-          <TextPair label="predictors" :data="point.predictors" icon="users"></TextPair>
+          <TextPair :data="point.status" icon="statePoint" label="current state"></TextPair>
+          <TextPair :data="getTime(point.dueDate)" icon="timePoint" label="due date"></TextPair>
+          <TextPair :data="point.predictors.toString()" icon="users" label="predictors"></TextPair>
         </flex-row>
         <div class="text-small">{{ point.description }}</div>
 

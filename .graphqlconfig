@@ -1,0 +1,15 @@
+{
+  "name": "Mars Schema",
+  "schemaPath": "./src/plugins/apollo/query/schema.graphql",
+  "extensions": {
+    "endpoints": {
+      "Default GraphQL Endpoint": {
+        "url": "http://95.217.102.116:8000/subgraphs/name/mars-economy/mars-prediction-markets",
+        "headers": {
+          "user-agent": "JS GraphQL"
+        },
+        "introspect": false
+      }
+    }
+  }
+}
