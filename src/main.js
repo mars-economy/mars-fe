@@ -5,12 +5,12 @@ import VModal from 'vue-js-modal'
 import App from './App.vue'
 import router from './router'
 import store from './store'
-import VueAnalytics from 'vue-analytics'
+import VueGtag from 'vue-gtag'
 
 Vue.config.productionTip = false
 Vue.use(VueFlex)
 Vue.use(VModal)
-Vue.use(VueAnalytics, {
+Vue.use(VueGtag, {
   id: 'G-M1VEG7HVF6',
   router
 })
