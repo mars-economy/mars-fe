@@ -5,8 +5,7 @@
         <ul class="menu vf__flex vf__align-self-center">
         </ul>
         <span class="menu-whitepaper">
-          <a @click="openLink('./whitepaper/Project_MARS_Whitepaper_V0.4.pdf')">
-            Whitepaper</a>
+          <a href="./whitepaper/Project_MARS_Whitepaper_V0.4.pdf">Whitepaper</a>
         </span>
       </div>
 
