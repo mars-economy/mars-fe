@@ -5,9 +5,7 @@
        :class="stage.status">
     <flex-row align-v="center" align-h="start" class="stage-label-body">
       <NumberCircle :number="index"></NumberCircle>
-      <div>
-        {{stage.name}}
-      </div>
+      <div>{{ stage.name }}</div>
     </flex-row>
   </div>
 
