@@ -4,7 +4,10 @@
       <div class="menubar vf__flex vf__justify-content-center">
         <ul class="menu vf__flex vf__align-self-center">
         </ul>
-        <span class="menu-whitepaper"><a href="">Whitepaper</a></span>
+        <span class="menu-whitepaper">
+          <a @click="openLink('./whitepaper/Project_MARS_Whitepaper_V0.4.pdf')">
+            Whitepaper</a>
+        </span>
       </div>
 
     <div class="header-application-button">
@@ -15,7 +18,12 @@
 
 <script>
 export default {
-  name: 'Header'
+  name: 'Header',
+  methods: {
+    openLink (url) {
+      window.open(url, '_blank')
+    }
+  }
 }
 </script>
 
