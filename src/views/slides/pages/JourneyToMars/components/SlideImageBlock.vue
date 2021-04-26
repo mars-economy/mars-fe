@@ -50,7 +50,6 @@ export default {
             dueDate
           })
           Object.assign(arr[index], MILESTONES_POSITION[categoryIndex].points[index])
-          console.log(arr)
           return arr[index]
         })
     }

@@ -36,10 +36,8 @@ export default {
     },
     isModalOpen () {
       Reveal.configure({ mouseWheel: false, touch: false, keyboard: false })
-      console.log('opened')
     },
     isModalClose () {
-      console.log('closed')
       Reveal.configure({ mouseWheel: true, touch: true, keyboard: true })
     }
   }
