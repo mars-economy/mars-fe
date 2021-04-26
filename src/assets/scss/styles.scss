@@ -1,0 +1,72 @@
+@import "variables";
+@import "reveal";
+@import "modal";
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background-color: $background-color-base;
+  color: $white;
+}
+
+html {
+  min-height: 100vh;
+  font-size: 16px;
+  background-image: url("~@/../public/images/bg.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+body.reveal-viewport {
+  background: transparent !important;
+
+  .backgrounds {
+    z-index: -999;
+  }
+}
+
+h3, h6 {
+  font-weight: 400 !important;
+  text-transform: none !important;
+}
+
+.h1 {
+  font-size: $heading1Size;
+  line-height: 3.6rem;
+  font-weight: normal;
+  letter-spacing: -0.02em;
+  text-shadow: $heading-shadow-base;
+  text-transform: none !important;
+}
+
+.h2 {
+  font-size: $heading2Size;
+  line-height: 1.18em;
+  font-weight: bold;
+  letter-spacing: -0.02em;
+  text-shadow: $heading-shadow-base;
+  text-transform: none !important;
+}
+
+.h3 {
+  font-size: $heading2Size;
+  line-height: 1.5em;
+  font-weight: normal;
+  letter-spacing: -0.02em;
+  text-shadow: $heading-shadow-base;
+  text-transform: none !important;
+}
+
+.text-muted {
+  opacity: 0.3;
+}
+.text-small {
+  font-size: 0.875em;
+}
+.clickable, *[clickable] {
+  cursor: pointer;
+}
+.hidden {
+  display: none !important;
+}

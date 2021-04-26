@@ -1,0 +1,133 @@
+@import '~reveal.js/css/reveal.scss';
+//@import '~reveal.js/dist/theme/white.css';
+
+// Default mixins and settings -----------------
+@import "~reveal.js/css/theme/template/mixins";
+@import "~reveal.js/css/theme/template/settings";
+// ---------------------------------------------
+
+// Override styles -----------------------------
+
+$backgroundColor: $background-color-base;
+
+$mainColor: $white;
+$headingColor: $white;
+
+$mainFontSize: 20px;
+$mainFont: $font-family-base;
+$headingFont: $font-family-base;
+$headingTextShadow: none;
+$headingLetterSpacing: normal;
+$headingTextTransform: uppercase;
+$headingFontWeight: 600;
+$linkColor: $white;
+$linkColorHover: lighten($linkColor, 15%);
+$selectionBackgroundColor: lighten($linkColor, 25%);
+
+$heading1Size: 2.25rem;
+$heading2Size: 1.75rem;
+$heading3Size: 1.3em;
+$heading4Size: 1.0em;
+
+// ---------------------------------------------
+
+// Theme template ------------------------------
+@import "~reveal.js/css/theme/template/theme";
+// ---------------------------------------------
+
+@import "~reveal.js-verticator/plugin/verticator/verticator.css";
+//@import "~reveal.js-simplemenu/plugin/highlight/zenburn.css";
+
+ul.verticator {
+  right: 2.2vw;
+  padding: 0 !important;
+  z-index: 1024;
+
+  li {
+    width: Max(1.7vw, 16px);
+    height: Max(1.7vw, 16px);;
+    margin-bottom: 10px;
+    text-align: center;
+    justify-content: center;
+    display: flex;
+    vertical-align: middle;
+    box-sizing: border-box;
+
+    &.active {
+      background-color: rgba($white, 0.2);
+      border: 1px solid rgba($white, 0.2);
+      box-sizing: border-box;
+      backdrop-filter: blur(20px);
+      border-radius: 50%;
+      position: relative;
+    }
+
+    a {
+      width: auto !important;
+      height: auto !important;
+
+      &:after {
+        width: Max(0.4vw, 4px) !important;
+        height: Max(0.4vw, 4px) !important;
+        transform: translateZ(0) scale(1) !important;
+      }
+    }
+  }
+}
+
+.reveal .controls {
+  z-index: 1024;
+}
+
+.menubar {
+  margin: auto;
+  height: unset;
+  border: none;
+}
+
+.menubar ul.menu, .menubar .menu ul {
+  list-style-type: none;
+  margin-left: 0;
+  text-align: center;
+  padding-inline-start: unset;
+}
+
+.menubar, .menubar a {
+  //font-size: 1rem;
+}
+
+.menu li {
+  display: inline-block;
+  + li {
+    margin-left: 2vw;
+  }
+}
+
+.menu a, .menu-whitepaper a {
+  font-family: $font-family-base;
+  font-style: normal;
+  font-weight: bold;
+  font-size: Max(0.8vw, 10px);
+  line-height: 1.33em;
+  letter-spacing: 0.01em;
+  text-transform: uppercase;
+  color: rgba($white, 0.5);
+}
+
+.menu a:hover,  .menu-whitepaper:hover {
+  color: white;
+}
+
+.menu-whitepaper {
+  display: inline-block;
+  margin-left: 2vw;
+  cursor: pointer;
+}
+
+
+.menu a.active,
+.menu li.active a {
+  color: white;
+  pointer-events: none;
+}
+
