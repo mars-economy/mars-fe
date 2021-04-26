@@ -1,7 +1,7 @@
 <template>
-  <flex-row align-v="center" class="social-network clickable" @click="openExternalLink(network.link)">
-    <div class="social-network-icon" v-html="network.icon">
-    </div>
+  <flex-row align-v="center" noWrap class="social-network clickable" @click="openExternalLink(network.link)">
+    <flex-row align-v="center" align-h="center" class="social-network-icon" v-html="network.icon">
+    </flex-row>
     <div class="social-network-name" :class="[!isFullName ? 'hidden' : '']">
       {{network.name}}
     </div>
@@ -35,7 +35,7 @@ export default {
     font-style: normal;
     font-weight: bold;
     font-size: Max(0.8vw, 10px);
-    line-height: 1.33em;
+    line-height: 1em;
     letter-spacing: 0.01em;
     text-transform: uppercase;
     color: $white;
