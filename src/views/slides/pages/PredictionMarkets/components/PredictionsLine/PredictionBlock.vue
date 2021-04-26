@@ -1,7 +1,7 @@
 <template>
   <flex-col class="prediction-card">
     <div class="card-label">
-      {{prediction.label}}
+      {{ prediction.milestone.category.name }}
     </div>
     <div class="card-header">
       {{prediction.name}}
@@ -9,8 +9,8 @@
     <div class="card-body">
       <div class="card-info">
         <TextPair label="current state" :data="prediction.state" icon="statePoint"></TextPair>
-        <TextPair label="due to" :data="getTime(prediction.dueTo)" icon="timePoint"></TextPair>
-        <TextPair label="predictors" :data="prediction.predictors" icon="users"></TextPair>
+        <TextPair :data="getTime(prediction.dueDate)" icon="timePoint" label="due to"></TextPair>
+        <TextPair :data="prediction.predictorsNumber" icon="users" label="predictors"></TextPair>
       </div>
       <div>
         {{prediction.description}}

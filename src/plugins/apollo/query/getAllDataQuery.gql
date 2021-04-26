@@ -15,7 +15,7 @@ query getAllDataQuery {
     }
     predictions(orderBy: position orderDirection: asc) {
         id
-        milestone {id}
+        milestone {id, name, category {id, name}}
         position
         name
         description

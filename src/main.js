@@ -7,6 +7,8 @@ import router from './router'
 import store from './store'
 import VueGtag from 'vue-gtag'
 import { apolloProvider } from './plugins/apollo/apollo'
+import VueLodash from 'vue-lodash'
+import lodash from 'lodash'
 
 Vue.config.productionTip = false
 Vue.use(VueFlex)
@@ -16,6 +18,9 @@ Vue.use(VueGtag, {
     id: 'G-M1VEG7HVF6'
   }
 }, router)
+Vue.use(VueLodash, {
+  lodash: lodash
+})
 
 new Vue({
   router,
