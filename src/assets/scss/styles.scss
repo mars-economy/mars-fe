@@ -64,3 +64,9 @@ h3, h6 {
 .text-small {
   font-size: 0.875em;
 }
+.clickable, *[clickable] {
+  cursor: pointer;
+}
+.hidden {
+  display: none !important;
+}

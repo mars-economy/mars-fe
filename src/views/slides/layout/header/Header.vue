@@ -17,12 +17,7 @@
 
 <script>
 export default {
-  name: 'Header',
-  methods: {
-    openLink (url) {
-      window.open(url, '_blank')
-    }
-  }
+  name: 'Header'
 }
 </script>
 
