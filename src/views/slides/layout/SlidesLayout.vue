@@ -5,6 +5,7 @@
       <router-view/>
     </div>
     <Spaceman></Spaceman>
+    <SocialNetworksPanel></SocialNetworksPanel>
   </div>
 </template>
 
@@ -14,10 +15,12 @@ import Verticator from 'reveal.js-verticator/plugin/verticator/verticator.esm'
 import Simplemenu from '@/plugins/simpleMenu/simplemenu'
 import Header from './header/Header'
 import Spaceman from '@/views/slides/layout/spaceman/Spaceman'
+import SocialNetworksPanel from '@/views/slides/layout/socialNetworks/SocialNetworksPanel'
 
 export default {
   name: 'SlidesLayout',
   components: {
+    SocialNetworksPanel,
     Spaceman,
     Header
   },
