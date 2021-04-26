@@ -12,7 +12,6 @@ const state = {
 
 const getters = {
   getPhases: state => (phaseName, parentId) => {
-    console.log('getPhases', phaseName, parentId)
     return state[phaseName]
   }
 }

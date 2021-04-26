@@ -21,7 +21,8 @@
 
 import Button from '@/components/buttons/Button'
 import PredictionBlock from '@/views/slides/pages/PredictionMarkets/components/PredictionsLine/PredictionBlock'
-import { PREDICTIONS } from '@/constants/predictions'
+import { mapState } from 'vuex'
+import { MODULE_NAMES } from '../../../../../../store'
 
 export default {
   name: 'PredictionsLine',
@@ -29,10 +30,12 @@ export default {
     PredictionBlock,
     Button
   },
-  data: function () {
-    return {
-      predictions: PREDICTIONS
-    }
+  computed: {
+    ...mapState(MODULE_NAMES.PHASES, {
+      predictions (state) {
+        return this.lodash.reverse(this.lodash.sortBy(state.predictions, 'predictorsNumber')).slice(0, 4)
+      }
+    })
   }
 }
 
@@ -42,11 +45,13 @@ export default {
   .predictions-line-title {
     margin: 2rem 0;
   }
+
   .predictions-line {
     display: flex;
     justify-content: space-between;
     align-items: stretch;
   }
+
   .predictions-line-item {
     width: 276px;
   }
