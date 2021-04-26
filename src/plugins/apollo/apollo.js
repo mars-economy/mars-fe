@@ -5,7 +5,7 @@ import VueApollo from 'vue-apollo'
 import { InMemoryCache } from 'apollo-cache-inmemory'
 
 const httpLink = createHttpLink({
-  uri: 'http://95.217.102.116:8000/subgraphs/name/mars-economy/mars-prediction-markets'
+  uri: 'https://graphql.marseconomy.org/subgraphs/name/mars-economy/mars-prediction-markets'
 })
 
 const cache = new InMemoryCache()
