@@ -10,7 +10,7 @@
       <div class="card-info">
         <TextPair label="current state" :data="prediction.state" icon="statePoint"></TextPair>
         <TextPair :data="getTime(prediction.dueDate)" icon="timePoint" label="due to"></TextPair>
-        <TextPair :data="prediction.predictorsNumber" icon="users" label="predictors"></TextPair>
+        <TextPair :data="prediction.predictorsNumber.toString()" icon="users" label="predictors"></TextPair>
       </div>
       <div>
         {{prediction.description}}
@@ -39,7 +39,7 @@ export default {
       name: String,
       description: String,
       dueTo: String,
-      predictors: String,
+      predictors: Number,
       link: String,
       label: String
     }
