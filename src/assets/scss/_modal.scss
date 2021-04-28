@@ -17,6 +17,9 @@
     padding: 48px 32px 24px 32px;
     backdrop-filter: blur(60px);
   }
+  &.disclaimer-modal .modal-content {
+    padding-top: 24px;
+  }
 
   .modal-header {
     font-weight: bold;

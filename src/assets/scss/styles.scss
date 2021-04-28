@@ -42,11 +42,10 @@ h3, h6 {
 
 .h2 {
   font-size: $heading2Size;
-  line-height: 1.18em;
-  font-weight: bold;
-  letter-spacing: -0.02em;
+  line-height: 1.16em;
+  font-weight: 600;
   text-shadow: $heading-shadow-base;
-  text-transform: none !important;
+  text-transform: uppercase;
 }
 
 .h3 {
