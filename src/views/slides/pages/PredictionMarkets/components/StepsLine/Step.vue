@@ -8,7 +8,7 @@
       </div>
       <flex-row>
         <span><a :href="step.link">{{step.description}}</a></span>
-        <LinkIcon :link="step.link"></LinkIcon>
+        <LinkIcon @click="openExternalLink(step.link)"></LinkIcon>
       </flex-row>
     </div>
 
@@ -30,6 +30,11 @@ export default {
       link: String
     },
     number: Number
+  },
+  methods: {
+    openExternalLink (url) {
+      window.open(url, '_blank')
+    }
   }
 }
 </script>

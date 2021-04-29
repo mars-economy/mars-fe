@@ -1,16 +1,20 @@
 <template>
   <div class="contacts">
     <div class="email-container">
-      <EmailContact label="Press inquiries" email="press@marseconomy.com"></EmailContact>
+      <EmailContact label="Press inquiries" email="press@marseconomy.org"></EmailContact>
     </div>
     <div class="email-container">
-      <EmailContact label="Other inquiries" email="support@marseconomy.com"></EmailContact>
+      <EmailContact label="Other inquiries" email="support@marseconomy.org"></EmailContact>
     </div>
     <div class="button-container">
-      <Button name="comprehensive guide" color="light"></Button>
+      <Button name="comprehensive guide" color="light"
+              @click="openExternalLink('https://mars-10.gitbook.io/mars/')">
+      </Button>
     </div>
     <div class="button-container">
-      <Button name="Whitepaper" color="light"></Button>
+      <Button name="Whitepaper" color="light"
+              @click="openExternalLink('https://dev.marseconomy.org/whitepaper/Project_MARS_Whitepaper_V0.4.pdf')">
+      </Button>
     </div>
     <div class="button-container" @click="showModal()">
       <Button name="Disclaimer" color="light"></Button>
@@ -45,9 +49,11 @@ export default {
     },
     isModalClose () {
       Reveal.configure({ mouseWheel: true, touch: true, keyboard: true })
+    },
+    openExternalLink (url) {
+      window.open(url, '_blank')
     }
   }
-
 }
 </script>
 
