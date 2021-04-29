@@ -37,7 +37,7 @@ export const STEPS = [
       '</defs>\n' +
       '</svg>\n',
     description: 'Connect your wallet',
-    link: ''
+    link: 'https://mars-10.gitbook.io/mars/getting-started/crypto-wallets'
   },
   {
     icon: '<svg width="52" height="52" viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg">\n' +
@@ -69,7 +69,7 @@ export const STEPS = [
       '</defs>\n' +
       '</svg>\n',
     description: 'Place you predictions and stake your tokens',
-    link: ''
+    link: 'https://mars-10.gitbook.io/mars/usdmars-token/prediction-markets'
   },
   {
     icon: '<svg width="47" height="52" viewBox="0 0 47 52" fill="none" xmlns="http://www.w3.org/2000/svg">\n' +
@@ -106,6 +106,6 @@ export const STEPS = [
       '</defs>\n' +
       '</svg>\n',
     description: 'Track answers and earnings',
-    link: ''
+    link: 'https://mars-10.gitbook.io/mars/usdmars-token/prediction-markets'
   }
 ]

@@ -1,7 +1,7 @@
 <template>
-  <section id="timeline" name="timeline">
+  <section id="timeline" name="roadmap">
     <flex-col align-h="center" align-v="center" class="vf__flex-nowrap">
-      <div class="h2">Mars Economy project milestones</div>
+      <div class="h2">Mars Economy project roadmap</div>
       <div class="timeline-container">
         <div v-for="(block, index) in blocksArray" :key="index" class="timeline-item">
           <TimeLineBlock :block="block" :isCurrent="block.current"></TimeLineBlock>
