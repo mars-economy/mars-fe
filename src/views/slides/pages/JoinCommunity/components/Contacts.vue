@@ -11,7 +11,7 @@
         <SocialNetwork :network="network" :key="network.name" isFullName></SocialNetwork>
       </template>
     </flex-row>
-  </div>
+   </div>
 
 </template>
 

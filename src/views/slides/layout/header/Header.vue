@@ -5,7 +5,7 @@
         <ul class="menu vf__flex vf__align-self-center">
         </ul>
         <span class="menu-whitepaper">
-          <a href="./whitepaper/Project_MARS_Whitepaper_V0.4.pdf">Whitepaper</a>
+          <a href="./whitepaper/Mars_Economy_Project_Whitepaper.pdf">Whitepaper</a>
         </span>
       </div>
 
