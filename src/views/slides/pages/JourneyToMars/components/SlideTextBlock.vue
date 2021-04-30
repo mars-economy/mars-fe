@@ -2,7 +2,8 @@
 
   <div class="slide-text-block" :style="'width:' + sizeWidth">
     <div class="h2">Journey to Mars</div>
-    <div class="text">Every resource used and step taken will create this new economy - The economy of Mars. Help shed light on these projects by predicting their outcome - receive $DMT for correctpredictions!</div>
+    <div class="text">Every resource used and step taken will create this new economy -
+      The economy of Mars. Help shed light on these projects by predicting their outcome - receive rewards for correct predictions!</div>
   </div>
 
 </template>
