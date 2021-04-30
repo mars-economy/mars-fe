@@ -6,11 +6,11 @@
       </div>
       <div class="mars-markets-content">
         <div class="h2">Mars Markets</div>
-        <div>$Mars token holders will both be able to submit and vote on project proposals as well as help incentivize
+        <div>$DMT token holders will both be able to submit and vote on project proposals as well as help incentivize
           Mars projects large and small by voting on ecosystem tokens for entities invested in the Mars
           colonization.
         </div>
-        <div>You can buy $MARS tokens now - see the available markets below.</div>
+        <div>You can buy $DMT tokens now - see the available markets below.</div>
 
         <div class="tokens-block-container">
           <div v-for="(block, index) in blocksArray" v-bind:key="index" class="tokens-block-item">
