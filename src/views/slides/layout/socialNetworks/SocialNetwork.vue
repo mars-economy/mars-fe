@@ -30,7 +30,6 @@ export default {
 
 <style scoped lang="scss">
   .social-network {
-    margin: 1rem 0;
     font-family: "Karla", "Helvetica Neue", sans-serif;
     font-style: normal;
     font-weight: bold;
@@ -44,7 +43,7 @@ export default {
     opacity: 0.8;
   }
   .social-network-name {
-    margin-left: 1em;
+    margin-left: 6px;
     opacity: 0.5;
   }
 

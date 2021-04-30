@@ -6,58 +6,34 @@
     <div class="email-container">
       <EmailContact label="Other inquiries" email="support@marseconomy.org"></EmailContact>
     </div>
-    <div class="button-container">
-      <Button name="comprehensive guide" color="light"
-              @click="openExternalLink('https://mars-10.gitbook.io/mars/')">
-      </Button>
-    </div>
-    <div class="button-container">
-      <Button name="Whitepaper" color="light"
-              @click="openExternalLink('https://dev.marseconomy.org/whitepaper/Project_MARS_Whitepaper_V0.4.pdf')">
-      </Button>
-    </div>
-    <div class="button-container" @click="showModal()">
-      <Button name="Disclaimer" color="light"></Button>
-    </div>
+    <flex-row align-v="center" class="social-networks">
+      <template v-for="network in socials">
+        <SocialNetwork :network="network" :key="network.name" isFullName></SocialNetwork>
+      </template>
+    </flex-row>
   </div>
 
 </template>
 
 <script>
 import EmailContact from './EmailContact'
-import Button from '../../../../../components/buttons/Button'
-import Disclaimer from '@/views/slides/pages/JoinCommunity/components/Disclaimer'
-import Reveal from 'reveal.js/js'
+import SocialNetwork from '@/views/slides/layout/socialNetworks/SocialNetwork'
+import { SOCIAL_NETWORKS } from '@/constants/socialNetworkLinks'
 export default {
   name: 'Contacts',
   components: {
-    Button,
+    SocialNetwork,
     EmailContact
   },
-  methods: {
-    showModal () {
-      console.log('show')
-      this.$modal.show(
-        Disclaimer,
-        {},
-        { height: 'auto', classes: ['disclaimer-modal', 'custom-modal'] },
-        { opened: this.isModalOpen, closed: this.isModalClose }
-      )
-    },
-    isModalOpen () {
-      Reveal.configure({ mouseWheel: false, touch: false, keyboard: false })
-    },
-    isModalClose () {
-      Reveal.configure({ mouseWheel: true, touch: true, keyboard: true })
-    },
-    openExternalLink (url) {
-      window.open(url, '_blank')
+  data: function () {
+    return {
+      socials: SOCIAL_NETWORKS
     }
   }
 }
 </script>
 
-<style scoped>
+<style scoped lang="scss">
   .email-container + .email-container {
     margin-top: 1.5rem;
   }
@@ -66,6 +42,14 @@ export default {
   }
   .button-container + .button-container {
     margin-top: 1rem;
+  }
+  .social-networks {
+    width: 312px;
+    margin-top: 1rem;
+    & > div {
+      width: 33%;
+      margin: 10px 0;
+    }
   }
 
 </style>

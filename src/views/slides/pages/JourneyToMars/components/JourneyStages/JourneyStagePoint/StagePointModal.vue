@@ -55,7 +55,7 @@ export default {
   },
   methods: {
     getTime: function (time) {
-      return moment.unix(time).format('MMM, D YYYY Z UTC')
+      return moment.unix(time).utc().format('MMM, D YYYY z')
     }
   }
 
