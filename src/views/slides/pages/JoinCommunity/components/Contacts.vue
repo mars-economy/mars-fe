@@ -13,7 +13,7 @@
     </div>
     <div class="button-container">
       <Button name="Whitepaper" color="light"
-              @click="openExternalLink('https://dev.marseconomy.org/whitepaper/Project_MARS_Whitepaper_V0.4.pdf')">
+              @click="openExternalLink('https://dev.marseconomy.org/whitepaper/Mars_Economy_Project_Whitepaper.pdf')">
       </Button>
     </div>
     <div class="button-container" @click="showModal()">
