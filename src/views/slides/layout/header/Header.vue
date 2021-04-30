@@ -1,23 +1,54 @@
 <template>
   <header>
-      <div class="header-icon">Mars Economy</div>
-      <div class="menubar vf__flex vf__justify-content-center">
-        <ul class="menu vf__flex vf__align-self-center">
-        </ul>
-        <span class="menu-whitepaper">
+      <div class="header-icon headline">Mars Economy</div>
+      <div class="menubar-container vf__flex vf__justify-content-center">
+        <div class="menu">
+          <ul class="menu vf__flex vf__align-self-center">
+          </ul>
+          <span class="menu-whitepaper">
           <a href="./whitepaper/Mars_Economy_Project_Whitepaper.pdf">Whitepaper</a>
         </span>
+        </div>
       </div>
+    <div class="menu-trigger clickable" @click="onMenuToggle">
+      <Icon name="menu" size="24" v-if="!isMenuOpen"></Icon>
+      <Icon name="close" size="24" v-else></Icon>
 
-    <div class="header-application-button">
+    </div>
+
+    <div class="header-application-button hidden-sm">
         <button>GO TO APPLICATION</button>
       </div>
   </header>
 </template>
 
 <script>
+import Icon from '@/components/svgImages/Icon'
 export default {
-  name: 'Header'
+  name: 'Header',
+  components: {
+    Icon
+  },
+  data: function () {
+    return {
+      isMenuOpen: false,
+      menuHeight: 'unset',
+      isMobile: true
+    }
+  },
+  methods: {
+    onMenuToggle: function () {
+      if (this.isMobile) {
+        this.isMenuOpen = !this.isMenuOpen
+        const elem = document.querySelector('.menubar-container')
+        if (elem.style.height === '100vh') {
+          elem.style.height = this.menuHeight = '0'
+        } else {
+          elem.style.height = '100vh'
+        }
+      }
+    }
+  }
 }
 </script>
 
@@ -31,16 +62,6 @@ export default {
     left: 2.2vw;
     right: 2.2vw;
     z-index: 1024;
-
-    .header-icon {
-      font-family: $font-family-base;
-      font-style: normal;
-      font-weight: 800;
-      font-size: Max(1.25vw, 12px);
-      line-height: 21px;
-      letter-spacing: -0.02em;
-      width: Max(10vw, 85px);
-    }
 
     .header-application-button {
       align-self: center;
@@ -71,4 +92,14 @@ export default {
       }
     }
   }
+  .header-icon {
+    font-family: $font-family-base;
+    font-style: normal;
+    font-weight: 800;
+    font-size: Max(1.25vw, 12px);
+    line-height: 21px;
+    letter-spacing: -0.02em;
+    width: Max(10vw, 85px);
+  }
+
 </style>

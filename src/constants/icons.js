@@ -38,6 +38,14 @@ export const ICONS = {
 
   angleLeft: '<svg width="6" height="8" viewBox="0 0 6 8" fill="none" xmlns="http://www.w3.org/2000/svg">\n' +
     '<path d="M0.846191 0.809508L0.846191 1.65004C0.846191 1.83284 0.934008 2.00668 1.08276 2.11421L3.68858 3.99958L1.08276 5.88495C0.934008 5.99248 0.846191 6.16453 0.846191 6.34912L0.846191 7.18965C0.846191 7.30614 0.978813 7.37424 1.0738 7.30614L5.48255 4.11607C5.56141 4.05872 5.56141 3.94223 5.48255 3.88488L1.0738 0.694808C0.978812 0.624913 0.846191 0.693017 0.846191 0.809508Z" fill="white"/>\n' +
+    '</svg>\n',
+
+  menu: '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">\n' +
+    '<g opacity="0.8">\n' +
+    '<path d="M5.00208 7H19" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>\n' +
+    '<path d="M5.00012 11.666H18.9946" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>\n' +
+    '<path d="M9.66846 16.332H18.9946" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>\n' +
+    '</g>\n' +
     '</svg>\n'
 
 }
