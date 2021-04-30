@@ -1,16 +1,23 @@
 <template>
   <div class="contacts">
     <div class="email-container">
-      <EmailContact label="Press inquiries" email="press@marseconomy.com"></EmailContact>
+      <EmailContact label="Press inquiries" email="press@marseconomy.org"></EmailContact>
     </div>
     <div class="email-container">
-      <EmailContact label="Other inquiries" email="support@marseconomy.com"></EmailContact>
+      <EmailContact label="Other inquiries" email="support@marseconomy.org"></EmailContact>
     </div>
     <div class="button-container">
-      <Button name="comprehensive guide" color="light" link=""></Button>
+      <Button name="comprehensive guide" color="light"
+              @click="openExternalLink('https://mars-10.gitbook.io/mars/')">
+      </Button>
     </div>
     <div class="button-container">
-      <Button name="Whitepaper" color="light" link=""></Button>
+      <Button name="Whitepaper" color="light"
+              @click="openExternalLink('https://dev.marseconomy.org/whitepaper/Project_MARS_Whitepaper_V0.4.pdf')">
+      </Button>
+    </div>
+    <div class="button-container" @click="showModal()">
+      <Button name="Disclaimer" color="light"></Button>
     </div>
   </div>
 
@@ -19,11 +26,33 @@
 <script>
 import EmailContact from './EmailContact'
 import Button from '../../../../../components/buttons/Button'
+import Disclaimer from '@/views/slides/pages/JoinCommunity/components/Disclaimer'
+import Reveal from 'reveal.js/js'
 export default {
   name: 'Contacts',
   components: {
     Button,
     EmailContact
+  },
+  methods: {
+    showModal () {
+      console.log('show')
+      this.$modal.show(
+        Disclaimer,
+        {},
+        { height: 'auto', classes: ['disclaimer-modal', 'custom-modal'] },
+        { opened: this.isModalOpen, closed: this.isModalClose }
+      )
+    },
+    isModalOpen () {
+      Reveal.configure({ mouseWheel: false, touch: false, keyboard: false })
+    },
+    isModalClose () {
+      Reveal.configure({ mouseWheel: true, touch: true, keyboard: true })
+    },
+    openExternalLink (url) {
+      window.open(url, '_blank')
+    }
   }
 }
 </script>

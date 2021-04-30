@@ -6,11 +6,11 @@
       </div>
       <div class="mars-markets-content">
         <div class="h2">Mars Markets</div>
-        <div>$Mars token holders will both be able to submit and vote on project proposals as well as help incentivize
+        <div>$DMT token holders will both be able to submit and vote on project proposals as well as help incentivize
           Mars projects large and small by voting on ecosystem tokens for entities invested in the Mars
           colonization.
         </div>
-        <div>You can buy $MARS tokens now - see the available markets below.</div>
+        <div>You can buy $DMT tokens now - see the available markets below.</div>
 
         <div class="tokens-block-container">
           <div v-for="(block, index) in blocksArray" v-bind:key="index" class="tokens-block-item">
@@ -40,7 +40,8 @@ export default {
             '<path opacity="0.5" d="M10.8761 7.13084V15.9982H13.7444V3.94352C13.7444 1.2341 12.2324 -0.0416335 9.16568 0.000891007H4.85815V2.38834H9.15353C10.4389 2.37619 10.8761 2.82979 10.8761 4.0468V7.13084Z" fill="white"/>\n' +
             '</svg>\n',
           title: 'Liquifi',
-          content: 'A new-gen decentralized exchange on Binance Smart Chain and Ethereum.'
+          content: 'A new-gen decentralized exchange on Binance Smart Chain and Ethereum.',
+          link: 'https://app.liquifi.org/'
         },
         {
           icon: '<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">\n' +
@@ -49,18 +50,6 @@ export default {
             '</svg>\n',
           title: 'PancakeSwap',
           content: 'One of the most popular decentralized exchanges on Binance Smart Chain.',
-          waiting: true
-        },
-        {
-          icon: '<svg width="17" height="16" viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg">\n' +
-            '<path d="M1.80664 9.80646L3.61329 8L1.80664 6.19355L0 8L1.80664 9.80646Z" fill="white"/>\n' +
-            '<path d="M11.0978 6.70967L8.00063 3.6129L4.90364 6.70967L3.09712 4.90322L8.00063 0L12.9043 4.90322L11.0978 6.70967Z" fill="white"/>\n' +
-            '<path d="M12.3881 8L14.1948 6.19355L16.0013 8L14.1948 9.80645L12.3881 8Z" fill="white"/>\n' +
-            '<path d="M4.90364 9.29033L8.00063 12.3871L11.0978 9.29033L12.9043 11.0968L8.00063 16L3.09712 11.0968L4.90364 9.29033Z" fill="white"/>\n' +
-            '<path d="M9.80728 8L8.00063 9.80646L6.19412 8L8.00063 6.19355L9.80728 8Z" fill="white"/>\n' +
-            '</svg>\n',
-          title: 'Binance',
-          content: 'A centralized exchange where $Mars tokens are listed.',
           waiting: true
         }
       ]
@@ -96,7 +85,7 @@ export default {
   }
 
   .tokens-block-item {
-    width: 174px;
+    width: 276px;
     + .tokens-block-item {
       margin-left: 2rem;
     }

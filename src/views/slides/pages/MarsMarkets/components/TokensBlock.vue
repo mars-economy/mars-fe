@@ -1,11 +1,14 @@
 <template>
-  <div class="tokens-block-card" :class="{'muted' : isMuted}">
+  <div class="tokens-block-card" :class="[isMuted ? 'muted' : 'clickable']" @click="openExternalLink">
       <flex-row class="card-header" alignV="center">
         <flex-row v-html="block.icon" class="tokens-block-icon"></flex-row>
         <div>{{ block.title }}</div>
       </flex-row>
       <div class="card-body" :class="{'muted' : isMuted}">
         {{ block.content }}
+        <flex-col align-h="end" class="card-button" v-if="block.link">
+          <Button name="go to market" color="none" icon txtOnly></Button>
+        </flex-col>
       </div>
     <div class="card-footer" v-if="isMuted">
       COMING SOON
@@ -15,15 +18,27 @@
 
 <script>
 
+import Button from '@/components/buttons/Button'
 export default {
   name: 'TokensBlock',
+  components: {
+    Button
+  },
   props: {
     block: {
       title: String,
       content: String,
-      icon: String
+      icon: String,
+      link: String
     },
     isMuted: Boolean
+  },
+  methods: {
+    openExternalLink () {
+      if (this.block.link) {
+        window.open(this.block.link, '_blank')
+      }
+    }
   }
 }
 </script>
@@ -32,7 +47,12 @@ export default {
 
   .tokens-block-card {
     @extend %card;
+    padding: 24px 20px;
     min-height: 100%;
+
+    &.clickable:hover {
+      background-color: rgba($white, 0.1)
+    }
   }
   .card-header {
     font-size: 1rem;
@@ -49,6 +69,9 @@ export default {
     .card-body, .card-header {
       @extend .text-muted
     }
+  }
+  .card-button {
+    margin-top: 14px;
   }
   .card-footer {
     position: absolute;

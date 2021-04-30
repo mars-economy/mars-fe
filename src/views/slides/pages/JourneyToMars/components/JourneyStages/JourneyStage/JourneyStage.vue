@@ -2,7 +2,7 @@
   <div class="stage-label" @click="showModal(stage.name, stage.description)"
        :id="'journey-stage-'+index"
        :style="{left: stage.offsetX+'px', top: stage.offsetY+'px'}"
-       :class="stage.status">
+       :class="'stage'+index">
     <flex-row align-v="center" align-h="start" class="stage-label-body">
       <NumberCircle :number="index"></NumberCircle>
       <div>{{ stage.name }}</div>
@@ -58,14 +58,14 @@ export default {
       content: '';
       position: absolute;
       right: -2px;
-      width: 4px;
+      width: 6px;
       top: 0;
       bottom: 0;
       z-index: -1;
       box-sizing: border-box;
     }
-    &.passed:after { background-color: $color-info; }
-    &.future:after { background-color: $color-primary; }
+    &.stage1:after { background:  linear-gradient(-90deg, $color-info, transparent); }
+    &:not(.stage1):after { background: linear-gradient(-90deg, $color-primary, transparent); }
 
   }
   .stage-label-body {
