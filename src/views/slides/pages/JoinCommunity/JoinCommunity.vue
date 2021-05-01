@@ -11,9 +11,8 @@
             <Button name="comprehensive guide" color="light"
                     @click="openExternalLink('https://mars-10.gitbook.io/mars/')">
             </Button>
-            <Button name="Whitepaper" color="light"
-                    @click="openExternalLink('https://dev.marseconomy.org/whitepaper/Project_MARS_Whitepaper_V0.4.pdf')">
-            </Button>
+            <Button name="whitepaper" color="light"
+                    @click="openExternalLink('https://dev.marseconomy.org/whitepaper/Mars_Economy_Project_Whitepaper.pdf')"></Button>
           </flex-row>
         </div>
         <div class="contacts-container">
@@ -33,6 +32,11 @@ export default {
   components: {
     Button,
     Contacts
+  },
+  methods: {
+    openExternalLink (url) {
+      window.open(url, '_blank')
+    }
   }
 }
 </script>
