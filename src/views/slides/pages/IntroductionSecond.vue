@@ -3,9 +3,7 @@
            data-visibility="uncounted">
     <flex-row class="intro-container">
       <div class="intro-text h3">
-          Our belief is that everyone's should be able to play
-          a role in creating and shaping the future of Mars,
-          whether or not they travel there themselves.
+          Our belief is that everyone should be able to play a role in creating and shaping the future of Mars.
       </div>
       <IntroductionSecondSvg></IntroductionSecondSvg>
     </flex-row>

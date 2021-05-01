@@ -5,7 +5,7 @@
         <div class="subscribe-container">
           <div class="h2">Join the community</div>
           <div class="subscribe-text">
-            Learn more about Mars Economy, chat with the team and other community members, have a say in shaping the roadmap, and join us on this journey to the Red Planet. Be a part of the future.
+            Learn more about Mars Economy, chat with the team and other members of the community on our messaging channels,  have a say in shaping the roadmap, and join us on this journey to the Red Planet. Be a part of the future.
           </div>
           <flex-row class="button-container">
             <Button name="comprehensive guide" color="light"
