@@ -1,13 +1,20 @@
 <template>
   <section id="community" name="community">
     <div class="community-container">
-      <div class="h2">Join the community</div>
       <flex-row class="community-content">
         <div class="subscribe-container">
+          <div class="h2">Join the community</div>
           <div class="subscribe-text">
-            Learn more about Mars Economy, chat with the team and other community members, have a say in shaping the roadmap, and join us on this journey to the Red Planet. Be a part of the future.
+            Learn more about Mars Economy, chat with the team and other members of the community on our messaging channels,  have a say in shaping the roadmap, and join us on this journey to the Red Planet. Be a part of the future.
           </div>
-          <SubscribeForm></SubscribeForm>
+          <flex-row class="button-container">
+            <Button name="comprehensive guide" color="light"
+                    @click="openExternalLink('https://mars-10.gitbook.io/mars/')">
+            </Button>
+            <Button name="Whitepaper" color="light"
+                    @click="openExternalLink('https://dev.marseconomy.org/whitepaper/Project_MARS_Whitepaper_V0.4.pdf')">
+            </Button>
+          </flex-row>
         </div>
         <div class="contacts-container">
           <Contacts></Contacts>
@@ -19,18 +26,18 @@
 </template>
 
 <script>
-import SubscribeForm from './components/SubscribeForm'
 import Contacts from './components/Contacts'
+import Button from '@/components/buttons/Button'
 export default {
   name: 'JoinCommunity',
   components: {
-    Contacts,
-    SubscribeForm
+    Button,
+    Contacts
   }
 }
 </script>
 
-<style scoped>
+<style scoped lang="scss">
 
   .community-container {
     padding: 0 17.5rem 0 20.3rem;
@@ -48,6 +55,12 @@ export default {
 
   .subscribe-text {
     margin-bottom: 3rem;
+  }
+
+  .button-container {
+    .btn + .btn {
+      margin-left: 1rem;
+    }
   }
 
 </style>

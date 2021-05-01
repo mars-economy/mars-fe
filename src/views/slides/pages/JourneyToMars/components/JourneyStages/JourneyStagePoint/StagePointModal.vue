@@ -8,7 +8,7 @@
 
       <div class="modal-body">
         <flex-row noWrap align-h="between">
-          <TextPair :data="point.status" icon="statePoint" label="current state"></TextPair>
+          <TextPair :data="point.status" icon="statePoint" label="state"></TextPair>
           <TextPair :data="getTime(point.dueDate)" icon="timePoint" label="due date"></TextPair>
           <TextPair :data="point.predictors.toString()" icon="users" label="predictors"></TextPair>
         </flex-row>
@@ -55,7 +55,7 @@ export default {
   },
   methods: {
     getTime: function (time) {
-      return moment.unix(time).format('MMMM YYYY')
+      return moment.unix(time).utc().format('MMM, D YYYY z')
     }
   }
 

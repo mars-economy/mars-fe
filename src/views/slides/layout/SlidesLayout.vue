@@ -6,6 +6,7 @@
     </div>
     <Spaceman></Spaceman>
     <SocialNetworksPanel></SocialNetworksPanel>
+    <Footer v-if="isLastSlide"></Footer>
   </div>
 </template>
 
@@ -16,13 +17,45 @@ import Simplemenu from '@/plugins/simpleMenu/simplemenu'
 import Header from './header/Header'
 import Spaceman from '@/views/slides/layout/spaceman/Spaceman'
 import SocialNetworksPanel from '@/views/slides/layout/socialNetworks/SocialNetworksPanel'
+import Footer from '@/views/slides/layout/footer/Footer'
 
 export default {
   name: 'SlidesLayout',
   components: {
+    Footer,
     SocialNetworksPanel,
     Spaceman,
     Header
+  },
+  data: function () {
+    return {
+      isMobile: window.innerWidth < 900,
+      isLastSlide: false
+    }
+  },
+  methods: {
+    onScreenResize: function () {
+      this.isMobile = window.innerWidth < 900
+    },
+    configReveal () {
+      if (!this.isMobile) {
+        Reveal.configure(
+          {
+            width: 1440,
+            height: 900,
+            margin: 0
+          }
+        )
+      } else {
+        Reveal.configure(
+          {
+            width: 320,
+            height: 568,
+            margin: 0
+          }
+        )
+      }
+    }
   },
   async mounted () {
     Reveal.initialize(
@@ -36,14 +69,6 @@ export default {
         mouseWheel: true,
         previewLinks: true,
         // disableLayout: true,
-        width: 1440,
-        height: 900,
-        margin: 0,
-        verticator: {
-          darktheme: true,
-          skipuncounted: true,
-          clickable: true
-        },
         simplemenu: {
           menuclass: 'menu',
           activeclass: 'active',
@@ -51,10 +76,17 @@ export default {
           selectby: 'id',
           auto: true
         },
+        verticator: {
+          darktheme: true,
+          skipuncounted: true,
+          clickable: true
+        },
         plugins: [Simplemenu, Verticator]
       }
     )
+    this.configReveal()
     Reveal.on('slidechanged', event => {
+      this.isLastSlide = event.currentSlide.id === 'community'
       this.$modal.hideAll()
       Reveal.configure({
         mouseWheel: true,
@@ -62,6 +94,10 @@ export default {
         keyboard: true
       })
     })
+    window.onresize = () => {
+      this.onScreenResize()
+      this.configReveal()
+    }
   }
 }
 </script>
