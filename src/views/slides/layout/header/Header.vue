@@ -2,13 +2,17 @@
   <header>
       <div class="header-icon headline">Mars Economy</div>
       <div class="menubar-container vf__flex vf__justify-content-center">
-        <div class="menu">
+        <div class="menubar">
           <ul class="menu vf__flex vf__align-self-center">
           </ul>
           <span class="menu-whitepaper">
           <a href="./whitepaper/Mars_Economy_Project_Whitepaper.pdf">Whitepaper</a>
         </span>
         </div>
+        <template  v-if="isMobile">
+          <SocialNetworksPanel/>
+          <Footer />
+        </template>
       </div>
     <div class="menu-trigger clickable" @click="onMenuToggle">
       <Icon name="menu" size="24" v-if="!isMenuOpen"></Icon>
@@ -24,16 +28,20 @@
 
 <script>
 import Icon from '@/components/svgImages/Icon'
+import SocialNetworksPanel from '../socialNetworks/SocialNetworksPanel'
+import Footer from '../footer/Footer'
 export default {
   name: 'Header',
   components: {
+    Footer,
+    SocialNetworksPanel,
     Icon
   },
   data: function () {
     return {
       isMenuOpen: false,
       menuHeight: 'unset',
-      isMobile: true
+      isMobile: window.innerWidth < 900
     }
   },
   methods: {
@@ -48,6 +56,14 @@ export default {
         }
       }
     }
+  },
+  onScreenResize: function () {
+    this.isMobile = window.innerWidth < 900
+  },
+  mounted () {
+    window.onresize = () => {
+      this.onScreenResize()
+    }
   }
 }
 </script>
@@ -57,11 +73,12 @@ export default {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    top: 1.6vw;
     position: absolute;
-    left: 2.2vw;
-    right: 2.2vw;
-    z-index: 1024;
+    padding: 1.6vw 2.2vw;
+    top:0;
+    left: 0;
+    right: 0;
+    z-index: 1025;
 
     .header-application-button {
       align-self: center;
@@ -100,6 +117,13 @@ export default {
     line-height: 21px;
     letter-spacing: -0.02em;
     width: Max(10vw, 85px);
+    z-index: 1030;
+  }
+
+  @media (max-width: $screen-sm-max) {
+    header {
+      padding: 20px $padding-slide-mobile;
+    }
   }
 
 </style>

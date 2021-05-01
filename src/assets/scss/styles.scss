@@ -20,10 +20,13 @@ html {
 
 body.reveal-viewport {
   background: transparent !important;
-
   .backgrounds {
     z-index: -999;
   }
+}
+
+div {
+  box-sizing: border-box;
 }
 
 h3, h6 {

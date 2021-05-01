@@ -5,7 +5,7 @@
       <router-view/>
     </div>
     <Spaceman></Spaceman>
-    <SocialNetworksPanel></SocialNetworksPanel>
+    <SocialNetworksPanel v-if="!isMobile"></SocialNetworksPanel>
     <Footer v-if="isLastSlide"></Footer>
   </div>
 </template>

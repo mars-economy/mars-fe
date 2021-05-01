@@ -11,14 +11,16 @@ $color-info: #A0AAE1;
 // Breakpoints
 
 $screen-sm-max: 900px;
-$screen-md-min: 901px;
+$screen-md-min: $screen-sm-max + 1px;
 
 // Fonts
 $font-family-base: "Karla", "Helvetica Neue", sans-serif;
 $heading-shadow-base: 0px 4px 4px rgba(13, 20, 41, 0.2);
+$shadow-base:  0px 4px 4px rgba(13, 20, 41, 0.2);
 
 // Sizing
 $radius-base: 0.5rem;
+$padding-slide-mobile: 24px;
 
 %card {
   background: rgba($white, 0.05);

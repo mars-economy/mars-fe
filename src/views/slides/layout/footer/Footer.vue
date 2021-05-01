@@ -19,7 +19,6 @@ export default {
   name: 'Footer',
   methods: {
     showModal () {
-      console.log('show')
       this.$modal.show(
         Disclaimer,
         {},
@@ -43,19 +42,32 @@ export default {
 
 <style scoped lang="scss">
   .footer {
-    position: absolute;
-    bottom: 1rem;
-    left: 50%;
-    transform: translateX(-50%);
-    font-size: 14px;
-    line-height: 20px;
-    text-align: right;
-    letter-spacing: -0.02em;
-
-    .footer-item {
+    @media (min-width: $screen-md-min) {
+      position: absolute;
+      bottom: 1rem;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 14px;
+      line-height: 20px;
+      text-align: right;
+      letter-spacing: -0.02em;
       margin: 1rem;
+    }
+    @media (max-width: $screen-sm-max) {
+      display: flex;
+      width: 100%;
+      padding: $padding-slide-mobile;
+      justify-content: space-between;
+      font-size: 12px;
+      line-height: 18px;
+    }
+    text-shadow: $shadow-base;
+  }
+    .footer-item {
       opacity: 0.5;
-      text-shadow: $heading-shadow-base;
+      + .footer-item {
+        margin-left: 2rem;
+      }
     }
     .footer-link {
       text-decoration-line: underline;
@@ -63,6 +75,5 @@ export default {
         opacity: 1;
       }
     }
-  }
 
 </style>
