@@ -6,7 +6,7 @@
     <PredictionMarkets></PredictionMarkets>
     <MarsMarkets :isMobile="isMobileView"></MarsMarkets>
     <TimeLIne></TimeLIne>
-    <JoinCommunity></JoinCommunity>
+    <JoinCommunity :isMobile="isMobileView"></JoinCommunity>
     <div class="ellipse"></div>
   </section>
 </template>

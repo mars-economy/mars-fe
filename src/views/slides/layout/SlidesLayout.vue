@@ -6,7 +6,7 @@
     </div>
     <Spaceman></Spaceman>
     <SocialNetworksPanel v-if="!isMobile"></SocialNetworksPanel>
-    <Footer v-if="isLastSlide"></Footer>
+    <Footer v-if="isLastSlide && !isMobile"></Footer>
   </div>
 </template>
 

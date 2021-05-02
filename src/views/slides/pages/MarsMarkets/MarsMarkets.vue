@@ -5,7 +5,7 @@
         <MarsMarketsSvg></MarsMarketsSvg>
       </div>
       <div class="mars-markets-content">
-        <div class="h4" v-if="!isMobile">Mars Markets</div>
+        <div class="h4 hidden-sm">Mars Markets</div>
         <div>The Decentralized Mars Token ($DMT) holders have the ability to submit and vote on project proposals. Ecosystem pool tokens will be distributed gradually to organizations advancing Mars colonization, as voted on by the community.
         </div>
         <div>You can buy $DMT tokens now - see the available markets below.</div>
