@@ -2,9 +2,9 @@
   <section class="main-section">
     <Introduction></Introduction>
     <IntroductionSecond></IntroductionSecond>
-    <JourneyToMars></JourneyToMars>
+    <JourneyToMars :isMobile="isMobileView"></JourneyToMars>
     <PredictionMarkets></PredictionMarkets>
-    <MarsMarkets></MarsMarkets>
+    <MarsMarkets :isMobile="isMobileView"></MarsMarkets>
     <TimeLIne></TimeLIne>
     <JoinCommunity></JoinCommunity>
     <div class="ellipse"></div>
@@ -36,7 +36,7 @@ export default {
   },
   data: function () {
     return {
-      isMobileView: false
+      isMobileView: window.innerWidth < 900
     }
   },
   watch: {
@@ -52,8 +52,8 @@ export default {
   },
   mounted () {
     Reveal.on('resize', event => {
-      this.isMobileView = event.scale < 1
-      // console.log(event.scale)
+      this.isMobileView = event.size.width === 320
+      console.log(event.size.width)
     })
   }
 }

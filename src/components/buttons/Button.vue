@@ -32,8 +32,9 @@ export default {
 
 .btn {
   font-family: $font-family-base;
-  font-size: 0.75rem;
-  line-height: 1em;
+  font-size: 12px;
+  line-height: 18px;
+  font-weight: bold;
   text-align: center;
   letter-spacing: 0.01em;
   text-transform: uppercase;

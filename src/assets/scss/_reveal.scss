@@ -13,21 +13,24 @@ $backgroundColor: $background-color-base;
 $mainColor: $white;
 $headingColor: $white;
 
-$mainFontSize: 20px;
+$mainFontSize: inherit;
 $mainFont: $font-family-base;
 $headingFont: $font-family-base;
 $headingTextShadow: none;
-$headingLetterSpacing: normal;
-$headingTextTransform: uppercase;
-$headingFontWeight: 600;
+$headingLetterSpacing: inherit;
+$headingTextTransform: inherit;
+$headingFontWeight: inherit;
 $linkColor: $white;
 $linkColorHover: lighten($linkColor, 15%);
 $selectionBackgroundColor: lighten($linkColor, 25%);
 
-$heading1Size: 2.25rem;
-$heading2Size: 1.5rem;
-$heading3Size: 1.3em;
-$heading4Size: 1.0em;
+$heading1Size: 36px;
+$heading2Size: 36px;
+$heading3Size: 28px;
+$heading4Size: 24px;
+$heading5Size: 16px;
+$heading6Size: 14px;
+
 
 // ---------------------------------------------
 
@@ -76,9 +79,43 @@ ul.verticator {
   }
 }
 
+.reveal {
+  font-weight: inherit;
+}
+.reveal .slides > section {
+  @media (max-width: $screen-sm-max) {
+    padding: 40px 0;
+  }
+}
 .reveal .controls {
   z-index: 1024;
+  /* button {
+    border-radius: 16px;
+    border: $border-light;
+    background-color: rgba($white, 0.05);
+    width: 32px;
+    height: 32px;
+    padding: 0;
+  }
+  .controls-arrow {
+    &:after, &:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 9px;
+      height: 2px;
+      transform-origin: 1px 50%;
+      background-color: $white;
+    }
+  }
+  @media (max-width: $screen-sm-max) {
+    bottom: 16px;
+    left: 50%;
+    transform: translateX(-50%);
+  } */
 }
+
 .reveal ul {
   margin: 0;
 }
@@ -88,6 +125,8 @@ ul.verticator {
 
 .menubar-container {
   display: flex;
+  justify-content: center;
+  align-items: center;
   margin: auto;
   height: unset;
   border: none;

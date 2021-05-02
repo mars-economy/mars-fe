@@ -235,6 +235,11 @@ export default {
 }
 </script>
 
-<style scoped>
-
+<style scoped lang="scss">
+  @media (max-width: $screen-sm-max) {
+    .introduction-image svg{
+      height: unset;
+      max-width: 85%;
+    }
+  }
 </style>

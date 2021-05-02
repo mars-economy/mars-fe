@@ -8,9 +8,11 @@ $background-color-base: #04001C !default;
 $color-primary: #ffc22e;
 $color-info: #A0AAE1;
 
+$border-light: 1px solid rgba($white, 0.05);
+
 // Breakpoints
 
-$screen-sm-max: 900px;
+$screen-sm-max: 780px;
 $screen-md-min: $screen-sm-max + 1px;
 
 // Fonts

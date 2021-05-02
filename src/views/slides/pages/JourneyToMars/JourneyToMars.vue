@@ -1,11 +1,11 @@
 <template>
   <section id="journey-to-mars" name="Journey to Mars">
-    <div class="journey-to-mars">
-      <SlideTextBlock size-width="48%"></SlideTextBlock>
-      <div class="journey-to-mars-img">
-        <SlideImageBlock></SlideImageBlock>
+     <div class="journey-to-mars">
+        <SlideTextBlock size-width="48%"></SlideTextBlock>
+        <div class="journey-to-mars-img">
+          <SlideImageBlock></SlideImageBlock>
+        </div>
       </div>
-    </div>
   </section>
 </template>
 
@@ -17,6 +17,9 @@ export default {
   components: {
     SlideImageBlock,
     SlideTextBlock
+  },
+  props: {
+    isMobile: Boolean
   }
 }
 </script>

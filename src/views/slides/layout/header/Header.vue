@@ -1,9 +1,9 @@
 <template>
   <header>
-      <div class="header-icon headline">Mars Economy</div>
-      <div class="menubar-container vf__flex vf__justify-content-center">
+      <div class="header-icon headline" ref="sectionTitle">Mars Economy</div>
+      <div class="menubar-container">
         <div class="menubar">
-          <ul class="menu vf__flex vf__align-self-center">
+          <ul class="menu vf__flex vf__align-self-center" @click="onMenuToggle">
           </ul>
           <span class="menu-whitepaper">
           <a href="./whitepaper/Mars_Economy_Project_Whitepaper.pdf">Whitepaper</a>
@@ -32,6 +32,9 @@ import SocialNetworksPanel from '../socialNetworks/SocialNetworksPanel'
 import Footer from '../footer/Footer'
 export default {
   name: 'Header',
+  props: {
+    isMobile: Boolean
+  },
   components: {
     Footer,
     SocialNetworksPanel,
@@ -40,8 +43,7 @@ export default {
   data: function () {
     return {
       isMenuOpen: false,
-      menuHeight: 'unset',
-      isMobile: window.innerWidth < 900
+      menuHeight: '0'
     }
   },
   methods: {
@@ -55,14 +57,6 @@ export default {
           elem.style.height = '100vh'
         }
       }
-    }
-  },
-  onScreenResize: function () {
-    this.isMobile = window.innerWidth < 900
-  },
-  mounted () {
-    window.onresize = () => {
-      this.onScreenResize()
     }
   }
 }

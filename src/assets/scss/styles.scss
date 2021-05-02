@@ -12,6 +12,8 @@ html, body {
 html {
   min-height: 100vh;
   font-size: 16px;
+  line-height: 1.37em;
+  font-weight: 300;
   background-image: url("~@/../public/images/bg.png");
   background-position: center;
   background-repeat: no-repeat;
@@ -36,7 +38,7 @@ h3, h6 {
 
 .h1 {
   font-size: $heading1Size;
-  line-height: 3.6rem;
+  line-height: 1.33em;
   font-weight: normal;
   letter-spacing: -0.02em;
   text-shadow: $heading-shadow-base;
@@ -45,26 +47,52 @@ h3, h6 {
 
 .h2 {
   font-size: $heading2Size;
-  line-height: 1.16em;
-  font-weight: 600;
+  line-height: 1.33em;
+  font-weight: normal;
   text-shadow: $heading-shadow-base;
-  text-transform: uppercase;
+  text-transform: none;
 }
 
 .h3 {
-  font-size: $heading2Size;
+  font-size: $heading3Size;
   line-height: 1.5em;
-  font-weight: normal;
+  font-weight: 300;
   letter-spacing: -0.02em;
   text-shadow: $heading-shadow-base;
   text-transform: none !important;
 }
 
+.h4 {
+  font-size: $heading4Size;
+  line-height: 1.17em;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  text-shadow: $heading-shadow-base;
+  text-transform: uppercase;
+}
+
+.h5 {
+  font-size: $heading5Size;
+  line-height: 1.37em;
+  font-weight: bold;
+  letter-spacing: -0.02em;
+  text-transform: none;
+}
+
+.h6 {
+  font-size: $heading6Size;
+  line-height: 1.29em;
+  font-weight: bold;
+  letter-spacing: -0.02em;
+  text-transform: none;
+}
+
+
 .text-muted {
   opacity: 0.3;
 }
 .text-small {
-  font-size: 0.875em;
+  font-size: 14px;
 }
 .clickable, *[clickable] {
   cursor: pointer;
@@ -73,13 +101,22 @@ h3, h6 {
   display: none !important;
 }
 
+.mt-auto {
+  margin-top: auto;
+}
+.ml-auto {
+  margin-left: auto;
+}
+.mr-auto {
+  margin-right: auto;
+}
+
 @media (max-width: $screen-sm-max) {
   body {
     font-weight: 300;
   }
   section.slide-container {
-    padding-left: 24px;
-    padding-right: 24px;
+    padding: 64px $padding-slide-mobile;
     box-sizing: border-box;
   }
   .h1, .h2, .h3, .h4, .h5 {
@@ -91,14 +128,14 @@ h3, h6 {
     line-height: 1.4em;
     letter-spacing: -0.02em;
     font-weight: 300;
-    text-align: left;
+    text-align: center;
   }
   .h2 {
     font-size: 20px;
     line-height: 1.4em;
     letter-spacing: -0.02em;
     font-weight: 500;
-    text-align: left;
+    text-align: center;
   }
   .h5 {
     font-size: 16px;

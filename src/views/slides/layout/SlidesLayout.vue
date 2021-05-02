@@ -1,6 +1,6 @@
 <template>
   <div id="app" class="reveal">
-    <Header></Header>
+    <Header :isMobile="isMobile"></Header>
     <div class="slides">
       <router-view/>
     </div>
@@ -29,13 +29,14 @@ export default {
   },
   data: function () {
     return {
-      isMobile: window.innerWidth < 900,
-      isLastSlide: false
+      isMobile: window.innerWidth <= 780,
+      isLastSlide: false,
+      currentSlideName: 'Mars Economy'
     }
   },
   methods: {
     onScreenResize: function () {
-      this.isMobile = window.innerWidth < 900
+      this.isMobile = window.innerWidth <= 780
     },
     configReveal () {
       if (!this.isMobile) {
@@ -87,6 +88,8 @@ export default {
     this.configReveal()
     Reveal.on('slidechanged', event => {
       this.isLastSlide = event.currentSlide.id === 'community'
+      this.currentSlideName = event.currentSlide.id
+      console.log(this.currentSlideName)
       this.$modal.hideAll()
       Reveal.configure({
         mouseWheel: true,
