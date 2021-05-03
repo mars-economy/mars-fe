@@ -11,7 +11,7 @@
         </div>
         <template  v-if="isMobile">
           <SocialNetworksPanel/>
-          <Footer />
+          <Footer :isMobile="isMobile" />
         </template>
       </div>
     <div class="menu-trigger clickable" @click="onMenuToggle">

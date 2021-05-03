@@ -5,7 +5,7 @@
     <JourneyToMars :isMobile="isMobileView"></JourneyToMars>
     <PredictionMarkets></PredictionMarkets>
     <MarsMarkets :isMobile="isMobileView"></MarsMarkets>
-    <TimeLIne></TimeLIne>
+    <TimeLIne :isMobile="isMobileView"></TimeLIne>
     <JoinCommunity :isMobile="isMobileView"></JoinCommunity>
     <div class="ellipse"></div>
   </section>

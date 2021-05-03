@@ -58,3 +58,15 @@
     opacity: 0.5;
   }
 }
+
+.vm--container {
+  padding: 64px $padding-slide-mobile;
+}
+@media (max-width: $screen-sm-max) {
+  .vm--modal.mobile-modal {
+    top: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    padding: 16px;
+  }
+}

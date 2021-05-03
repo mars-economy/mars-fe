@@ -17,6 +17,9 @@ import Reveal from 'reveal.js/js'
 
 export default {
   name: 'Footer',
+  props: {
+    isMobile: Boolean
+  },
   methods: {
     showModal () {
       this.$modal.show(

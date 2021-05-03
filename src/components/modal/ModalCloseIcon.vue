@@ -14,7 +14,7 @@ export default {
 }
 </script>
 
-<style scoped>
+<style scoped lang="scss">
 
   .close-icon {
     position: absolute;
@@ -22,6 +22,10 @@ export default {
     top: 24px;
     cursor: pointer;
     z-index: 999;
+    @media (max-width: $screen-sm-max) {
+      right: 16px;
+      top: 16px;
+    }
   }
 
 </style>
