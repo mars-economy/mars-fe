@@ -122,7 +122,7 @@ ul.verticator {
 
 // MENU
 
-
+$menubar-item-margin: 24px;
 .menubar-container {
   display: flex;
   justify-content: center;
@@ -170,7 +170,7 @@ ul.verticator {
   @media (max-width: $screen-sm-max) {
     display: block;
     + li {
-      margin-top: 32px;
+      margin-top: $menubar-item-margin;
     }
   }
 }
@@ -198,7 +198,7 @@ ul.verticator {
   margin-left: 2vw;
   cursor: pointer;
   @media (max-width: $screen-sm-max) {
-    margin-top: 32px;
+    margin-top: $menubar-item-margin;
     display: block;
     margin-left: 0;
     text-align: left;

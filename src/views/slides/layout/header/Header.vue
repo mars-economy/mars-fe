@@ -8,6 +8,9 @@
           <span class="menu-whitepaper">
           <a href="./whitepaper/Mars_Economy_Project_Whitepaper.pdf">Whitepaper</a>
         </span>
+          <div class="header-application-button" v-if="isMobile">
+            <Button color="light" name="GO TO APPLICATION" size="small"></Button>
+          </div>
         </div>
         <template  v-if="isMobile">
           <SocialNetworksPanel/>
@@ -20,8 +23,8 @@
 
     </div>
 
-    <div class="header-application-button hidden-sm">
-        <button>GO TO APPLICATION</button>
+    <div class="header-application-button hidden-sm" v-if="!isMobile">
+      <Button color="light" name="GO TO APPLICATION" size="small"></Button>
       </div>
   </header>
 </template>
@@ -30,12 +33,14 @@
 import Icon from '@/components/svgImages/Icon'
 import SocialNetworksPanel from '../socialNetworks/SocialNetworksPanel'
 import Footer from '../footer/Footer'
+import Button from '../../../../components/buttons/Button'
 export default {
   name: 'Header',
   props: {
     isMobile: Boolean
   },
   components: {
+    Button,
     Footer,
     SocialNetworksPanel,
     Icon
@@ -77,30 +82,6 @@ export default {
     .header-application-button {
       align-self: center;
       justify-self: center;
-      width: Max(10vw, 115px);
-
-      button {
-        font-family: $font-family-base;
-        font-style: normal;
-        font-weight: bold;
-        font-size: Max(0.83vw, 10px);
-        line-height: 1.3em;
-        letter-spacing: 0.01em;
-        text-transform: uppercase;
-        padding: 0.66em 1em;
-        white-space: nowrap;
-
-        background: rgba(255, 255, 255, 0.05);
-        border: 1px solid rgba(255, 255, 255, 0.1);
-        box-sizing: border-box;
-        border-radius: 0.5em;
-        color: white;
-        backdrop-filter: blur(20px);
-        &:hover {
-          border: 1px solid rgba($white, 1);
-          cursor: pointer;
-        }
-      }
     }
   }
   .header-icon {
@@ -117,6 +98,9 @@ export default {
   @media (max-width: $screen-sm-max) {
     header {
       padding: 20px $padding-slide-mobile;
+    }
+    .header-application-button {
+      margin-top: $menubar-item-margin;
     }
   }
 

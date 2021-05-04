@@ -1,19 +1,29 @@
 <template>
   <div class="journey-bg">
-    <JourneyToMarsGrid></JourneyToMarsGrid>
-    <template v-for="(category,index) in categories">
-      <JourneyStage :key="'stage_'+index" :index=index+1 :stage="category"></JourneyStage>
-      <template v-for="(milestone, ind) in milestones(category.id, index)">
-        <JourneyStagePoint :offsetX="category.offsetX+228"
-                           :point="milestone"
-                           :stage="category.name"
-                           :status="milestone.status.toLowerCase()"
-                           :key="'point_'+index+ind">
-        </JourneyStagePoint>
+    <JourneyToMarsGrid v-if="!isMobile" />
+    <JourneyToMarsGridMobile v-else />
+    <div :class="{'stage-group': isMobile}">
+      <template v-for="(category,index) in categories">
+        <JourneyStage :key="'stage_'+index"
+                      :index=index+1
+                      :stage="category"
+                      :milestones="milestones(category.id, index)"
+                      :isMobile="isMobile">
+        </JourneyStage>
+        <template  v-if="!isMobile">
+          <template v-for="(milestone, ind) in milestones(category.id, index)">
+            <JourneyStagePoint :offsetX="category.offsetX+228"
+                               :point="milestone"
+                               :stage="category.name"
+                               :status="milestone.status.toLowerCase()"
+                               :key="'point_'+index+ind">
+            </JourneyStagePoint>
+          </template>
+        </template>
       </template>
-    </template>
-  </div>
 
+    </div>
+  </div>
 </template>
 
 <script>
@@ -24,13 +34,18 @@ import { mapState } from 'vuex'
 import { CATEGORIES_POSITION, MILESTONES_POSITION } from '../../../../../constants/journeyStages'
 import JourneyStagePoint
   from '@/views/slides/pages/JourneyToMars/components/JourneyStages/JourneyStagePoint/JourneyStagePoint'
+import JourneyToMarsGridMobile from './JourneyStages/JourneyToMarsGridMobile'
 
 export default {
   name: 'SlideImageBlock',
   components: {
+    JourneyToMarsGridMobile,
     JourneyStagePoint,
     JourneyStage,
     JourneyToMarsGrid
+  },
+  props: {
+    isMobile: Boolean
   },
   methods: {
     milestones (categoryId, categoryIndex) {
@@ -70,5 +85,13 @@ export default {
   .journey-bg {
     position: relative;
   }
-
+  .stage-group {
+    position: absolute;
+    top: 100px;
+    right: 23px;
+    height: 240px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
 </style>
