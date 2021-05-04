@@ -3,7 +3,7 @@
     <span class="footer-item">
       Mars Еconomy 2021
     </span>
-    <span class="footer-item footer-link clickable" @click="showModal()">
+    <span class="footer-item footer-link clickable" @click="showModal(); $emit('onCloseMenu')">
       Disclaimer
     </span>
 
@@ -20,14 +20,28 @@ export default {
   props: {
     isMobile: Boolean
   },
+  data: function () {
+    return {
+      configModal: {
+        height: 'auto',
+        classes: ['disclaimer-modal', 'custom-modal']
+      }
+    }
+  },
   methods: {
     showModal () {
       this.$modal.show(
         Disclaimer,
         {},
-        { height: 'auto', classes: ['disclaimer-modal', 'custom-modal'] },
+        this.getConfigModal(),
         { opened: this.isModalOpen, closed: this.isModalClose }
       )
+    },
+    getConfigModal () {
+      if (this.isMobile) {
+        this.configModal.classes.push('mobile-modal')
+      }
+      return this.configModal
     },
     isModalOpen () {
       Reveal.configure({ mouseWheel: false, touch: false, keyboard: false })
@@ -45,8 +59,12 @@ export default {
 
 <style scoped lang="scss">
   .footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     @media (min-width: $screen-md-min) {
       position: absolute;
+      width: 225px;
       bottom: 1rem;
       left: 50%;
       transform: translateX(-50%);
@@ -55,9 +73,11 @@ export default {
       text-align: right;
       letter-spacing: -0.02em;
       margin: 1rem;
+
     }
     @media (max-width: $screen-sm-max) {
       display: flex;
+      flex-direction: row-reverse;
       width: 100%;
       padding: $padding-slide-mobile;
       justify-content: space-between;
@@ -68,9 +88,6 @@ export default {
   }
     .footer-item {
       opacity: 0.5;
-      + .footer-item {
-        margin-left: 2rem;
-      }
     }
     .footer-link {
       text-decoration-line: underline;

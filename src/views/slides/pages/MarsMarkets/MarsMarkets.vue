@@ -55,16 +55,7 @@ export default {
         }
       ]
     }
-  },
-  methods: {
-    onSetPageTitle: function () {
-      console.log(this.$route)
-    }
-  },
-  mounted () {
-    this.onSetPageTitle()
   }
-
 }
 </script>
 

@@ -1,8 +1,8 @@
 <template>
   <div>
     <ModalCloseIcon @closeModal="$emit('close')"></ModalCloseIcon>
+    <div class="modal-content">
     <TimeLineBlockTitle :block="block" />
-    <div>
       {{block.content}}
     </div>
 

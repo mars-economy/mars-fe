@@ -17,6 +17,9 @@ export default {
 <style scoped lang="scss">
 
   .close-icon {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
     position: absolute;
     right: 24px;
     top: 24px;

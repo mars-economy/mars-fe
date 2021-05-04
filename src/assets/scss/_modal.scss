@@ -15,7 +15,6 @@
 
   .modal-content {
     padding: 48px 32px 24px 32px;
-    backdrop-filter: blur(60px);
   }
   &.disclaimer-modal .modal-content {
     padding-top: 24px;
@@ -64,9 +63,16 @@
 }
 @media (max-width: $screen-sm-max) {
   .vm--modal.mobile-modal {
+    left: 0 !important;
     top: 0 !important;
     width: 100% !important;
     height: 100% !important;
-    padding: 16px;
+    overflow-y: auto;
+
+    .modal-content {
+      padding: 16px 16px 0;
+      margin-bottom: 16px;
+      // max-height: 100% !important;
+    }
   }
 }
