@@ -1,6 +1,8 @@
 <template>
   <header>
-      <div class="header-icon headline" ref="sectionTitle">Mars Economy</div>
+      <div class="header-icon headline">
+          {{ getHeaderTitle(slideId) }}
+      </div>
       <div class="menubar-container">
         <div class="menubar">
           <ul class="menu vf__flex vf__align-self-center" @click="onMenuToggle">
@@ -37,7 +39,8 @@ import Button from '../../../../components/buttons/Button'
 export default {
   name: 'Header',
   props: {
-    isMobile: Boolean
+    isMobile: Boolean,
+    slideId: { type: String, default: 'Mars Economy' }
   },
   components: {
     Button,
@@ -48,7 +51,8 @@ export default {
   data: function () {
     return {
       isMenuOpen: false,
-      menuHeight: '0'
+      menuHeight: '0',
+      headerTitle: 'Mars Economy'
     }
   },
   methods: {
@@ -61,6 +65,14 @@ export default {
         } else {
           elem.style.height = '100vh'
         }
+      }
+    },
+    getHeaderTitle (id) {
+      if (id && this.isMobile) {
+        const title = document.querySelector('#' + id).getAttribute('title')
+        return title || 'Mars Economy'
+      } else {
+        return 'Mars Economy'
       }
     }
   }

@@ -69,19 +69,22 @@
 
 @media (max-width: $screen-sm-max) {
   .vm--container {
-    padding: 64px $padding-slide-mobile;
+    padding: 60px $padding-slide-mobile 64px;
   }
   .vm--modal.mobile-modal {
     left: 0 !important;
     top: 0 !important;
     width: 100% !important;
+    max-width: 450px;
+    margin: auto;
     height: 100% !important;
-    overflow-y: auto;
+    overflow: no-display;
 
     .modal-content {
       padding: 16px 16px 0;
       margin-bottom: 16px;
-      // max-height: 100% !important;
+      height: calc(100vh - 124px) !important;
+      overflow-y: auto;
     }
   }
 }

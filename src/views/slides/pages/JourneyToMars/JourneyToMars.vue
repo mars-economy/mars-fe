@@ -1,5 +1,5 @@
 <template>
-  <section id="journey-to-mars" name="Journey to Mars" class="slide-container">
+  <section id="journey-to-mars" name="Journey to Mars" class="slide-container" title="Journey to Mars">
      <div class="journey-to-mars">
         <SlideTextBlock size-width="48%" v-if="!isMobile"></SlideTextBlock>
         <div class="journey-to-mars-img">

@@ -3,7 +3,8 @@
     <Introduction></Introduction>
     <IntroductionSecond></IntroductionSecond>
     <JourneyToMars :isMobile="isMobileView"></JourneyToMars>
-    <PredictionMarkets></PredictionMarkets>
+    <PredictionMarkets :isMobile="isMobileView"></PredictionMarkets>
+    <TopPredictions v-if="isMobileView"></TopPredictions>
     <MarsMarkets :isMobile="isMobileView"></MarsMarkets>
     <TimeLIne :isMobile="isMobileView"></TimeLIne>
     <JoinCommunity :isMobile="isMobileView"></JoinCommunity>
@@ -21,11 +22,13 @@ import PredictionMarkets from './pages/PredictionMarkets/PredictionMarkets'
 import JoinCommunity from './pages/JoinCommunity/JoinCommunity'
 import JourneyToMars from './pages/JourneyToMars/JourneyToMars'
 import apolloMixin from '../../mixins/apollo.mixins'
+import TopPredictions from '@/views/slides/pages/PredictionMarkets/components/TopPredictions'
 
 export default {
   mixins: [apolloMixin],
   name: 'Slides',
   components: {
+    TopPredictions,
     JourneyToMars,
     JoinCommunity,
     PredictionMarkets,
@@ -36,7 +39,7 @@ export default {
   },
   data: function () {
     return {
-      isMobileView: window.innerWidth < 900
+      isMobileView: window.innerWidth <= 781
     }
   },
   watch: {

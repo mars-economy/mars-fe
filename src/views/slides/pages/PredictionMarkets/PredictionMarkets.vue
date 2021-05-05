@@ -1,34 +1,56 @@
 <template>
-  <section id="prediction-markets" name="prediction markets">
-    <flex-col class="prediction-markets">
+  <section id="prediction-markets" name="prediction markets" class="slide-container" title="Prediction markets">
+    <flex-col class="prediction-markets" v-if="!isMobile">
 
-      <div class="h2">Prediction Markets</div>
+      <div class="h4">Prediction Markets</div>
       <StepsLine></StepsLine>
+      <flex-row align-h="between" class="predictions-line-title">
+        <div>Top four predictions</div>
+        <div>
+          <Button name="see more predictions" color="primary" link=""></Button>
+        </div>
+      </flex-row>
       <PredictionsLine></PredictionsLine>
 
     </flex-col>
+    <div v-else>
+      <div class="h2">Instruction</div>
+      <StepsLine :isMobile="isMobile"></StepsLine>
+      <Button name="see all predictions" color="primary" />
+    </div>
   </section>
 </template>
 
 <script>
 import StepsLine from '@/views/slides/pages/PredictionMarkets/components/StepsLine/StepsLine'
 import PredictionsLine from '@/views/slides/pages/PredictionMarkets/components/PredictionsLine/PredictionsLine'
+import Button from '@/components/buttons/Button'
 export default {
   name: 'PredictionMarkets',
   components: {
+    Button,
     PredictionsLine,
     StepsLine
+  },
+  props: {
+    isMobile: Boolean
   }
 }
 </script>
 
 <style scoped lang="scss">
 
-  .h2 {
+  .h4 {
     margin-bottom: 2rem;
   }
   .prediction-markets {
     padding: 0 7.5rem;
   }
+  .predictions-line-title {
+    margin: 2rem 0;
+  }
 
+  .h2 + .step-line {
+    margin-top: 16px;
+  }
 </style>

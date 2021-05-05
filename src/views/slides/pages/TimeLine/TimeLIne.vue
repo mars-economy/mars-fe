@@ -1,7 +1,7 @@
 <template>
-  <section id="timeline" name="roadmap" class="slide-container">
+  <section id="timeline" name="roadmap" class="slide-container" title="Roadmap">
     <flex-col align-h="center" align-v="center" class="vf__flex-nowrap">
-      <div class="h2 hidden-sm">Mars Economy project roadmap</div>
+      <div class="h4 hidden-sm">Mars Economy project roadmap</div>
       <div class="timeline-container">
         <div v-for="(block, index) in blocksArray" :key="index" class="timeline-item">
           <template v-if="!isMobile">
@@ -57,7 +57,7 @@ export default {
 </script>
 
 <style scoped lang="scss">
-  .h2 {
+  .h4 {
     margin-bottom: 3rem;
   }
   .timeline-container {

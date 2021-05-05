@@ -1,8 +1,10 @@
 <template>
 
-  <flex-row align-h="start" align-v="center" class="pair">
-    <flex-row align-v="center" align-h="center" class="pair-icon" v-if="icon" v-html="icons[icon]"></flex-row>
-    <div class="pair-data">{{data}}</div>
+  <flex-row align-h="start" align-v="center" class="pair" :class="direction">
+    <flex-row align-h="start" align-v="center">
+      <flex-row align-v="center" align-h="center" class="pair-icon" v-if="icon" v-html="icons[icon]"></flex-row>
+      <div class="pair-data">{{data}}</div>
+    </flex-row>
     <div class="pair-label">{{label}}</div>
   </flex-row>
 
@@ -16,7 +18,8 @@ export default {
   props: {
     label: String,
     data: String,
-    icon: String
+    icon: String,
+    direction: String
   },
   data: function () {
     return {
@@ -41,6 +44,16 @@ export default {
   }
   .pair-icon {
     margin-right: 0.5rem;
+  }
+
+  .pair.column {
+    flex-direction: column;
+    align-items: flex-start;
+    .pair-label {
+      order: -1;
+      margin-left: 0;
+      margin-bottom: 4px;
+    }
   }
 
 </style>

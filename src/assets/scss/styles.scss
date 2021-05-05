@@ -109,6 +109,10 @@ h3, h6 {
   display: none !important;
 }
 
+.text-center {
+  text-align: center !important;
+}
+
 .mt-auto {
   margin-top: auto;
 }
@@ -117,6 +121,9 @@ h3, h6 {
 }
 .mr-auto {
   margin-right: auto;
+}
+.mb-auto {
+  margin-bottom: auto;
 }
 
 @media (max-width: $screen-sm-max) {
@@ -146,7 +153,7 @@ h3, h6 {
     line-height: 1.4em;
     letter-spacing: -0.02em;
     font-weight: 500;
-    text-align: center;
+    text-align: left;
   }
   .h4 {
     font-weight: bold;
