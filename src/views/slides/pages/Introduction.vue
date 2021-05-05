@@ -8,16 +8,17 @@
 
 <script>
 export default {
-  name: 'Introduction',
-  mounted () {
-  }
+  name: 'Introduction'
 }
 </script>
 
 <style scoped lang="scss">
   .h3 {
     letter-spacing: -0.01em;
-    margin-bottom: 1rem;
+    margin-bottom: 16px;
+   @media (max-width: $screen-sm-max) {
+     margin-top: 28px;
+   }
   }
 
 </style>

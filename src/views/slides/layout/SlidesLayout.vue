@@ -52,7 +52,8 @@ export default {
           {
             width: 320,
             height: 568,
-            margin: 0
+            margin: 0,
+            center: false
           }
         )
       }

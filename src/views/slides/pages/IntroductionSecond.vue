@@ -35,6 +35,7 @@ export default {
     .intro-container {
       margin: unset;
       flex-direction: column;
+      margin-top: 28px;
     }
     .intro-text {
       text-align: left;
