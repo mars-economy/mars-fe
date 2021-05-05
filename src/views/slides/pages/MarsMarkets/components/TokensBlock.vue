@@ -1,5 +1,5 @@
 <template>
-  <div class="tokens-block-card" :class="[isMuted ? 'muted' : 'clickable']" @click="openExternalLink">
+  <div class="tokens-block-card" :class="[isMuted ? 'muted' : 'clickable', {'mobile' : isMobile}]" @click="openExternalLink">
       <flex-row class="card-header" alignV="center">
         <flex-row v-html="block.icon" class="tokens-block-icon"></flex-row>
         <div>{{ block.title }}</div>
@@ -51,7 +51,8 @@ export default {
 
   .tokens-block-card {
     @extend %card;
-    @media (min-width: $screen-md-min) {
+    padding: 16px 20px;
+    &:not(.mobile) {
       padding: 24px 20px;
       min-height: 100%;
     }

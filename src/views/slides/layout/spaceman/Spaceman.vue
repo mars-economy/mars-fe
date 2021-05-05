@@ -30,7 +30,7 @@ export default {
   },
   data: function () {
     return {
-      isLabelOpen: Boolean
+      isLabelOpen: false
     }
   }
 }
@@ -71,7 +71,7 @@ export default {
       text-shadow: $shadow-base;
       opacity: 1;
       width: 115px;
-      transition: all 0.8s ease-out;
+      transition: all 0.3s ease-out;
       overflow: hidden;
     }
 

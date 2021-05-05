@@ -1,11 +1,11 @@
 <template>
   <section id="mars-markets" name="mars markets" class="slide-container" title="Mars Markets">
-    <div class="mars-markets-container">
+    <div class="mars-markets-container" :class="{'mobile' : isMobile}">
       <div class="mars-markets-image" v-if="!isMobile">
         <MarsMarketsSvg></MarsMarketsSvg>
       </div>
       <div class="mars-markets-content">
-        <div class="h4 hidden-sm">Mars Markets</div>
+        <div class="h4" v-if="!isMobile">Mars Markets</div>
         <div>The Decentralized Mars Token ($DMT) holders have the ability to submit and vote on project proposals. Ecosystem pool tokens will be distributed gradually to organizations advancing Mars colonization, as voted on by the community.
         </div>
         <div>You can buy $DMT tokens now - see the available markets below.</div>
@@ -61,18 +61,24 @@ export default {
 
 <style lang="scss" scoped>
 
-  .mars-markets-container {
-    @media (min-width: $screen-md-min) {
+  .mars-markets-container:not(.mobile) {
       display: flex;
       margin: 0 14rem 0 12rem;
       flex-wrap: nowrap;
       align-items: center;
       font-size: 20px;
-    }
+    .tokens-block-item {
+        width: 276px;
+        + .tokens-block-item {
+          margin-left: 2rem;
+        }
+      }
   }
+
   .mars-markets-image {
     filter: drop-shadow(0px 0px 24px rgba($white, 0.3));
   }
+
   .mars-markets-content {
     text-align: left;
     margin-left: 5.5rem;
@@ -80,18 +86,20 @@ export default {
       margin-top: 1em;
       text-shadow: $heading-shadow-base;
     }
-    @media (max-width: $screen-sm-max) {
-      text-align: left;
-      margin-left: 0;
-    }
-
   }
+
   .tokens-block-container {
     display: flex;
     justify-content: space-between;
     align-items: stretch;
+  }
 
-    @media (max-width: $screen-sm-max) {
+ .mobile {
+    .mars-markets-content {
+      text-align: left;
+      margin-left: 0;
+    }
+    .tokens-block-container {
       flex-direction: column;
       .tokens-block-item + .tokens-block-item {
         margin-top: 16px;
@@ -99,12 +107,4 @@ export default {
     }
   }
 
-  .tokens-block-item {
-    @media (min-width: $screen-md-min) {
-      width: 276px;
-      + .tokens-block-item {
-        margin-left: 2rem;
-      }
-    }
-  }
 </style>
