@@ -11,7 +11,7 @@
             <Button name="comprehensive guide" color="light"
                     @click="openExternalLink('https://mars-10.gitbook.io/mars/')">
             </Button>
-            <Button name="whitepaper" color="light"
+            <Button name="technical whitepaper" color="light"
                     @click="openExternalLink('https://dev.marseconomy.org/whitepaper/Mars_Economy_Project_Whitepaper.pdf')"></Button>
           </div>
         </div>
