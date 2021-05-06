@@ -8,7 +8,7 @@
     </div>
     <flex-row align-v="center" class="social-networks">
       <template v-for="network in socials">
-        <SocialNetwork :network="network" :key="network.name" isFullName></SocialNetwork>
+        <SocialNetwork :network="network" :key="network.name" :isFullName="!isMobile"></SocialNetwork>
       </template>
     </flex-row>
    </div>
@@ -25,6 +25,9 @@ export default {
     SocialNetwork,
     EmailContact
   },
+  props: {
+    isMobile: Boolean
+  },
   data: function () {
     return {
       socials: SOCIAL_NETWORKS
@@ -36,6 +39,9 @@ export default {
 <style scoped lang="scss">
   .email-container + .email-container {
     margin-top: 1.5rem;
+    @media (max-width: $screen-sm-max) {
+      margin-top: 12px;
+    }
   }
   .email-container + .button-container {
     margin-top: 2rem;
@@ -45,10 +51,18 @@ export default {
   }
   .social-networks {
     width: 312px;
-    margin-top: 1rem;
+    margin-top: 16px;
     & > div {
       width: 33%;
       margin: 10px 0;
+    }
+    @media (max-width: $screen-sm-max) {
+      width: 200px;
+      margin: 32px auto 0 auto;
+      & > div {
+        justify-content: center;
+        transform: scale(1.3);
+      }
     }
   }
 

@@ -15,7 +15,6 @@
 
   .modal-content {
     padding: 48px 32px 24px 32px;
-    backdrop-filter: blur(60px);
   }
   &.disclaimer-modal .modal-content {
     padding-top: 24px;
@@ -41,11 +40,20 @@
 
   .modal-content:not(.leading) {
     padding-top: 24px;
+    @media (max-width: $screen-sm-max) {
+      padding-top: 48px;
+    }
   }
 
   .modal-header.l1 {
     font-size: 1.25rem;
     line-height: 1.15em;
+    letter-spacing: -0.02em;
+  }
+
+  .modal-header.l2 {
+    font-size: 14px;
+    line-height: 18px;
     letter-spacing: -0.02em;
   }
 
@@ -56,5 +64,27 @@
     letter-spacing: -0.02em;
     text-transform: uppercase;
     opacity: 0.5;
+  }
+}
+
+@media (max-width: $screen-sm-max) {
+  .vm--container {
+    padding: 60px $padding-slide-mobile 64px;
+  }
+  .vm--modal.mobile-modal {
+    left: 0 !important;
+    top: 0 !important;
+    width: 100% !important;
+    max-width: 450px;
+    margin: auto;
+    height: 100% !important;
+    overflow: no-display;
+
+    .modal-content {
+      padding: 16px 16px 0;
+      margin-bottom: 16px;
+      height: calc(100vh - 124px) !important;
+      overflow-y: auto;
+    }
   }
 }

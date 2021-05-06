@@ -6,9 +6,9 @@
       <div>
         <div class="step-label"> step {{number}}</div>
       </div>
-      <flex-row>
-        <span><a :href="step.link">{{step.description}}</a></span>
-        <LinkIcon @click="openExternalLink(step.link)"></LinkIcon>
+      <flex-row noWrap>
+        <span class="text-small" style="flex-grow: 0"><a :href="step.link">{{step.description}}</a></span>
+        <LinkIcon @click="openExternalLink(step.link)" class="mr-auto"></LinkIcon>
       </flex-row>
     </div>
 
@@ -44,10 +44,9 @@ export default {
   .step-container {
     display: flex;
     flex-direction: row;
-
   }
   .step-icon {
-    margin-right: 1rem;
+    margin-right: 12px;
   }
   .step-info {
     text-align: left;

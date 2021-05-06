@@ -1,23 +1,23 @@
 <template>
-  <section id="mars-markets" name="mars markets">
-    <flex-row class="mars-markets-container">
-      <div class="mars-markets-image">
+  <section id="mars-markets" name="mars markets" class="slide-container" title="Mars Markets">
+    <div class="mars-markets-container" :class="{'mobile' : isMobile}">
+      <div class="mars-markets-image" v-if="!isMobile">
         <MarsMarketsSvg></MarsMarketsSvg>
       </div>
       <div class="mars-markets-content">
-        <div class="h2">Mars Markets</div>
+        <div class="h4" v-if="!isMobile">Mars Markets</div>
         <div>The Decentralized Mars Token ($DMT) holders have the ability to submit and vote on project proposals. Ecosystem pool tokens will be distributed gradually to organizations advancing Mars colonization, as voted on by the community.
         </div>
         <div>You can buy $DMT tokens now - see the available markets below.</div>
 
         <div class="tokens-block-container">
           <div v-for="(block, index) in blocksArray" v-bind:key="index" class="tokens-block-item">
-            <TokensBlock :block="block" :is-muted="block.waiting"></TokensBlock>
+            <TokensBlock :block="block" :is-muted="block.waiting" :isMobile="isMobile"></TokensBlock>
           </div>
         </div>
 
       </div>
-    </flex-row>
+    </div>
   </section>
 </template>
 
@@ -28,6 +28,9 @@ import MarsMarketsSvg from '@/components/svgImages/MarsMarketsSvg'
 export default {
   name: 'MarsMarkets',
   components: { MarsMarketsSvg, TokensBlock },
+  props: {
+    isMobile: Boolean
+  },
   data: function () {
     return {
       blocksArray: [
@@ -53,39 +56,54 @@ export default {
       ]
     }
   }
-
 }
 </script>
 
 <style lang="scss" scoped>
 
-  .mars-markets-container {
-    margin: 0 14rem 0 12rem;
-    flex-wrap: nowrap;
-    align-items: center;
+  .mars-markets-container:not(.mobile) {
+      display: flex;
+      margin: 0 14rem 0 12rem;
+      flex-wrap: nowrap;
+      align-items: center;
+      font-size: 20px;
+    .tokens-block-item {
+        width: 276px;
+        + .tokens-block-item {
+          margin-left: 2rem;
+        }
+      }
   }
+
   .mars-markets-image {
     filter: drop-shadow(0px 0px 24px rgba($white, 0.3));
   }
+
   .mars-markets-content {
     text-align: left;
-    line-height: 1.4em;
     margin-left: 5.5rem;
     > div + div {
       margin-top: 1em;
       text-shadow: $heading-shadow-base;
     }
   }
+
   .tokens-block-container {
     display: flex;
     justify-content: space-between;
     align-items: stretch;
   }
 
-  .tokens-block-item {
-    width: 276px;
-    + .tokens-block-item {
-      margin-left: 2rem;
+ .mobile {
+    .mars-markets-content {
+      text-align: left;
+      margin-left: 0;
+    }
+    .tokens-block-container {
+      flex-direction: column;
+      .tokens-block-item + .tokens-block-item {
+        margin-top: 16px;
+      }
     }
   }
 

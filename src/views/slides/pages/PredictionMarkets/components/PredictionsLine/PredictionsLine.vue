@@ -1,15 +1,10 @@
 <template>
   <div>
 
-    <flex-row align-h="between" class="predictions-line-title">
-      <div>Top four predictions</div>
-      <div>
-        <Button name="see more predictions" color="primary" link=""></Button>
-      </div>
-    </flex-row>
-    <div class="predictions-line">
+    <div class="predictions-line" :class="{'mobile' : isMobile}">
       <div v-for="(prediction,index) in predictions" :key="index" class="predictions-line-item">
-        <PredictionBlock :prediction="prediction"></PredictionBlock>
+        <PredictionBlock :prediction="prediction"  :isMobile="isMobile"></PredictionBlock>
+        <Divider v-if="isMobile && index !== predictions.length -1" />
       </div>
 
     </div>
@@ -19,16 +14,19 @@
 
 <script>
 
-import Button from '@/components/buttons/Button'
 import PredictionBlock from '@/views/slides/pages/PredictionMarkets/components/PredictionsLine/PredictionBlock'
 import { mapState } from 'vuex'
 import { MODULE_NAMES } from '../../../../../../store'
+import Divider from '@/components/block/Divider'
 
 export default {
   name: 'PredictionsLine',
   components: {
-    PredictionBlock,
-    Button
+    Divider,
+    PredictionBlock
+  },
+  props: {
+    isMobile: Boolean
   },
   computed: {
     ...mapState(MODULE_NAMES.PHASES, {
@@ -42,18 +40,17 @@ export default {
 </script>
 
 <style scoped lang="scss">
-  .predictions-line-title {
-    margin: 2rem 0;
-  }
-
   .predictions-line {
     display: flex;
     justify-content: space-between;
     align-items: stretch;
+    &:not(.mobile) {
+      .predictions-line-item {
+        width: 276px;
+      }
+    }
+    &.mobile {
+      flex-direction: column;
+    }
   }
-
-  .predictions-line-item {
-    width: 276px;
-  }
-
 </style>

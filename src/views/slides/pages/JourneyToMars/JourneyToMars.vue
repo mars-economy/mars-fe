@@ -1,11 +1,11 @@
 <template>
-  <section id="journey-to-mars" name="Journey to Mars">
-    <div class="journey-to-mars">
-      <SlideTextBlock size-width="48%"></SlideTextBlock>
-      <div class="journey-to-mars-img">
-        <SlideImageBlock></SlideImageBlock>
+  <section id="journey-to-mars" name="Journey to Mars" class="slide-container" title="Journey to Mars">
+     <div class="journey-to-mars">
+        <SlideTextBlock size-width="48%" v-if="!isMobile"></SlideTextBlock>
+        <div class="journey-to-mars-img">
+          <SlideImageBlock :isMobile="isMobile" />
+        </div>
       </div>
-    </div>
   </section>
 </template>
 
@@ -17,22 +17,29 @@ export default {
   components: {
     SlideImageBlock,
     SlideTextBlock
+  },
+  props: {
+    isMobile: Boolean
   }
 }
 </script>
 
 <style scoped lang="scss">
   .journey-to-mars {
-    width: 992px;
-    height: 574px;
-    margin: auto;
     position: relative;
     padding: 0;
-  }
-  .journey-to-mars-img {
-    position: absolute;
-    bottom: 0;
-    right: 0;
+    width: 272px;
+    height: 444px;
+    @media (min-width: $screen-md-min) {
+      width: 992px;
+      height: 574px;
+      margin: auto;
+      .journey-to-mars-img {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+      }
+    }
   }
 
 </style>

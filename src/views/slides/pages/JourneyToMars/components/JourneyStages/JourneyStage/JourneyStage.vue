@@ -1,7 +1,7 @@
 <template>
-  <div class="stage-label" @click="showModal(stage.name, stage.description)"
+  <div class="stage-label" @click="showModal()"
        :id="'journey-stage-'+index"
-       :style="{left: stage.offsetX+'px', top: stage.offsetY+'px'}"
+       :style="[ !isMobile ? {left: stage.offsetX+'px', top: stage.offsetY+'px'} : '']"
        :class="'stage'+index">
     <flex-row align-v="center" align-h="start" class="stage-label-body">
       <NumberCircle :number="index"></NumberCircle>
@@ -23,16 +23,27 @@ export default {
   },
   props: {
     stage: Object,
-    index: Number
+    milestones: Array,
+    index: Number,
+    isMobile: Boolean
   },
   methods: {
-    showModal (name, content) {
-      this.$modal.show(
-        StageModal,
-        { name: name, description: content },
-        { height: 'auto', classes: 'custom-modal' },
-        { opened: this.isModalOpen, closed: this.isModalClose }
-      )
+    showModal () {
+      if (!this.isMobile) {
+        this.$modal.show(
+          StageModal,
+          { name: this.stage.name, description: this.stage.description },
+          { height: 'auto', classes: 'custom-modal' },
+          { opened: this.isModalOpen, closed: this.isModalClose }
+        )
+      } else {
+        this.$modal.show(
+          StageModal,
+          { name: this.stage.name, description: this.stage.description, milestones: this.milestones, isMobile: true },
+          { height: 'auto', classes: ['custom-modal', 'mobile-modal', 'stage-point-modal'] },
+          { opened: this.isModalOpen, closed: this.isModalClose }
+        )
+      }
     },
     isModalOpen () {
       Reveal.configure({ mouseWheel: false, touch: false, keyboard: false })
@@ -48,11 +59,16 @@ export default {
   .stage-label {
     width: 232px;
     height: 42px;
-    position: absolute;
     display: flex;
     justify-content: flex-start;
     align-items: stretch;
     cursor: pointer;
+    @media (min-width: $screen-md-min) {
+      position: absolute;
+    }
+    @media (max-width: $screen-sm-max) {
+      position: relative;
+    }
 
     &:after {
       content: '';

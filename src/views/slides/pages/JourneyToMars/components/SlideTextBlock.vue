@@ -1,7 +1,7 @@
 <template>
 
   <div class="slide-text-block" :style="'width:' + sizeWidth">
-    <div class="h2">Journey to Mars</div>
+    <div class="h4">Journey to Mars</div>
     <div class="text">Choose the correct outcomes of events along the way and receive rewards. Participate in the  Mars Economy prediction market today!</div>
   </div>
 

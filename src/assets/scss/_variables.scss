@@ -8,12 +8,21 @@ $background-color-base: #04001C !default;
 $color-primary: #ffc22e;
 $color-info: #A0AAE1;
 
+$border-light: 1px solid rgba($white, 0.05);
+
+// Breakpoints
+
+$screen-sm-max: 780px;
+$screen-md-min: $screen-sm-max + 1px;
+
 // Fonts
 $font-family-base: "Karla", "Helvetica Neue", sans-serif;
 $heading-shadow-base: 0px 4px 4px rgba(13, 20, 41, 0.2);
+$shadow-base:  0px 4px 4px rgba(13, 20, 41, 0.2);
 
 // Sizing
 $radius-base: 0.5rem;
+$padding-slide-mobile: 24px;
 
 %card {
   background: rgba($white, 0.05);

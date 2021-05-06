@@ -143,7 +143,6 @@
       <span>Earth</span>
       <span>Mars</span>
     </div>
-
   </div>
 </template>
 
