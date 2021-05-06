@@ -2,11 +2,12 @@
   <section class="main-section">
     <Introduction></Introduction>
     <IntroductionSecond></IntroductionSecond>
-    <JourneyToMars></JourneyToMars>
-    <PredictionMarkets></PredictionMarkets>
-    <MarsMarkets></MarsMarkets>
-    <TimeLIne></TimeLIne>
-    <JoinCommunity></JoinCommunity>
+    <JourneyToMars :isMobile="isMobileView"></JourneyToMars>
+    <PredictionMarkets :isMobile="isMobileView"></PredictionMarkets>
+    <TopPredictions v-if="isMobileView"></TopPredictions>
+    <MarsMarkets :isMobile="isMobileView"></MarsMarkets>
+    <TimeLIne :isMobile="isMobileView"></TimeLIne>
+    <JoinCommunity :isMobile="isMobileView"></JoinCommunity>
     <div class="ellipse"></div>
   </section>
 </template>
@@ -21,11 +22,13 @@ import PredictionMarkets from './pages/PredictionMarkets/PredictionMarkets'
 import JoinCommunity from './pages/JoinCommunity/JoinCommunity'
 import JourneyToMars from './pages/JourneyToMars/JourneyToMars'
 import apolloMixin from '../../mixins/apollo.mixins'
+import TopPredictions from '@/views/slides/pages/PredictionMarkets/components/TopPredictions'
 
 export default {
   mixins: [apolloMixin],
   name: 'Slides',
   components: {
+    TopPredictions,
     JourneyToMars,
     JoinCommunity,
     PredictionMarkets,
@@ -36,7 +39,7 @@ export default {
   },
   data: function () {
     return {
-      isMobileView: false
+      isMobileView: window.innerWidth <= 781
     }
   },
   watch: {
@@ -52,8 +55,8 @@ export default {
   },
   mounted () {
     Reveal.on('resize', event => {
-      this.isMobileView = event.scale < 1
-      // console.log(event.scale)
+      this.isMobileView = event.size.width === 320
+      console.log(event.size.width)
     })
   }
 }

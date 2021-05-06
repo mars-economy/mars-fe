@@ -5,17 +5,8 @@
 
     <div class="modal-content leading">
       <ModalHeader :header="point.name" level="1"></ModalHeader>
-
-      <div class="modal-body">
-        <flex-row noWrap align-h="between">
-          <TextPair :data="point.status" icon="statePoint" label="state"></TextPair>
-          <TextPair :data="getTime(point.dueDate)" icon="timePoint" label="due date"></TextPair>
-          <TextPair :data="point.predictors.toString()" icon="users" label="predictors"></TextPair>
-        </flex-row>
-        <div class="text-small">{{ point.description }}</div>
-
-      </div>
-
+      <StagePointInfo :point="point"></StagePointInfo>
+      <div class="text-small">{{ point.description }}</div>
     </div>
     <div class="modal-content">
       <ModalHeader header="Predictions:" level="3"></ModalHeader>
@@ -31,13 +22,13 @@
 </template>
 
 <script>
-import TextPair from '@/components/block/TextPair'
 import moment from 'moment'
 import Button from '@/components/buttons/Button'
 import ModalLabel from '@/components/modal/ModalLabel'
 import ModalCloseIcon from '@/components/modal/ModalCloseIcon'
-import ModalHeader from '@/components/modal/ModalHeader'
 import PointPredictionsList from './PointPredictionsList'
+import StagePointInfo from './StagePointInfo'
+import ModalHeader from '@/components/modal/ModalHeader'
 
 export default {
   name: 'StagePointModal',
@@ -46,12 +37,12 @@ export default {
     stage: String
   },
   components: {
-    PointPredictionsList,
     ModalHeader,
+    StagePointInfo,
+    PointPredictionsList,
     ModalCloseIcon,
     ModalLabel,
-    Button,
-    TextPair
+    Button
   },
   methods: {
     getTime: function (time) {

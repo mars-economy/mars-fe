@@ -1,18 +1,30 @@
 <template>
-  <div class="timeline-block" :class="{'active' : isCurrent}">
+  <div class="timeline-block" :class="{'active' : isCurrent}" @click="$emit('click')">
     <div class="timeline-block-icon">
       <TimeLineIcon :icon="block.icon" :active="isCurrent"></TimeLineIcon>
     </div>
-    <div class="timeline-block-period">
-      {{ block.month }}
-    </div>
-    <div class="timeline-block-card">
-      <div class="card-header">
-        {{ block.title }}</div>
-      <div class="card-body">
-        {{ block.content }}
+    <template v-if="!isMobile">
+      <div class="timeline-block-period">
+        {{ block.month }}
       </div>
-    </div>
+      <div class="timeline-block-card">
+        <div class="card-header">
+          {{ block.title }}</div>
+        <div class="card-body">
+          {{ block.content }}
+        </div>
+      </div>
+    </template>
+    <template v-else>
+      <flex-col align-h="start">
+        <div class="timeline-block-period">
+          {{ block.month }}
+        </div>
+        <div class="h4">
+          {{ block.title }}
+        </div>
+      </flex-col>
+    </template>
   </div>
 </template>
 
@@ -29,7 +41,8 @@ export default {
       icon: String,
       month: String
     },
-    isCurrent: Boolean
+    isCurrent: Boolean,
+    isMobile: Boolean
   }
 }
 </script>
@@ -41,22 +54,17 @@ export default {
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
-  }
+}
 
   .timeline-block-icon {
-    width: 4rem;
-    height: 4rem;
+    width: 64px;
+    height: 64px;
   }
-
   .timeline-block-period {
-    font-size: 0.75rem;
-    line-height: 0.875rem;
-    font-weight: bold;
-    letter-spacing: -0.02em;
-    text-transform: uppercase;
-    text-shadow: $heading-shadow-base;
-    margin-top: 1rem;
-    height: 2rem;
+    @extend .caption-bold;
+      text-shadow: $heading-shadow-base;
+      margin-top: 1rem;
+      height: 2rem;
   }
 
   .timeline-block-card {
@@ -81,4 +89,5 @@ export default {
       padding-top: 12px;
     }
   }
+
 </style>

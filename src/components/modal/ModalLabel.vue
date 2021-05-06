@@ -28,6 +28,7 @@ export default {
     left: -1px;
     border-bottom-right-radius: $radius-base;
     box-sizing: content-box;
+    backdrop-filter: blur(20px);
 
     .muted { opacity: 0.5 }
 

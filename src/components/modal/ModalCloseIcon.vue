@@ -14,14 +14,21 @@ export default {
 }
 </script>
 
-<style scoped>
+<style scoped lang="scss">
 
   .close-icon {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
     position: absolute;
     right: 24px;
     top: 24px;
     cursor: pointer;
     z-index: 999;
+    @media (max-width: $screen-sm-max) {
+      right: 16px;
+      top: 16px;
+    }
   }
 
 </style>

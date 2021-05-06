@@ -1,12 +1,12 @@
 <template>
   <div id="app" class="reveal">
-    <Header></Header>
+    <Header :isMobile="isMobile" :slideId="currentSlideId" ref="header"></Header>
     <div class="slides">
       <router-view/>
     </div>
     <Spaceman></Spaceman>
-    <SocialNetworksPanel></SocialNetworksPanel>
-    <Footer v-if="isLastSlide"></Footer>
+    <SocialNetworksPanel v-if="!isMobile"></SocialNetworksPanel>
+    <Footer v-if="isLastSlide && !isMobile"></Footer>
   </div>
 </template>
 
@@ -29,13 +29,14 @@ export default {
   },
   data: function () {
     return {
-      isMobile: window.innerWidth < 900,
-      isLastSlide: false
+      isMobile: window.innerWidth <= 780,
+      isLastSlide: false,
+      currentSlideId: ''
     }
   },
   methods: {
     onScreenResize: function () {
-      this.isMobile = window.innerWidth < 900
+      this.isMobile = window.innerWidth <= 780
     },
     configReveal () {
       if (!this.isMobile) {
@@ -51,7 +52,8 @@ export default {
           {
             width: 320,
             height: 568,
-            margin: 0
+            margin: 0,
+            center: false
           }
         )
       }
@@ -88,6 +90,7 @@ export default {
     Reveal.on('slidechanged', event => {
       this.isLastSlide = event.currentSlide.id === 'community'
       this.$modal.hideAll()
+      this.currentSlideId = event.currentSlide.id
       Reveal.configure({
         mouseWheel: true,
         touch: true,
