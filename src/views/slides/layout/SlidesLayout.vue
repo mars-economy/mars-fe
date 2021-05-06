@@ -88,7 +88,7 @@ export default {
     )
     this.configReveal()
     Reveal.on('slidechanged', event => {
-      this.isLast = event.currentSlide.id === 'community'
+      this.isLastSlide = event.currentSlide.id === 'community'
       this.$modal.hideAll()
       this.currentSlideId = event.currentSlide.id
       Reveal.configure({
