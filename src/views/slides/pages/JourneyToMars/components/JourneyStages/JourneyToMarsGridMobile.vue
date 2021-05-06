@@ -40,8 +40,8 @@
       </defs>
     </svg>
     <div class="planets">
-      <span>Earth 2021</span>
-      <span>Mars 2025</span>
+      <span>Earth</span>
+      <span>Mars</span>
     </div>
   </div>
 </template>
