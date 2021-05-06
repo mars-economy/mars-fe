@@ -3,7 +3,12 @@
            data-visibility="uncounted" class="slide-container">
     <div class="intro-container">
       <div class="h3">
+        <div>
           Our belief is that everyone should be able to play a role in creating and shaping the future of Mars.
+        </div>
+        <div>
+        Open-source protocols like the Mars Economy project are ushering in a new era of innovation and inclusivity;  democratic and decentralized by design.
+        </div>
       </div>
       <IntroductionSecondSvg></IntroductionSecondSvg>
     </div>
@@ -29,6 +34,10 @@ export default {
     }
     .h3 {
       text-align: left;
+      padding-right: 32px;
+      div + div {
+        margin-top: 32px;
+      }
     }
   }
   @media (max-width: $screen-sm-max) {
