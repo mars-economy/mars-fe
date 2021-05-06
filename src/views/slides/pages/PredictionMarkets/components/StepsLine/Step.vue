@@ -6,9 +6,9 @@
       <div>
         <div class="step-label"> step {{number}}</div>
       </div>
-      <flex-row noWrap>
-        <span class="text-small" style="flex-grow: 0"><a :href="step.link">{{step.description}}</a></span>
-        <LinkIcon @click="openExternalLink(step.link)" class="mr-auto"></LinkIcon>
+      <flex-row noWrap @click="openExternalLink(step.link)" class="clickable">
+        <span class="text-small" style="flex-grow: 0">{{step.description}}</span>
+        <LinkIcon  class="mr-auto"></LinkIcon>
       </flex-row>
     </div>
 
