@@ -3,7 +3,7 @@
     <flex-row class="spaceman-label" align-v="center" align-h="between"  noWrap :class="{'label-collapse' : !isLabelOpen}">
         <span class="label-text">
           Have a question?<br>
-          Please read <b>F.A.Q.</b>
+          Please read <b class="clickable" @click="openExternalLink('https://mars-10.gitbook.io/mars/')">F.A.Q.</b>
         </span>
         <div class="btn-icon" @click="isLabelOpen = !isLabelOpen">
           <template v-if="isLabelOpen">
@@ -31,6 +31,11 @@ export default {
   data: function () {
     return {
       isLabelOpen: false
+    }
+  },
+  methods: {
+    openExternalLink (url) {
+      window.open(url, '_blank')
     }
   }
 }
