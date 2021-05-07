@@ -67,6 +67,7 @@ export default {
     padding: 2.6rem 1.5rem 1.5rem 1.6rem;
     text-align: left;
     height: 100%;
+    position: relative;
   }
   .card-label {
     @extend %card-label;

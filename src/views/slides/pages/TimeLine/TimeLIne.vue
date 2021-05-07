@@ -8,7 +8,7 @@
             <TimeLineBlock :block="block" :isCurrent="block.current" />
           </template>
           <template v-else>
-            <TimeLineBlockTitle  :block="block" :isCurrent="block.current" @click="showModal(block)" />
+            <TimeLineBlockTitle :block="block" :isCurrent="block.current" @click="showModal(block)" clickable />
           </template>
         </div>
       </div>
@@ -48,9 +48,11 @@ export default {
     },
     isModalOpen () {
       Reveal.configure({ mouseWheel: false, touch: false, keyboard: false })
+      Reveal.getCurrentSlide().classList.add('back-blur')
     },
     isModalClose () {
       Reveal.configure({ mouseWheel: true, touch: true, keyboard: true })
+      Reveal.getCurrentSlide().classList.remove('back-blur')
     }
   }
 }
