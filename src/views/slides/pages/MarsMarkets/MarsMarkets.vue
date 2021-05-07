@@ -42,7 +42,7 @@ export default {
             '</svg>\n',
           title: 'Liquifi',
           content: 'A new-gen decentralized exchange on Binance Smart Chain and Ethereum.',
-          link: 'https://app.liquifi.org/'
+          link: process.env.VUE_APP_LIQUIFI_APP
         },
         {
           icon: '<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">\n' +

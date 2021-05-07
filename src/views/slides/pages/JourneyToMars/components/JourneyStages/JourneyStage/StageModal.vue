@@ -5,7 +5,7 @@
 
     <div class="modal-content">
       <ModalHeader :header="name" level="1"></ModalHeader>
-      <div class="modal-body"> {{description}} </div>
+      <div class="modal-body"> {{ description }}</div>
       <template v-if="milestones">
         <div class="milestones-list">
           <flex-col v-for="(milestone, index) in milestones" :key="index" class="milestone-list-item">
@@ -17,7 +17,7 @@
         </div>
       </template>
       <div class="modal-footer hidden-sm">
-        <Button color="primary" name="Go to application" icon></Button>
+        <Button color="primary" icon name="Go to application" v-on:click="navigateToApp()"></Button>
       </div>
     </div>
 
@@ -44,12 +44,27 @@ export default {
   props: {
     name: String,
     description: String,
-    milestones: { type: Array, default: null },
-    isMobile: { type: Boolean, dafault: false }
+    milestones: {
+      type: Array,
+      default: null
+    },
+    isMobile: {
+      type: Boolean,
+      dafault: false
+    }
   },
   data: function () {
     return {
       iconClose: ICONS.close
+    }
+  },
+  methods: {
+    navigateToApp (milestoneId = null) {
+      if (!milestoneId) {
+        window.open(process.env.VUE_APP_MARS_APPLICATION, '_blank')
+        return
+      }
+      window.open(process.env.VUE_APP_MARS_APPLICATION + '/milestones/' + milestoneId, '_blank')
     }
   }
 }
@@ -61,6 +76,7 @@ export default {
     padding: 12px 0;
     margin-top: 12px;
     position: relative;
+
     &:before {
       content: '';
       position: absolute;
@@ -69,6 +85,7 @@ export default {
       right: -12px;
       border-top: $border-light;
     }
+
     .stage-point-info {
       margin-bottom: 12px;
     }

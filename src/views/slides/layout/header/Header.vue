@@ -1,24 +1,24 @@
 <template>
   <header>
-      <div class="header-icon headline">
-          {{ getHeaderTitle(slideId) }}
-      </div>
-      <div class="menubar-container">
-        <div class="menubar">
-          <ul class="menu vf__flex vf__align-self-center" @click="onMenuToggle">
-          </ul>
-          <span class="menu-whitepaper">
+    <div class="header-icon headline">
+      {{ getHeaderTitle(slideId) }}
+    </div>
+    <div class="menubar-container">
+      <div class="menubar">
+        <ul class="menu vf__flex vf__align-self-center" @click="onMenuToggle">
+        </ul>
+        <span class="menu-whitepaper">
           <a href="./whitepaper/Mars_Economy_Project_Whitepaper.pdf">Whitepaper</a>
         </span>
-          <div class="header-application-button" v-if="isMobile">
-            <Button color="light" name="GO TO APPLICATION" size="small"></Button>
-          </div>
+        <div v-if="isMobile" class="header-application-button">
+          <Button color="light" name="GO TO APPLICATION" size="small" v-on:click="navigateToApp()"></Button>
         </div>
-        <template  v-if="isMobile">
-          <SocialNetworksPanel/>
-          <Footer :isMobile="isMobile" @onCloseMenu="onMenuToggle"/>
-        </template>
       </div>
+      <template v-if="isMobile">
+        <SocialNetworksPanel/>
+        <Footer :isMobile="isMobile" @onCloseMenu="onMenuToggle"/>
+      </template>
+    </div>
     <div class="menu-trigger clickable" @click="onMenuToggle">
       <Icon name="menu" size="24" v-if="!isMenuOpen"></Icon>
       <Icon name="close" size="24" v-else></Icon>
@@ -26,8 +26,8 @@
     </div>
 
     <div class="header-application-button hidden-sm" v-if="!isMobile">
-      <Button color="light" name="GO TO APPLICATION" size="small"></Button>
-      </div>
+      <Button color="light" name="GO TO APPLICATION" size="small" v-on:click="navigateToApp()"></Button>
+    </div>
   </header>
 </template>
 
@@ -36,11 +36,15 @@ import Icon from '@/components/svgImages/Icon'
 import SocialNetworksPanel from '../socialNetworks/SocialNetworksPanel'
 import Footer from '../footer/Footer'
 import Button from '../../../../components/buttons/Button'
+
 export default {
   name: 'Header',
   props: {
     isMobile: Boolean,
-    slideId: { type: String, default: 'Mars Economy' }
+    slideId: {
+      type: String,
+      default: 'Mars Economy'
+    }
   },
   components: {
     Button,
@@ -56,6 +60,9 @@ export default {
     }
   },
   methods: {
+    navigateToApp () {
+      window.open(process.env.VUE_APP_MARS_APPLICATION, '_blank')
+    },
     onMenuToggle: function () {
       if (this.isMobile) {
         this.isMenuOpen = !this.isMenuOpen
@@ -86,7 +93,7 @@ export default {
     align-items: center;
     position: absolute;
     padding: 1.6vw 2.2vw;
-    top:0;
+    top: 0;
     left: 0;
     right: 0;
     z-index: 1025;
@@ -96,6 +103,7 @@ export default {
       justify-self: center;
     }
   }
+
   .header-icon {
     font-family: $font-family-base;
     font-style: normal;

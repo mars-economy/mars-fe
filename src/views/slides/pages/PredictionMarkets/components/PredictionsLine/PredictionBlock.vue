@@ -17,7 +17,8 @@
       </div>
     </div>
     <div class="card-footer">
-      <Button color="primary" size="block" name="predict now" :link="prediction.link" icon></Button>
+      <Button color="primary" icon name="predict now" size="block"
+              v-on:click="navigateToApp(prediction.milestone.id)"></Button>
     </div>
   </flex-col>
 
@@ -48,6 +49,9 @@ export default {
   methods: {
     getTime: function (time) {
       return moment.unix(time).utc().format('MMM, D YYYY z')
+    },
+    navigateToApp (milestoneId) {
+      window.open(process.env.VUE_APP_MARS_APPLICATION + '/milestones/' + milestoneId, '_blank')
     },
     getDirection () {
       return this.isMobile ? 'column' : 'row'
