@@ -7,7 +7,7 @@
       <flex-row align-h="between" class="predictions-line-title">
         <div>Top four predictions</div>
         <div>
-          <Button name="see more predictions" color="primary" link=""></Button>
+          <Button color="primary" name="see more predictions" v-on:click="navigateToApp()"></Button>
         </div>
       </flex-row>
       <PredictionsLine></PredictionsLine>
@@ -25,6 +25,7 @@
 import StepsLine from '@/views/slides/pages/PredictionMarkets/components/StepsLine/StepsLine'
 import PredictionsLine from '@/views/slides/pages/PredictionMarkets/components/PredictionsLine/PredictionsLine'
 import Button from '@/components/buttons/Button'
+
 export default {
   name: 'PredictionMarkets',
   components: {
@@ -34,6 +35,11 @@ export default {
   },
   props: {
     isMobile: Boolean
+  },
+  methods: {
+    navigateToApp () {
+      window.open(process.env.VUE_APP_MARS_APPLICATION, '_blank')
+    }
   }
 }
 </script>

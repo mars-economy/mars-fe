@@ -1,6 +1,6 @@
 .vm--overlay {
-  background: none;
-  backdrop-filter: blur(16px);
+  background: none !important;
+  // backdrop-filter: blur(16px);
   transition: all 0.2ms;
 }
 .vm--modal.custom-modal {

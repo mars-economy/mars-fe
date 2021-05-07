@@ -14,7 +14,7 @@
         <PointPredictionsList :predictions="point.predictions"></PointPredictionsList>
       </div>
       <div class="modal-footer">
-        <Button name="predict now" link="" color="primary" icon></Button>
+        <Button color="primary" icon link="" name="predict now" v-on:click="navigateToApp(point.id)"></Button>
       </div>
     </div>
   </div>
@@ -47,6 +47,9 @@ export default {
   methods: {
     getTime: function (time) {
       return moment.unix(time).utc().format('MMM, D YYYY z')
+    },
+    navigateToApp (milestoneId) {
+      window.open(process.env.VUE_APP_MARS_APPLICATION + '/milestones/' + milestoneId, '_blank')
     }
   }
 

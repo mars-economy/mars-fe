@@ -45,9 +45,11 @@ export default {
     },
     isModalOpen () {
       Reveal.configure({ mouseWheel: false, touch: false, keyboard: false })
+      Reveal.getCurrentSlide().classList.add('back-blur')
     },
     isModalClose () {
       Reveal.configure({ mouseWheel: true, touch: true, keyboard: true })
+      Reveal.getCurrentSlide().classList.remove('back-blur')
     },
     openExternalLink (url) {
       window.open(url, '_blank')

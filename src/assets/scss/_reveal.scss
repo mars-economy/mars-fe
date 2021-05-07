@@ -87,34 +87,6 @@ ul.verticator {
     padding: 40px 0;
   }
 }
-.reveal .controls {
-  z-index: 1024;
-  /* button {
-    border-radius: 16px;
-    border: $border-light;
-    background-color: rgba($white, 0.05);
-    width: 32px;
-    height: 32px;
-    padding: 0;
-  }
-  .controls-arrow {
-    &:after, &:before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 9px;
-      height: 2px;
-      transform-origin: 1px 50%;
-      background-color: $white;
-    }
-  }
-  @media (max-width: $screen-sm-max) {
-    bottom: 16px;
-    left: 50%;
-    transform: translateX(-50%);
-  } */
-}
 
 .reveal ul {
   margin: 0;
@@ -221,7 +193,8 @@ $menubar-item-margin: 24px;
 }
 
 .reveal .controls {
-    .navigate-up.enabled, .navigate-down.enabled {
+  z-index: 1024;
+  .navigate-up.enabled, .navigate-down.enabled {
       width: 32px;
       height: 32px;
       box-sizing: border-box;

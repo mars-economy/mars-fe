@@ -90,6 +90,7 @@ export default {
     Reveal.on('slidechanged', event => {
       this.isLastSlide = event.currentSlide.id === 'community'
       this.$modal.hideAll()
+      Reveal.getCurrentSlide().classList.remove('back-blur')
       this.currentSlideId = event.currentSlide.id
       Reveal.configure({
         mouseWheel: true,
