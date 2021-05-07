@@ -4,7 +4,7 @@
     <IntroductionSecond></IntroductionSecond>
     <JourneyToMars :isMobile="isMobileView"></JourneyToMars>
     <PredictionMarkets :isMobile="isMobileView"></PredictionMarkets>
-    <TopPredictions v-if="isMobileView"></TopPredictions>
+    <TopPredictions></TopPredictions>
     <MarsMarkets :isMobile="isMobileView"></MarsMarkets>
     <TimeLIne :isMobile="isMobileView"></TimeLIne>
     <JoinCommunity :isMobile="isMobileView"></JoinCommunity>
