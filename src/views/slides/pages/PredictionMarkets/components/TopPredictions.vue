@@ -1,6 +1,6 @@
 <template>
   <section id="top-predictions" :data-visibility="isMobileView ? 'uncounted' : 'hidden'" class="slide-container"
-           title="Prediction markets">
+           title="Prediction markets" slide-title="Prediction markets">
     <div class="h2">Top Predictions</div>
     <div class="card-scrollable">
       <PredictionsLine :isMobile=true></PredictionsLine>

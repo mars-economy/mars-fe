@@ -1,5 +1,5 @@
 <template>
-  <section id="timeline" name="roadmap" class="slide-container" title="Roadmap">
+  <section id="timeline" name="roadmap" class="slide-container" slide-title="Roadmap">
     <flex-col align-h="center" align-v="center" class="vf__flex-nowrap">
       <div class="h4 hidden-sm">Mars Economy project roadmap</div>
       <div class="timeline-container">

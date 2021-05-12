@@ -1,5 +1,5 @@
 <template>
-  <section id="prediction-markets" name="prediction markets" class="slide-container" title="Prediction markets">
+  <section id="prediction-markets" name="prediction markets" class="slide-container" slide-title="Prediction markets">
     <flex-col class="prediction-markets" v-if="!isMobile">
 
       <div class="h4">Prediction Markets</div>
