@@ -1,5 +1,5 @@
 <template>
-  <section id="community" name="community" class="slide-container" title="Join the community">
+  <section id="community" name="community" class="slide-container" slide-title="Join the community">
     <div class="community-container">
       <div class="community-content">
         <div class="subscribe-container">

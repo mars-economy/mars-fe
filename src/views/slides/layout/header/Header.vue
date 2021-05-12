@@ -76,7 +76,7 @@ export default {
     },
     getHeaderTitle (id) {
       if (id && this.isMobile) {
-        const title = document.querySelector('#' + id).getAttribute('title')
+        const title = document.querySelector('#' + id).getAttribute('slide-title')
         return title || 'Mars Economy'
       } else {
         return 'Mars Economy'
