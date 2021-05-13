@@ -1,5 +1,5 @@
 <template>
-  <section id="mars-markets" name="mars markets" class="slide-container" title="Mars Markets">
+  <section id="mars-markets" name="mars markets" class="slide-container" slide-title="Mars Markets">
     <div class="mars-markets-container" :class="{'mobile' : isMobile}">
       <div class="mars-markets-image" v-if="!isMobile">
         <MarsMarketsSvg></MarsMarketsSvg>
