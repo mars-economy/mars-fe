@@ -7,7 +7,7 @@
       <div class="mars-markets-content">
         <template v-if="!isMobile">
           <div class="h4">Mars Markets</div>
-          <div>The Decentralized Mars Token ($DMT) holders have the ability to submit and vote on project proposals. Ecosystem pool tokens will be distributed gradually to organizations advancing Mars colonization, as voted on by the community.
+          <div>Token holders partake in the governance of the DAO by having the ability to submit and vote on Mars Economy projects and proposals. They also have the ability to vote on the distribution of the ecosystem pool, incentivizing outside projects in their pursuit of Mars colonization.
           </div>
         </template>
         <div>You can buy $DMT tokens now - see the available markets below.</div>

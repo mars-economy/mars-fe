@@ -15,7 +15,7 @@
       </flex-col>
       <flex-col class="text-block">
         <span>Contract address</span>
-        <span class="link" @click="navigateToContract">0xeEE23...97c</span>
+        <span class="link" @click="navigateToContract">0x77da5...a6c</span>
       </flex-col>
 
     </div>
