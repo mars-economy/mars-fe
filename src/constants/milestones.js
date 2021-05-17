@@ -1,7 +1,7 @@
 export const MILESTONES = [
   {
     title: 'Project Inception and Ideation',
-    content: 'We set out to create an exciting, self-sustainable DeFi project that would enable collaboration and channel energy towards Mars colonization.',
+    content: 'We put together a team of experienced DeFi technologists, UX designers, management consultants, and space industry experts to create an exciting, self-sustainable DeFi project that would enable active collaboration and channel energy towards Mars colonization. ',
     icon: '<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">\n' +
       '<path d="M26.5682 20.6023H25.2046V25.375H26.5682V20.6023Z" fill="#FFC22E"/>\n' +
       '<path d="M8.84131 22.6478H24.5232C24.5232 21.7487 24.5232 3.09242 24.5232 2.19324H8.84131V22.6478ZM19.4095 21.2841H13.9549C13.7666 21.2841 13.614 21.1316 13.614 20.9432C13.614 20.7549 13.7666 20.6023 13.9549 20.6023H19.4095C19.5977 20.6023 19.7504 20.7549 19.7504 20.9432C19.7504 21.1316 19.5977 21.2841 19.4095 21.2841ZM13.896 8.48846C15.7959 7.24012 18.2811 7.39762 20.0052 8.85726C21.2567 8.47203 22.0582 8.52876 22.3869 9.02894C22.7153 9.52885 22.4501 10.2863 21.6013 11.2808C21.847 12.0885 21.8889 12.9493 21.713 13.7991C21.2093 16.233 19.0708 17.8776 16.7091 17.8776C15.4786 17.8776 14.3156 17.4396 13.4042 16.6683C12.6426 16.9029 11.4595 17.1615 11.0224 16.4965C10.6937 15.9962 10.9596 15.2381 11.8098 14.2425C11.1722 12.1304 11.9605 9.76033 13.896 8.48846Z" fill="#FFC22E"/>\n' +
@@ -29,7 +29,7 @@ export const MILESTONES = [
   },
   {
     title: 'Laying the Groundwork',
-    content: 'Established a community governance framework, started coding smart contracts, and implemented the on-chain infrastructure.',
+    content: 'Bootstrapped! We established a community governance framework, started coding smart contracts, and implemented the on-chain infrastructure, without turning over any portion of the token distribution to outside investors.',
     icon: '<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">\n' +
       '<g clip-path="url(#clip0)">\n' +
       '<path d="M24.7892 17.9261L21.4897 20.1258L24.7892 22.3254V17.9261Z" fill="#FFC22E"/>\n' +
@@ -81,7 +81,8 @@ export const MILESTONES = [
   },
   {
     title: '3,2,1... Liftoff - We are here now!',
-    content: 'Mars Economy project goes live - Decentralized Mars Token ($DMT) is listed on the Liquifi exchange!',
+    content: 'The community is engaged to revisit the project concept and design as we build this together, adapting with the crowdsourced feedback.\n' +
+      'Mars Economy project goes live with our IDO -  Decentralized Mars Token ($DMT) is listed on the Liquifi exchange and the prediction market goes underway.\n',
     icon: '<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">\n' +
       '<path d="M16.0353 19.8849C18.584 19.8849 20.6575 17.8114 20.6575 15.2627C20.6575 12.714 18.584 10.6405 16.0353 10.6405C13.4865 10.6405 11.4131 12.714 11.4131 15.2627C11.4131 17.8113 13.4865 19.8849 16.0353 19.8849ZM16.0353 12.7738C17.4077 12.7738 18.5242 13.8903 18.5242 15.2627C18.5242 16.6351 17.4077 17.7516 16.0353 17.7516C14.6629 17.7516 13.5464 16.6351 13.5464 15.2627C13.5464 13.8903 14.6629 12.7738 16.0353 12.7738Z" fill="#FFC22E"/>\n' +
       '<path d="M28.1386 24.5662L24.7447 18.0613C24.3541 19.844 23.6814 21.5569 22.7529 23.1301L28.1386 24.5662Z" fill="#FFC22E"/>\n' +
@@ -103,7 +104,8 @@ export const MILESTONES = [
   },
   {
     title: 'Community & Ecosystem Evangelization',
-    content: 'Engage community and space industry organizations, non-profits, and other beneficiaries tied to the colonization of the Red Planet.',
+    content: 'Build the team with individuals from the community who want to partake more actively in the Mars Economy Project.\n' +
+      'Enable community as we engage with space industry organizations, non-profits, and other beneficiaries tied to the colonization of the Red Planet. \n',
     icon: '<svg width="32" height="31" viewBox="0 0 32 31" fill="none" xmlns="http://www.w3.org/2000/svg">\n' +
       '<g clip-path="url(#clip0)">\n' +
       '<path d="M20.0002 18.1511C19.3949 18.8701 18.7366 19.5548 18.0909 20.2041C17.4085 20.8902 16.4995 21.268 15.531 21.268C14.558 21.268 13.6461 20.8872 12.9629 20.196C12.3239 19.5492 11.6724 18.8675 11.0728 18.1525C8.68295 19.6747 7.21045 22.34 7.21045 25.1815V30.5288H10.6291V27.2495C10.6291 27.0513 10.7896 26.8907 10.9878 26.8907C11.1859 26.8907 11.3466 27.0513 11.3466 27.2495V30.5288H19.7285V27.2495C19.7285 27.0513 19.8891 26.8907 20.0872 26.8907C20.2854 26.8907 20.446 27.0513 20.446 27.2495V30.5288H23.8647V25.1815C23.8647 22.3389 22.3913 19.6731 20.0002 18.1511Z" fill="#FFC22E"/>\n' +
@@ -127,11 +129,11 @@ export const MILESTONES = [
       '</clipPath>\n' +
       '</defs>\n' +
       '</svg>\n',
-    month: 'Future'
+    month: 'July - September 2021'
   },
   {
     title: 'Crossing the Frontier',
-    content: 'Vote on proposals and distribute pooled ecosystem tokens to promising projects and organizations supporting Mars exploration.',
+    content: 'Community vote on proposals and distribute pooled ecosystem tokens to promising projects and organizations supporting Mars exploration.',
     icon: '<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">\n' +
       '<path d="M18.3671 18.8803L19.1137 19.378C19.1996 19.4353 19.2996 19.4657 19.4027 19.4657C19.5423 19.4657 19.6733 19.4113 19.7717 19.3129L20.3843 18.7003C20.5594 18.5251 20.5868 18.2484 20.4494 18.0422L19.8171 17.0936C19.7708 17.0242 19.732 16.9505 19.7014 16.8739L19.3054 15.8841C19.1461 15.4855 18.5974 15.4368 18.374 15.8092L17.8396 16.6999C17.7679 16.8193 17.7472 16.9595 17.7809 17.0946L18.1504 18.5729C18.1821 18.699 18.259 18.8082 18.3671 18.8803Z" fill="#FFC22E"/>\n' +
       '<path opacity="0.5" d="M29.9744 28.0952C29.601 28.0952 29.2974 28.3989 29.2974 28.7722C29.2974 29.1455 29.601 29.4492 29.9744 29.4492C30.3476 29.4492 30.6513 29.1455 30.6513 28.7722C30.6513 28.399 30.3476 28.0952 29.9744 28.0952Z" fill="#FFC22E"/>\n' +
@@ -152,7 +154,7 @@ export const MILESTONES = [
   },
   {
     title: 'Establishing the Mars Ecosystem',
-    content: 'The Mars Economy project fuels collaboration and self-sustainability within the financial ecosystem of Mars as humans become multi-planetary.',
+    content: 'The Mars Economy Community fuels collaboration and self-sustainability within the financial ecosystem of Mars as humans become multi-planetary.',
     icon: '<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">\n' +
       '<g clip-path="url(#clip0)">\n' +
       '<path d="M6.19935 25.3038C7.81119 25.3038 9.12245 23.9924 9.12245 22.3806C9.12245 20.9922 8.1298 19.7922 6.78602 19.5177C5.47351 20.7678 4.44002 22.3078 3.78906 24.0342C4.33556 24.8322 5.22391 25.3038 6.19935 25.3038Z" fill="#FFC22E"/>\n' +
