@@ -1,8 +1,8 @@
 <template>
 
-  <div class="btn" :color="color" :class="[size,{'btn-text': txtOnly} ]" @click="$emit('click')">
+  <div class="btn" :color="color" :class="[size,{'btn-text': txtOnly},{'disabled' : disabled}]" @click="$emit('click')">
     <slot>
-      <span>{{name}}</span>
+      <span class="text">{{name}}</span>
       <template v-if="icon">
         <div class="btn-icon" :class="'icon-color-'+color">
           <svg width="6" height="8" viewBox="0 0 6 8" xmlns="http://www.w3.org/2000/svg">
@@ -23,7 +23,8 @@ export default {
     color: String,
     txtOnly: Boolean,
     size: String,
-    icon: { type: Boolean, default: false }
+    icon: { type: Boolean, default: false },
+    disabled: Boolean
   }
 }
 </script>
@@ -50,21 +51,21 @@ export default {
   cursor: pointer;
 
   &[color='primary'] {
-    background-color: rgba($color-primary, 0.1);
+    background-color: rgba($color-primary, 0.15);
     border: 1px solid rgba($color-primary, 0.05);
     color: $color-primary;
     fill: $color-primary;
-    &:hover {
+    &:not(.disabled):hover {
       background-color: rgba($color-primary, 0.2);
     }
   }
 
   &[color='light'] {
     background-color: rgba($white, 0.05);
-    border: 1px solid rgba($white, 0.05);
+    border: 1px solid rgba($white, 0.1);
     color: $white;
     fill: $white;
-    &:hover {
+    &:not(.disabled):hover {
       background-color: rgba($white, 0.1);
     }
   }
@@ -111,4 +112,16 @@ export default {
   }
 }
 
+.btn.disabled {
+  cursor: default;
+
+  &[color='primary'] {
+    background: rgba($color-primary, 0.1);
+    color: rgba($color-primary, 0.5);
+    fill:  rgba($color-primary, 0.5)
+  }
+  &[color='light'] {
+    color: rgba($white, 0.5);
+  }
+}
 </style>

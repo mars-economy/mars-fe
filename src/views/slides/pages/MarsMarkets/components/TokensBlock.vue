@@ -1,22 +1,26 @@
 <template>
-  <div class="tokens-block-card" :class="[isMuted ? 'muted' : 'clickable', {'mobile' : isMobile}]" @click="openExternalLink">
+  <div class="tokens-block-card" :class="[isMuted ? 'muted' : '', {'mobile' : isMobile}]">
       <flex-row class="card-header" alignV="center">
         <flex-row v-html="block.icon" class="tokens-block-icon"></flex-row>
         <div>{{ block.title }}</div>
-        <div v-if="isMobile && block.link" class="ml-auto">
-          <Button name="go to market" color="none" icon txtOnly></Button>
-        </div>
+        <template v-if="isMobile">
+          <div v-if="block.link" class="ml-auto">
+            <Button  name="Buy tokens now" color="primary" size="small" @click="openExternalLink"></Button>
+          </div>
+        </template>
       </flex-row>
+    <template v-if="!isMobile">
       <div class="card-body" :class="{'muted' : isMuted}">
         {{ block.content }}
-        <flex-col align-h="end" class="card-button" v-if="block.link && !isMobile">
-          <Button name="go to market" color="none" icon txtOnly></Button>
+        <flex-col align-h="center" class="card-button" v-if="block.link && !isMobile">
+          <Button name="Buy tokens now" color="primary" @click="openExternalLink"></Button>
         </flex-col>
       </div>
+    </template>
     <div class="card-label" v-if="isMuted">
       COMING SOON
     </div>
-    </div>
+     </div>
 </template>
 
 <script>
@@ -51,7 +55,7 @@ export default {
 
   .tokens-block-card {
     @extend %card;
-    padding: 16px 20px;
+    padding: 12px 12px 12px 20px;
     &:not(.mobile) {
       padding: 24px 20px;
       min-height: 100%;
@@ -99,12 +103,16 @@ export default {
       border-bottom-left-radius: 0;
       border-bottom-right-radius: 0;
     }
-    @media (max-width: $screen-sm-max) {
-      top: 0;
-      right: 0;
-      border-top-left-radius: 0;
-      border-bottom-right-radius: 0;
+  }
+  .tokens-block-card.mobile {
+    .card-header {
+      margin-bottom: unset;
+    }
+    .card-label {
 
+      right: 12px;
+      top: 50%;
+      transform: translateY(-50%);
     }
   }
 </style>

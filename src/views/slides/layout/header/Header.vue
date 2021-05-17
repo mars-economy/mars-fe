@@ -1,7 +1,12 @@
 <template>
   <header>
     <div class="header-icon headline">
-      {{ getHeaderTitle(slideId) }}
+      <template v-if="!isMobile">
+        <Logo></Logo>
+      </template>
+      <template v-else>
+        {{ getHeaderTitle(slideId) }}
+      </template>
     </div>
     <div class="menubar-container">
       <div class="menubar">
@@ -10,9 +15,16 @@
         <span class="menu-whitepaper">
           <a href="./whitepaper/Mars_Economy_Project_Whitepaper.pdf">Whitepaper</a>
         </span>
-        <div v-if="isMobile" class="header-application-button">
-          <Button color="light" name="GO TO APPLICATION" size="small" v-on:click="navigateToApp()"></Button>
-        </div>
+
+        <template  v-if="isMobile">
+          <div class="header-application-button">
+            <Button color="light" name="GO TO APPLICATION" size="small" disabled></Button>
+          </div>
+          <div class="header-application-button">
+            <Button color="primary" name="Buy tokens now" size="small" v-on:click="navigateToBye()"></Button>
+          </div>
+
+        </template>
       </div>
       <template v-if="isMobile">
         <SocialNetworksPanel/>
@@ -25,9 +37,15 @@
 
     </div>
 
-    <div class="header-application-button hidden-sm" v-if="!isMobile">
-      <Button color="light" name="GO TO APPLICATION" size="small" v-on:click="navigateToApp()"></Button>
-    </div>
+    <template v-if="!isMobile">
+      <div class="header-application-button">
+        <Button color="light" name="GO TO APPLICATION" size="small" disabled></Button>
+      </div>
+      <div class="header-application-button">
+        <Button color="primary" name="Buy tokens now" size="small" v-on:click="navigateToBye()"></Button>
+      </div>
+    </template>
+
   </header>
 </template>
 
@@ -36,6 +54,7 @@ import Icon from '@/components/svgImages/Icon'
 import SocialNetworksPanel from '../socialNetworks/SocialNetworksPanel'
 import Footer from '../footer/Footer'
 import Button from '../../../../components/buttons/Button'
+import Logo from '@/views/slides/layout/header/Logo'
 
 export default {
   name: 'Header',
@@ -47,6 +66,7 @@ export default {
     }
   },
   components: {
+    Logo,
     Button,
     Footer,
     SocialNetworksPanel,
@@ -62,6 +82,9 @@ export default {
   methods: {
     navigateToApp () {
       window.open(process.env.VUE_APP_MARS_APPLICATION, '_blank')
+    },
+    navigateToBye () {
+      window.open('https://app.liquifi.org/#/dashboard/arbitrage?search=DMT', '_blank')
     },
     onMenuToggle: function () {
       if (this.isMobile) {
@@ -101,6 +124,10 @@ export default {
     .header-application-button {
       align-self: center;
       justify-self: center;
+
+      + .header-application-button {
+        margin-left: 12px;
+      }
     }
   }
 
@@ -118,9 +145,13 @@ export default {
   @media (max-width: $screen-sm-max) {
     header {
       padding: 20px $padding-slide-mobile;
-    }
-    .header-application-button {
-      margin-top: $menubar-item-margin;
+      .header-application-button {
+        justify-content: flex-start;
+        margin-top: $menubar-item-margin;
+        + .header-application-button {
+          margin-left: unset;
+        }
+      }
     }
   }
 

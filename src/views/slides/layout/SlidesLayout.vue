@@ -57,6 +57,9 @@ export default {
           }
         )
       }
+    },
+    goToSlide (index) {
+      Reveal.slide(1, index)
     }
   },
   async mounted () {

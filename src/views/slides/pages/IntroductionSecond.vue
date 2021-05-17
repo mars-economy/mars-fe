@@ -4,10 +4,10 @@
     <div class="intro-container">
       <div class="h3">
         <div>
-          Our belief is that everyone should be able to play a role in creating and shaping the future of Mars.
+          This DAO (Decentralized autonomous organization) was built on open-source protocols to hand the governance to the community with full transparency.
         </div>
         <div>
-        Open-source protocols like the Mars Economy project are ushering in a new era of innovation and inclusivity;  democratic and decentralized by design.
+          Initiating with the Mars Prediction Market, the Mars Economy project becomes what we can all make of it, with one purpose - to bring life to Mars.
         </div>
       </div>
       <IntroductionSecondSvg></IntroductionSecondSvg>
