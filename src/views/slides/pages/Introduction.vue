@@ -3,7 +3,7 @@
     <div class="h3">We are evolving…<br>
       and the dream of humans becoming a multi-planetary species is becoming a reality.</div>
     <div class="h2 text-center mb-auto">Within the next decade we expect colonization of Mars to be underway.</div>
-    <InfoPanel v-if="isMobile" :isMobile=true @click="goToSlide(5,$event)" />
+    <InfoPanel :isMobile=isMobile @click="goToMarsMarkets($event)" />
   </section>
 </template>
 
@@ -19,8 +19,12 @@ export default {
     InfoPanel
   },
   methods: {
-    goToSlide (index) {
-      Reveal.slide('1', index)
+    goToMarsMarkets () {
+      if (this.isMobile) {
+        Reveal.slide(1, 5)
+      } else {
+        Reveal.slide(1, 4)
+      }
     }
   }
 }

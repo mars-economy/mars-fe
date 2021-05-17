@@ -25,7 +25,8 @@ export default {
 <style scoped lang="scss">
 .mars-ido-panel {
   background-color: rgba($white, 0.05);
-  display: flex;
+  border: 1px solid rgba($white, 0.1);
+  display: inline-flex;
   align-items: center;
   justify-content: space-between;
   backdrop-filter: blur(20px);
@@ -44,20 +45,22 @@ export default {
     justify-content: center;
     align-items: center;
     margin-left: 16px;
+    background-color: rgba($white, 0.05);
+    border: 1px solid rgba($white, 0.1);
+    cursor: pointer;
+    svg {
+      fill: $white;
+      opacity: 0.5;
+    }
   }
 }
 
 .mars-ido-panel:not(.mobile) {
-  position: absolute;
-  bottom: 20px;
-  left: 50%;
-  transform: translateX(-50%);
-  border: 1px solid rgba($color-danger, 0.1);
   padding: 0 12px 0 20px;
+  margin-top: 32px;
   border-radius: 30px;
   .panel-text {
     padding: 20px 0;
-    color: $color-danger;
     align-items: center;
   }
   span + span {
@@ -70,21 +73,14 @@ export default {
       top: -20px;
       bottom: -20px;
       left: 0;
-      border-left: 1px solid rgba($color-danger, 0.1);
+      border-left: 1px solid rgba($white, 0.1);
     }
-  }
-  .panel-icon {
-    background-color: rgba($color-danger, 0.05);
-    border: 1px solid rgba($color-danger, 0.1);
-    cursor: pointer;
-    svg {fill: $color-danger}
   }
 }
 
 .mars-ido-panel.mobile {
   position: relative;
   border-radius: 40px;
-  border: 1px solid rgba($white, 0.1);
   margin-top: 20px;
   padding: 14px 16px 14px 29px;
 
@@ -95,15 +91,6 @@ export default {
       text-transform: none;
       font-weight: normal;
       margin-top: 8px;
-    }
-  }
-  .panel-icon {
-    background-color: rgba($white, 0.05);
-    border: 1px solid rgba($white, 0.1);
-    cursor: pointer;
-    svg {
-      fill: $white;
-      opacity: 0.5;
     }
   }
 }
