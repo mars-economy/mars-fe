@@ -5,11 +5,15 @@
         <MarsMarketsSvg></MarsMarketsSvg>
       </div>
       <div class="mars-markets-content">
-        <div class="h4" v-if="!isMobile">Mars Markets</div>
-        <div>The Decentralized Mars Token ($DMT) holders have the ability to submit and vote on project proposals. Ecosystem pool tokens will be distributed gradually to organizations advancing Mars colonization, as voted on by the community.
-        </div>
+        <template v-if="!isMobile">
+          <div class="h4">Mars Markets</div>
+          <div>The Decentralized Mars Token ($DMT) holders have the ability to submit and vote on project proposals. Ecosystem pool tokens will be distributed gradually to organizations advancing Mars colonization, as voted on by the community.
+          </div>
+        </template>
         <div>You can buy $DMT tokens now - see the available markets below.</div>
-
+        <div class="mars-markets-ido">
+          <MarsTokenIdo :isMobile="isMobile"></MarsTokenIdo>
+        </div>
         <div class="tokens-block-container">
           <div v-for="(block, index) in blocksArray" v-bind:key="index" class="tokens-block-item">
             <TokensBlock :block="block" :is-muted="block.waiting" :isMobile="isMobile"></TokensBlock>
@@ -24,10 +28,15 @@
 <script>
 import TokensBlock from './components/TokensBlock'
 import MarsMarketsSvg from '@/components/svgImages/MarsMarketsSvg'
+import MarsTokenIdo from '@/views/slides/pages/MarsMarkets/components/MarsTokenIdo'
 
 export default {
   name: 'MarsMarkets',
-  components: { MarsMarketsSvg, TokensBlock },
+  components: {
+    MarsTokenIdo,
+    MarsMarketsSvg,
+    TokensBlock
+  },
   props: {
     isMobile: Boolean
   },
@@ -42,7 +51,7 @@ export default {
             '</svg>\n',
           title: 'Liquifi',
           content: 'A new-gen decentralized exchange on Binance Smart Chain and Ethereum.',
-          link: process.env.VUE_APP_LIQUIFI_APP
+          link: 'https://app.liquifi.org/#/dashboard/arbitrage?search=DMT'
         },
         {
           icon: '<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">\n' +

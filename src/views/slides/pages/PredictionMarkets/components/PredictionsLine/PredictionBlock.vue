@@ -17,8 +17,7 @@
       </div>
     </div>
     <div class="card-footer">
-      <Button color="primary" icon name="predict now" size="block"
-              v-on:click="navigateToApp(prediction.milestone.id)"></Button>
+      <Button color="primary" icon name="predict now" size="block" disabled></Button>
     </div>
   </flex-col>
 
