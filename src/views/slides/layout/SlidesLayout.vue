@@ -6,6 +6,7 @@
     </div>
     <Spaceman></Spaceman>
     <SocialNetworksPanel v-if="!isMobile"></SocialNetworksPanel>
+    <InfoPanel  v-if="!isMobile && isFirstSlide" @click="goToSlide(4,$event)" />
     <Footer v-if="isLastSlide && !isMobile"></Footer>
   </div>
 </template>
@@ -18,10 +19,12 @@ import Header from './header/Header'
 import Spaceman from '@/views/slides/layout/spaceman/Spaceman'
 import SocialNetworksPanel from '@/views/slides/layout/socialNetworks/SocialNetworksPanel'
 import Footer from '@/views/slides/layout/footer/Footer'
+import InfoPanel from '@/views/slides/layout/InfoPanel/InfoPanel'
 
 export default {
   name: 'SlidesLayout',
   components: {
+    InfoPanel,
     Footer,
     SocialNetworksPanel,
     Spaceman,
@@ -31,6 +34,7 @@ export default {
     return {
       isMobile: window.innerWidth <= 780,
       isLastSlide: false,
+      isFirstSlide: true,
       currentSlideId: ''
     }
   },
@@ -57,6 +61,9 @@ export default {
           }
         )
       }
+    },
+    goToSlide (index) {
+      Reveal.slide('1', index)
     }
   },
   async mounted () {
@@ -89,6 +96,7 @@ export default {
     this.configReveal()
     Reveal.on('slidechanged', event => {
       this.isLastSlide = event.currentSlide.id === 'community'
+      this.isFirstSlide = event.currentSlide.id === 'introduction'
       this.$modal.hideAll()
       Reveal.getCurrentSlide().classList.remove('back-blur')
       this.currentSlideId = event.currentSlide.id

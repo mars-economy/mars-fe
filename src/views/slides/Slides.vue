@@ -1,6 +1,6 @@
 <template>
   <section class="main-section">
-    <Introduction></Introduction>
+    <Introduction :isMobile="isMobileView"></Introduction>
     <IntroductionSecond></IntroductionSecond>
     <JourneyToMars :isMobile="isMobileView"></JourneyToMars>
     <PredictionMarkets :isMobile="isMobileView"></PredictionMarkets>
