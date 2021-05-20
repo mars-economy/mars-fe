@@ -2,7 +2,7 @@
   <div class="step-line" :class="{'mobile': isMobile }">
 
     <div class="step-line-item" v-for="(step, index) in stepsArray" :key="index">
-      <Step :number=index+1 :step="step"></Step>
+      <Step :number=index+1 :step="step" :isMobile="isMobile"></Step>
     </div>
 
   </div>
@@ -36,6 +36,7 @@ export default {
     &:not(.mobile) {
       @extend %card;
       padding: 32px 64px;
+      font-size: unset;
     }
     display: flex;
     justify-content: space-between;
