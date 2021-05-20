@@ -4,11 +4,16 @@
 
     <div class="step-info">
       <div>
-        <div class="step-label"> step {{number}}</div>
+        <div class="step-label">
+          <span>step {{number}}</span>
+          <flex-row class="clickable" @click="openExternalLink(step.link)" align-v="center">
+            read more
+            <LinkIcon  class="mr-auto"></LinkIcon>
+          </flex-row>
+        </div>
       </div>
-      <flex-row noWrap @click="openExternalLink(step.link)" class="clickable">
-        <span class="text-small" style="flex-grow: 0">{{step.description}}</span>
-        <LinkIcon  class="mr-auto"></LinkIcon>
+      <flex-row>
+        <span :class="{'text-small' : isMobile}" style="flex-grow: 0">{{step.description}}</span>
       </flex-row>
     </div>
 
@@ -29,7 +34,8 @@ export default {
       description: String,
       link: String
     },
-    number: Number
+    number: Number,
+    isMobile: Boolean
   },
   methods: {
     openExternalLink (url) {
@@ -59,6 +65,23 @@ export default {
     @extend %card-label;
     position: relative;
     border-radius: $radius-base;
-    display: inline-block;
+    display: inline-flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    span:first-of-type {
+      opacity: 0.5;
+      margin-right: 8px;
+      padding-right: 8px;
+      position: relative;
+      &:after {
+        content: '';
+        position: absolute;
+        width: 1px;
+        right: 0;
+        top: -0.5rem;
+        bottom: -0.5rem;
+        border-right: $border-light;
+      }
+    }
   }
 </style>
