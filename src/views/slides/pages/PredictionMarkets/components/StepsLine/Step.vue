@@ -4,9 +4,9 @@
 
     <div class="step-info">
       <div>
-        <div class="step-label">
+        <div class="step-label clickable" @click="openExternalLink(step.link)">
           <span>step {{number}}</span>
-          <flex-row class="clickable" @click="openExternalLink(step.link)" align-v="center">
+          <flex-row align-v="center">
             read more
             <LinkIcon  class="mr-auto"></LinkIcon>
           </flex-row>
@@ -68,6 +68,9 @@ export default {
     display: inline-flex;
     flex-wrap: nowrap;
     align-items: center;
+    &:hover {
+      background-color: rgba($white, 0.1);
+    }
     span:first-of-type {
       opacity: 0.5;
       margin-right: 8px;

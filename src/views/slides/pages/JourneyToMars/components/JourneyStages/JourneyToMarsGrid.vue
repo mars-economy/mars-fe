@@ -28,7 +28,7 @@
       <g filter="url(#filter8_bd)">
         <circle cx="876.5" cy="500.5" r="2.5" fill="white"/>
       </g>
-      <g filter="url(#filter9_b)">
+      <g>
         <circle cx="904" cy="39" r="32" fill="#FF5244" fill-opacity="0.1"/>
         <circle cx="904" cy="39" r="31.5" stroke="#FF5244" stroke-opacity="0.1"/>
         <circle opacity="0.1" cx="904" cy="39" r="27" fill="#FD5346"/>
@@ -136,12 +136,6 @@
           <feColorMatrix type="matrix" values="0 0 0 0 1 0 0 0 0 0.321569 0 0 0 0 0.266667 0 0 0 0.5 0"/>
           <feBlend mode="normal" in2="effect1_backgroundBlur" result="effect2_dropShadow"/>
           <feBlend mode="normal" in="SourceGraphic" in2="effect2_dropShadow" result="shape"/>
-        </filter>
-        <filter id="filter9_b" x="852" y="-13" width="104" height="104" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-          <feFlood flood-opacity="0" result="BackgroundImageFix"/>
-          <feGaussianBlur in="BackgroundImage" stdDeviation="10"/>
-          <feComposite in2="SourceAlpha" operator="in" result="effect1_backgroundBlur"/>
-          <feBlend mode="normal" in="SourceGraphic" in2="effect1_backgroundBlur" result="shape"/>
         </filter>
         <filter id="filter10_b" x="-20" y="361" width="104" height="104" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
           <feFlood flood-opacity="0" result="BackgroundImageFix"/>

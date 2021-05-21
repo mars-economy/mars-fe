@@ -77,7 +77,7 @@ export default {
   .card-header {
     font-weight: bold;
     font-size: 16px;
-    line-height: 1.2em;
+    line-height: 22px;
     letter-spacing: -0.02em;
   }
   .card-info {
@@ -100,6 +100,7 @@ export default {
     .card-info {
       flex-direction: row-reverse;
       justify-content: flex-end;
+      margin: 12px 0;
 
       .pair {
         font-size: 12px;

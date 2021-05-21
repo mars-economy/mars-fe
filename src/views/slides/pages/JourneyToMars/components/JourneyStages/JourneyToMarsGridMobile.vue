@@ -2,7 +2,7 @@
   <div class="img-container">
     <svg width="272" height="444" viewBox="0 0 272 444" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path d="M250 400L250 62C250 39.9086 232.091 22 210 22L44 22" stroke="white" stroke-dasharray="1 6"/>
-      <g clip-path="url(#clip0)" filter="url(#filter0_b)">
+      <g>
         <circle opacity="0.1" cx="22" cy="22" r="18.5625" fill="#A0AAE1" fill-opacity="0.4"/>
         <circle cx="22" cy="22" r="22" fill="#A0AAE1" fill-opacity="0.1"/>
         <circle cx="22" cy="22" r="21.5" stroke="#A0AAE1" stroke-opacity="0.1"/>
@@ -11,7 +11,7 @@
         <path d="M21.9999 13.1286L22.2784 12.6475C22.5136 12.2411 24.5763 8.63802 24.5763 7.34444C24.5763 5.92339 23.4205 4.76758 21.9995 4.76758C20.5784 4.76758 19.4226 5.92339 19.4226 7.34444C19.4226 8.63845 21.4857 12.2411 21.7205 12.6475L21.9999 13.1286ZM21.9999 5.41136C23.0656 5.41136 23.933 6.27876 23.933 7.34444C23.933 8.17321 22.7184 10.5363 21.9999 11.8321C21.2814 10.5359 20.0668 8.17321 20.0668 7.34444C20.0668 6.27833 20.9342 5.41136 21.9999 5.41136Z" fill="#A0AAE1"/>
         <path d="M23.3124 7.34439C23.3124 6.62077 22.7236 6.03192 22 6.03192C21.2763 6.03192 20.6875 6.62077 20.6875 7.34439C20.6875 8.068 21.2763 8.65642 22 8.65642C22.7236 8.65642 23.3124 8.06757 23.3124 7.34439ZM21.3313 7.34439C21.3313 6.97614 21.6313 6.67571 22 6.67571C22.3686 6.67571 22.6686 6.97571 22.6686 7.34439C22.6686 7.71306 22.3682 8.01264 22 8.01264C21.6317 8.01264 21.3313 7.71263 21.3313 7.34439Z" fill="#A0AAE1"/>
       </g>
-      <g filter="url(#filter1_b)">
+      <g>
         <circle cx="250" cy="422" r="22" fill="#FF5244" fill-opacity="0.1"/>
         <circle cx="250" cy="422" r="21.5" stroke="#FF5244" stroke-opacity="0.1"/>
         <circle opacity="0.1" cx="250" cy="422" r="18.5625" fill="#FD5346"/>
@@ -22,18 +22,6 @@
         <path d="M243.663 410.866C243.191 411.042 242.952 411.57 243.128 412.042C243.261 412.396 243.604 412.634 243.982 412.634C244.092 412.634 244.2 412.614 244.302 412.575C244.531 412.49 244.713 412.321 244.814 412.1C244.915 411.877 244.924 411.629 244.838 411.401C244.667 410.944 244.123 410.695 243.663 410.866ZM244.229 411.832C244.199 411.897 244.145 411.947 244.077 411.972C243.938 412.026 243.782 411.949 243.731 411.816C243.679 411.677 243.749 411.521 243.888 411.469C243.918 411.458 243.951 411.452 243.983 411.452C244.094 411.452 244.196 411.522 244.235 411.627C244.26 411.694 244.258 411.767 244.229 411.832Z" fill="#FF5244"/>
       </g>
       <defs>
-        <filter id="filter0_b" x="-20" y="-20" width="84" height="84" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-          <feFlood flood-opacity="0" result="BackgroundImageFix"/>
-          <feGaussianBlur in="BackgroundImage" stdDeviation="10"/>
-          <feComposite in2="SourceAlpha" operator="in" result="effect1_backgroundBlur"/>
-          <feBlend mode="normal" in="SourceGraphic" in2="effect1_backgroundBlur" result="shape"/>
-        </filter>
-        <filter id="filter1_b" x="208" y="380" width="84" height="84" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-          <feFlood flood-opacity="0" result="BackgroundImageFix"/>
-          <feGaussianBlur in="BackgroundImage" stdDeviation="10"/>
-          <feComposite in2="SourceAlpha" operator="in" result="effect1_backgroundBlur"/>
-          <feBlend mode="normal" in="SourceGraphic" in2="effect1_backgroundBlur" result="shape"/>
-        </filter>
         <clipPath id="clip0">
           <rect width="44" height="44" fill="white"/>
         </clipPath>
