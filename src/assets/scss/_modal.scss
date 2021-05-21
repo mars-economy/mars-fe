@@ -10,19 +10,42 @@
   font-size: 1rem;
   line-height: 1.5em;
   padding: 0;
-  letter-spacing: 0.02em;
+  letter-spacing: -0.02em;
   transition:  all 0.5ms 0s;
 
   .modal-content {
     padding: 48px 32px 24px 32px;
   }
-  &.disclaimer-modal .modal-content {
-    padding-top: 24px;
+  &.disclaimer-modal .modal-content:not(.mobile) {
+    padding-top: 46px;
+  }
+  &.disclaimer-modal .modal-content.mobile {
+    padding-top: 16px;
   }
 
   .modal-header {
     font-weight: bold;
     margin-bottom: 0.75em;
+  }
+  .modal-header.l1 {
+    font-size: 1.25rem;
+    line-height: 1.15em;
+    letter-spacing: -0.02em;
+  }
+
+  .modal-header.l2 {
+    font-size: 14px;
+    line-height: 18px;
+    letter-spacing: -0.02em;
+  }
+
+  .modal-header.l3 {
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 14px;
+    letter-spacing: -0.02em;
+    text-transform: uppercase;
+    opacity: 0.5;
   }
 
   .modal-footer {
@@ -43,27 +66,6 @@
     @media (max-width: $screen-sm-max) {
       padding-top: 48px;
     }
-  }
-
-  .modal-header.l1 {
-    font-size: 1.25rem;
-    line-height: 1.15em;
-    letter-spacing: -0.02em;
-  }
-
-  .modal-header.l2 {
-    font-size: 14px;
-    line-height: 18px;
-    letter-spacing: -0.02em;
-  }
-
-  .modal-header.l3 {
-    font-weight: bold;
-    font-size: 12px;
-    line-height: 14px;
-    letter-spacing: -0.02em;
-    text-transform: uppercase;
-    opacity: 0.5;
   }
 }
 

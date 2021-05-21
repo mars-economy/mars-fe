@@ -97,6 +97,10 @@ export default {
     line-height: 1.29em;
     letter-spacing: -0.02em;
     flex-grow: 1;
+
+    &:hover {
+      background: rgba($white, 0.06);
+    }
   }
   .number-circle {
     margin: auto 0.6em;

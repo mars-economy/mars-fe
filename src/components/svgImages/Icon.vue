@@ -1,5 +1,5 @@
 <template>
-  <div class="icon p-b-inline-flex p-jc-center p-ai-center"
+  <div class="icon"
        :style="[size ? {width: size+'px', height: size+'px'} : {width: '20px', height: '20px'}]"
        v-html="getIconSvg(name)">
   </div>
@@ -23,6 +23,11 @@ export default {
 }
 </script>
 
-<style scoped>
+<style scoped lang="scss">
+  .icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
 
 </style>
