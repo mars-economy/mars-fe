@@ -1,9 +1,12 @@
 <template>
   <flex-row @click="showModal(stage, point)"
+            align-v="start"
             noWrap class="stage-point"
             :style="{left: offsetX+'px', top: point.offsetY+'px'}"
             :class="status">
-    <div class="point"></div>
+    <div class="point-hover clickable">
+      <div class="point"></div>
+    </div>
     <div class="stage-point-tooltip">
       {{point.name}}
     </div>
@@ -49,6 +52,12 @@ export default {
   .stage-point {
     position: absolute;
   }
+  .point-hover {
+    border: 6px solid transparent;
+    border-radius: 10px;
+    backdrop-filter: blur(4px);
+    transform: translate(-6px, -6px);
+  }
   .point {
     width: 8px;
     height: 8px;
@@ -68,7 +77,7 @@ export default {
     text-align: center;
     margin-left: 0.3em;
   }
-  .point:hover + .stage-point-tooltip {
+  .stage-point:hover .stage-point-tooltip {
     display: block;
   }
 
@@ -99,6 +108,11 @@ export default {
       background: rgba($color-primary, 0.1);
       border: 1px solid rgba($color-primary, 0.05);
     }
+
+    &:hover .point-hover {
+      border-color: rgba($color-primary, 0.1);
+    }
+
   }
 
 </style>

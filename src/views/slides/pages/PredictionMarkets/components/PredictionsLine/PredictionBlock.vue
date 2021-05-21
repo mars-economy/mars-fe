@@ -6,7 +6,7 @@
     <div class="card-header">
       {{prediction.name}}
     </div>
-    <div class="card-body mt-auto">
+    <div class="card-body">
       <div class="card-info">
         <TextPair label="current state" :data="prediction.state" icon="statePoint" class="hidden-sm"></TextPair>
         <TextPair :data="getTime(prediction.dueDate)" icon="timePoint" label="due to" :direction="getDirection()"></TextPair>
@@ -16,7 +16,7 @@
         {{prediction.description}}
       </div>
     </div>
-    <div class="card-footer">
+    <div class="card-footer mt-auto">
       <Button color="primary" icon name="predict now" size="block" disabled></Button>
     </div>
   </flex-col>
@@ -100,6 +100,11 @@ export default {
     .card-info {
       flex-direction: row-reverse;
       justify-content: flex-end;
+
+      .pair {
+        font-size: 12px;
+        line-height: 18px;
+      }
 
       .pair.column + .pair.column {
         margin-right: 16px;

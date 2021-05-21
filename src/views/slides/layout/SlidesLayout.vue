@@ -1,6 +1,6 @@
 <template>
   <div id="app" class="reveal">
-    <Header :isMobile="isMobile" :slideId="currentSlideId" ref="header"></Header>
+    <Header :isMobile="isMobile" :slideId="currentSlideId" ref="header" @navigateToHome="goToSlide(0)"></Header>
     <div class="slides">
       <router-view/>
     </div>
