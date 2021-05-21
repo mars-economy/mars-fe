@@ -143,7 +143,8 @@ export default {
     header {
       padding: 20px $padding-slide-mobile;
       .header-application-button {
-        justify-content: flex-start;
+        text-align: left;
+        padding: 0 24px;
         margin-top: $menubar-item-margin;
         + .header-application-button {
           margin-left: unset;
