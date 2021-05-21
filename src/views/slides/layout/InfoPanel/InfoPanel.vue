@@ -1,10 +1,10 @@
 <template>
-  <div class="mars-ido-panel" :class="{'mobile' : isMobile}">
+  <div class="mars-ido-panel clickable" :class="{'mobile' : isMobile}" @click="$emit('click')">
     <div class="panel-text">
       <span>Mars Economy Launch!</span>
       <span>Decentralized Mars Token IDO</span>
     </div>
-    <div class="panel-icon" @click="$emit('click')">
+    <div class="panel-icon">
       <svg width="9" height="12" viewBox="0 0 9 12" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M0.833374 0.895261L0.833374 2.24011C0.833374 2.53259 0.973881 2.81074 1.21188 2.98279L5.3812 5.99938L1.21188 9.01596C0.973881 9.18801 0.833374 9.46329 0.833374 9.75864L0.833374 11.1035C0.833374 11.2899 1.04557 11.3988 1.19754 11.2899L8.25155 6.18576C8.37772 6.094 8.37772 5.90762 8.25155 5.81586L1.19754 0.711741C1.04557 0.59991 0.833374 0.708875 0.833374 0.895261Z" />
       </svg>
@@ -24,12 +24,15 @@ export default {
 
 <style scoped lang="scss">
 .mars-ido-panel {
-  background-color: rgba($white, 0.05);
+  background-color: rgba($black, 0.05);
   border: 1px solid rgba($white, 0.1);
   display: inline-flex;
   align-items: center;
   justify-content: space-between;
   backdrop-filter: blur(20px);
+  &:hover {
+    background-color: rgba($black, 0.03);
+  }
   .panel-text {
     font-size: 12px;
     line-height: 14px;

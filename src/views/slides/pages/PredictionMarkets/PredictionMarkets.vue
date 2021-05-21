@@ -4,7 +4,7 @@
 
       <div class="h4">Prediction Markets</div>
       <StepsLine></StepsLine>
-      <flex-row align-h="between" class="predictions-line-title">
+      <flex-row align-h="between" align-v="center" class="predictions-line-title">
         <div>Top four predictions</div>
         <div>
           <Button color="primary" name="see more predictions" v-on:click="navigateToApp()"></Button>
@@ -54,6 +54,8 @@ export default {
   }
   .predictions-line-title {
     margin: 2rem 0;
+    font-size: 20px;
+    font-weight: bold;
   }
 
   .h2 + .step-line {

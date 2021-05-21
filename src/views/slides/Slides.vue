@@ -56,7 +56,6 @@ export default {
   mounted () {
     Reveal.on('resize', event => {
       this.isMobileView = event.size.width === 320
-      console.log(event.size.width)
     })
   }
 }

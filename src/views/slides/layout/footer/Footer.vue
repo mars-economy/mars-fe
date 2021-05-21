@@ -32,7 +32,7 @@ export default {
     showModal () {
       this.$modal.show(
         Disclaimer,
-        {},
+        { isMobile: this.isMobile },
         this.getConfigModal(),
         { opened: this.isModalOpen, closed: this.isModalClose }
       )

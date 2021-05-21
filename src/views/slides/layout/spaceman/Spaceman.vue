@@ -1,13 +1,13 @@
 <template>
   <div class="spaceman hidden-sm">
     <flex-row class="spaceman-label" align-v="center" align-h="between"  noWrap :class="{'label-collapse' : !isLabelOpen}">
-        <span class="label-text">
+        <span class="label-text clickable" @click="openExternalLink('https://mars-10.gitbook.io/mars/')">
           Have a question?<br>
-          Please read <b class="clickable" @click="openExternalLink('https://mars-10.gitbook.io/mars/')">F.A.Q.</b>
+          Please read <b>F.A.Q.</b>
         </span>
         <div class="btn-icon" @click="isLabelOpen = !isLabelOpen">
           <template v-if="isLabelOpen">
-            <svg width="6" height="8" viewBox="0 0 6 8" xmlns="http://www.w3.org/2000/svg">
+            <svg width="6" height="8" style="transform: rotate(180deg)" viewBox="0 0 6 8" xmlns="http://www.w3.org/2000/svg">
               <path d="M0.833496 0.809508L0.833496 1.65004C0.833496 1.83284 0.921313 2.00668 1.07006 2.11421L3.67589 3.99958L1.07006 5.88495C0.921313 5.99248 0.833496 6.16453 0.833496 6.34912L0.833496 7.18965C0.833496 7.30614 0.966117 7.37424 1.0611 7.30614L5.46985 4.11607C5.54871 4.05872 5.54871 3.94223 5.46985 3.88488L1.0611 0.694808C0.966117 0.624913 0.833496 0.693017 0.833496 0.809508Z" fill="#ffffff"/>
             </svg>
           </template>

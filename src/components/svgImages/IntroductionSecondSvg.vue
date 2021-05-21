@@ -1,5 +1,5 @@
 <template>
-  <flex-row class="introduction-image">
+  <flex-row class="introduction-image" align-h="end">
     <svg width="481" height="585" viewBox="0 0 481 585" fill="none" xmlns="http://www.w3.org/2000/svg" opacity="0.7">
       <path d="M331.08 441.239C359.995 441.239 383.434 417.83 383.434 388.955C383.434 360.079 359.995 336.671 331.08 336.671C302.166 336.671 278.726 360.079 278.726 388.955C278.726 417.83 302.166 441.239 331.08 441.239Z" stroke="white" stroke-miterlimit="10" stroke-linecap="round"/>
       <path d="M353.764 435.36C345.444 440.69 335.476 443.826 324.879 443.826C295.052 443.826 270.798 419.291 270.798 389.033C270.798 358.776 294.974 334.241 324.879 334.241C333.592 334.241 341.833 336.358 349.055 340.042" stroke="white" stroke-miterlimit="10" stroke-linecap="round"/>
@@ -239,8 +239,10 @@ export default {
   @media (max-width: $screen-sm-max) {
     .introduction-image svg{
       height: unset;
-      max-width: 87%;
+      max-width: 55%;
       margin-left: auto;
+      position: absolute;
+      bottom: 48px;
     }
   }
 </style>
