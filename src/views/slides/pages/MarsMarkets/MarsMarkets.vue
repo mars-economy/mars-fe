@@ -10,7 +10,7 @@
           <div class="text-shadow">Token holders partake in the governance of the DAO by having the ability to submit and vote on Mars Economy projects and proposals. They also have the ability to vote on the distribution of the ecosystem pool, incentivizing outside projects in their pursuit of Mars colonization.
           </div>
         </template>
-        <div class="text-shadow">You can buy $DMT tokens now - see the available markets below.</div>
+        <div class="text-shadow">You can buy Decentralized Mars tokens now - see the available markets below.</div>
         <div class="mars-markets-ido">
           <MarsTokenIdo :isMobile="isMobile"></MarsTokenIdo>
         </div>
