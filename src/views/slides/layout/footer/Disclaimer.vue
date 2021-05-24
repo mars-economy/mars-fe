@@ -1,8 +1,13 @@
 <template>
   <div>
     <ModalCloseIcon @closeModal="$emit('close')"></ModalCloseIcon>
-    <div class="modal-content">
-      <ModalHeader header="Disclaimer" level="1"></ModalHeader>
+    <div class="modal-content" :class="{'mobile' : isMobile}">
+      <template v-if="isMobile">
+        <ModalHeader header="Disclaimer" level="3"></ModalHeader>
+      </template>
+      <template v-else>
+        <ModalLabel labels="Disclaimer"></ModalLabel>
+      </template>
       <div class="modal-body">
         The information provided on this website does not constitute investment advice,
         financial advice, trading advice, or any other sort of advice and you should not treat
@@ -21,11 +26,16 @@
 <script>
 import ModalCloseIcon from '@/components/modal/ModalCloseIcon'
 import ModalHeader from '@/components/modal/ModalHeader'
+import ModalLabel from '@/components/modal/ModalLabel'
 export default {
   name: 'Disclaimer',
   components: {
+    ModalLabel,
     ModalHeader,
     ModalCloseIcon
+  },
+  props: {
+    isMobile: Boolean
   }
 }
 </script>

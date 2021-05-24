@@ -1,13 +1,13 @@
 <template>
   <header>
-    <div class="header-icon headline">
-      <template v-if="!isMobile">
-        <Logo></Logo>
-      </template>
-      <template v-else>
+    <flex-row class="header-icon headline">
+      <template v-if="isMobile && getHeaderTitle(slideId)">
         {{ getHeaderTitle(slideId) }}
       </template>
-    </div>
+      <template v-else>
+          <Logo class="clickable" :isMobile="isMobile" @click="$emit('navigateToHome')"></Logo>
+      </template>
+    </flex-row>
     <div class="menubar-container">
       <div class="menubar">
         <ul class="menu vf__flex vf__align-self-center" @click="onMenuToggle">
@@ -18,7 +18,7 @@
 
         <template  v-if="isMobile">
           <div class="header-application-button">
-            <Button color="light" name="GO TO APPLICATION" size="small" disabled></Button>
+            <Button color="light" name="Predict now" size="small" disabled></Button>
           </div>
           <div class="header-application-button">
             <Button color="primary" name="Buy tokens now" size="small" v-on:click="navigateToBye()"></Button>
@@ -39,7 +39,7 @@
 
     <template v-if="!isMobile">
       <div class="header-application-button">
-        <Button color="light" name="GO TO APPLICATION" size="small" disabled></Button>
+        <Button color="light" name="Predict now" size="small" disabled></Button>
       </div>
       <div class="header-application-button">
         <Button color="primary" name="Buy tokens now" size="small" v-on:click="navigateToBye()"></Button>
@@ -100,9 +100,9 @@ export default {
     getHeaderTitle (id) {
       if (id && this.isMobile) {
         const title = document.querySelector('#' + id).getAttribute('slide-title')
-        return title || 'Mars Economy'
+        return title || null
       } else {
-        return 'Mars Economy'
+        return null
       }
     }
   }
@@ -135,10 +135,7 @@ export default {
     font-family: $font-family-base;
     font-style: normal;
     font-weight: 800;
-    font-size: Max(1.25vw, 12px);
-    line-height: 21px;
     letter-spacing: -0.02em;
-    width: Max(10vw, 85px);
     z-index: 1030;
   }
 
@@ -146,7 +143,8 @@ export default {
     header {
       padding: 20px $padding-slide-mobile;
       .header-application-button {
-        justify-content: flex-start;
+        text-align: left;
+        padding: 0 24px;
         margin-top: $menubar-item-margin;
         + .header-application-button {
           margin-left: unset;

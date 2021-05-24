@@ -13,7 +13,7 @@
       <div class="card-body" :class="{'muted' : isMuted}">
         {{ block.content }}
         <flex-col align-h="center" class="card-button" v-if="block.link && !isMobile">
-          <Button name="Buy tokens now" color="primary" @click="openExternalLink"></Button>
+          <Button name="Buy tokens now" color="primary" size="small" @click="openExternalLink"></Button>
         </flex-col>
       </div>
     </template>

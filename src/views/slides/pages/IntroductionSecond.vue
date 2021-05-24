@@ -41,12 +41,14 @@ export default {
     }
   }
   @media (max-width: $screen-sm-max) {
+    section {
+      height: 100%;
+    }
     .intro-container {
       margin: unset;
       flex-direction: column;
-      margin-top: 28px;
     }
-    .intro-text {
+    .h3 {
       text-align: left;
     }
   }
