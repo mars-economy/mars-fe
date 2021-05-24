@@ -31,9 +31,21 @@ export default {
     return {
       isMobile: window.innerWidth <= 780,
       isLastSlide: false,
-      currentSlideId: ''
+      currentSlideId: '',
+      isInit: false
     }
   },
+  // watch: {
+  //   '$store.state.phases.categories': {
+  //     handler: async function (val) {
+  //       await this.init()
+  //       if (val) {
+  //         this.isInit = true
+  //       }
+  //     },
+  //     immediate: true
+  //   }
+  // },
   methods: {
     onScreenResize: function () {
       this.isMobile = window.innerWidth <= 780
@@ -60,51 +72,54 @@ export default {
     },
     goToSlide (index) {
       Reveal.slide(1, index)
+    },
+    async init () {
+      Reveal.initialize(
+        {
+          progress: true,
+          location: true,
+          keyboard: true,
+          hash: true,
+          // respondToHashChanges: true,
+          history: false,
+          mouseWheel: true,
+          previewLinks: true,
+          // disableLayout: true,
+          simplemenu: {
+            menuclass: 'menu',
+            activeclass: 'active',
+            activeelement: 'li',
+            selectby: 'id',
+            auto: true
+          },
+          verticator: {
+            darktheme: true,
+            skipuncounted: true,
+            clickable: true
+          },
+          plugins: [Simplemenu, Verticator]
+        }
+      )
+      this.configReveal()
+      Reveal.on('slidechanged', event => {
+        this.isLastSlide = event.currentSlide.id === 'community'
+        this.$modal.hideAll()
+        Reveal.getCurrentSlide().classList.remove('back-blur')
+        this.currentSlideId = event.currentSlide.id
+        Reveal.configure({
+          mouseWheel: true,
+          touch: true,
+          keyboard: true
+        })
+      })
+      window.onresize = () => {
+        this.onScreenResize()
+        this.configReveal()
+      }
     }
   },
   async mounted () {
-    Reveal.initialize(
-      {
-        progress: true,
-        location: true,
-        keyboard: true,
-        hash: true,
-        // respondToHashChanges: true,
-        history: false,
-        mouseWheel: true,
-        previewLinks: true,
-        // disableLayout: true,
-        simplemenu: {
-          menuclass: 'menu',
-          activeclass: 'active',
-          activeelement: 'li',
-          selectby: 'id',
-          auto: true
-        },
-        verticator: {
-          darktheme: true,
-          skipuncounted: true,
-          clickable: true
-        },
-        plugins: [Simplemenu, Verticator]
-      }
-    )
-    this.configReveal()
-    Reveal.on('slidechanged', event => {
-      this.isLastSlide = event.currentSlide.id === 'community'
-      this.$modal.hideAll()
-      Reveal.getCurrentSlide().classList.remove('back-blur')
-      this.currentSlideId = event.currentSlide.id
-      Reveal.configure({
-        mouseWheel: true,
-        touch: true,
-        keyboard: true
-      })
-    })
-    window.onresize = () => {
-      this.onScreenResize()
-      this.configReveal()
-    }
+    await this.init()
   }
 }
 </script>

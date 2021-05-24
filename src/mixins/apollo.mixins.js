@@ -4,7 +4,9 @@ import { PHASES_ACTION_TYPES } from '../store/modules/phases.module'
 
 const apolloMixins = {
   async mounted () {
-    await this.getAllData()
+    if (process.env.VUE_APP_DATA_SOURCE === 'graphql') {
+      await this.getAllData()
+    }
   },
   methods: {
     ...mapActions(MODULE_NAMES.PHASES, {

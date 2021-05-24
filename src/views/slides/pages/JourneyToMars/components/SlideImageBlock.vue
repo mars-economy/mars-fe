@@ -1,7 +1,7 @@
 <template>
   <div class="journey-bg">
-    <JourneyToMarsGrid v-if="!isMobile" />
-    <JourneyToMarsGridMobile v-else />
+    <JourneyToMarsGrid v-if="!isMobile"/>
+    <JourneyToMarsGridMobile v-else/>
     <div :class="{'stage-group': isMobile}">
       <template v-for="(category,index) in categories">
         <JourneyStage :key="'stage_'+index"
@@ -10,7 +10,7 @@
                       :milestones="milestones(category.id, index)"
                       :isMobile="isMobile">
         </JourneyStage>
-        <template  v-if="!isMobile">
+        <template>
           <template v-for="(milestone, ind) in milestones(category.id, index)">
             <JourneyStagePoint :offsetX="category.offsetX+228"
                                :point="milestone"
@@ -85,6 +85,7 @@ export default {
   .journey-bg {
     position: relative;
   }
+
   .stage-group {
     position: absolute;
     top: 100px;

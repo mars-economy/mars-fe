@@ -1,5 +1,13 @@
 import Vue from 'vue'
 import { apolloProvider } from '../../plugins/apollo/apollo'
+import MarsRegister from '@/data/MarsRegister.json'
+import BigNumber from 'bignumber.js'
+import {
+  createCategoriesArray,
+  createMilestonesArray,
+  createOutcomesArray,
+  createPredictionsArray
+} from '../../helpers/phases.objects'
 
 const getAllDataQuery = require('../../plugins/apollo/query/getAllDataQuery.gql')
 
@@ -17,7 +25,8 @@ const getters = {
 }
 
 export const PHASES_ACTION_TYPES = {
-  GET_DATA: 'getData'
+  GET_DATA: 'getData',
+  GET_DATA_FROM_ENGINE: 'getDataFromEngine'
 }
 
 export const PHASES_MUTATION_TYPES = {
@@ -25,6 +34,43 @@ export const PHASES_MUTATION_TYPES = {
 }
 
 const actions = {
+  async [PHASES_ACTION_TYPES.GET_DATA_FROM_ENGINE] ({
+    commit,
+    rootState
+  }) {
+    try {
+      const registerContract = await new rootState.wallet.web3engine.eth.Contract(MarsRegister.abi, process.env.VUE_APP_REGISTER_ADDR)
+      const timestampS = new BigNumber(Math.floor(Date.now() / 1000))
+      await registerContract.methods.getPredictionData(timestampS).call()
+        .then(res => {
+          if (res) {
+            const categories = createCategoriesArray(res[0])
+            const milestones = createMilestonesArray(res[1], categories)
+            const predictions = createPredictionsArray(res[2], milestones)
+            const outcomes = createOutcomesArray(res[3], predictions)
+            commit(PHASES_MUTATION_TYPES.SET_STATE, {
+              key: 'categories',
+              data: categories
+            })
+            commit(PHASES_MUTATION_TYPES.SET_STATE, {
+              key: 'milestones',
+              data: milestones
+            })
+            commit(PHASES_MUTATION_TYPES.SET_STATE, {
+              key: 'predictions',
+              data: predictions
+            })
+            commit(PHASES_MUTATION_TYPES.SET_STATE, {
+              key: 'outcomes',
+              data: outcomes
+            })
+          }
+          return res
+        })
+    } catch (e) {
+      console.debug(e)
+    }
+  },
   async [PHASES_ACTION_TYPES.GET_DATA] ({ commit }) {
     try {
       await apolloProvider.defaultClient.query({ query: getAllDataQuery }).then(res => {

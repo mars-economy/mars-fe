@@ -21,11 +21,12 @@ import TimeLIne from './pages/TimeLine/TimeLIne'
 import PredictionMarkets from './pages/PredictionMarkets/PredictionMarkets'
 import JoinCommunity from './pages/JoinCommunity/JoinCommunity'
 import JourneyToMars from './pages/JourneyToMars/JourneyToMars'
-import apolloMixin from '../../mixins/apollo.mixins'
 import TopPredictions from '@/views/slides/pages/PredictionMarkets/components/TopPredictions'
+import engineMixins from '../../mixins/engine.mixins'
+import apolloMixins from '../../mixins/apollo.mixins'
 
 export default {
-  mixins: [apolloMixin],
+  mixins: [apolloMixins, engineMixins],
   name: 'Slides',
   components: {
     TopPredictions,
@@ -39,7 +40,8 @@ export default {
   },
   data: function () {
     return {
-      isMobileView: window.innerWidth <= 781
+      isMobileView: window.innerWidth <= 781,
+      isInit: false
     }
   },
   watch: {
@@ -47,40 +49,24 @@ export default {
       async handler (val) {
         Reveal.availableRoutes()
         Reveal.sync()
-        // Reveal.layout()
-        // Reveal.prev()
-        // console.log(val)
       }
+    },
+    '$store.state.phases.categories': {
+      handler: async function (val) {
+        if (val) {
+          this.isInit = true
+        }
+      },
+      immediate: true
     }
   },
   mounted () {
     Reveal.on('resize', event => {
       this.isMobileView = event.size.width === 320
-      console.log(event.size.width)
     })
   }
 }
 </script>
 
 <style lang="scss" scoped>
-  .main-section {
-    //background-position: top 20% left 50%;
-    //background-repeat: no-repeat;
-    //background-image: url("~@/../public/images/ellipse.svg");
-    //background: rgba(160, 170, 225, 0.4);
-    //filter: blur(300px);
-    //.ellipse {
-    //  /* Ellipse 12 */
-    //
-    //  position: absolute;
-    //  width: 780.76px;
-    //  height: 596.74px;
-    //  left: 329.11px;
-    //  top: 146.74px;
-    //
-    //  background: rgba(160, 170, 225, 0.4);
-    //  filter: blur(300px);
-    //}
-
-  }
 </style>
