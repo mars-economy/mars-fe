@@ -1,7 +1,6 @@
 import Vue from 'vue'
 import { apolloProvider } from '../../plugins/apollo/apollo'
 import MarsRegister from '@/data/MarsRegister.json'
-import BigNumber from 'bignumber.js'
 import {
   createCategoriesArray,
   createMilestonesArray,
@@ -38,38 +37,38 @@ const actions = {
     commit,
     rootState
   }) {
-    try {
-      const registerContract = await new rootState.wallet.web3engine.eth.Contract(MarsRegister.abi, process.env.VUE_APP_REGISTER_ADDR)
-      const timestampS = new BigNumber(Math.floor(Date.now() / 1000))
-      await registerContract.methods.getPredictionData(timestampS).call()
-        .then(res => {
-          if (res) {
-            const categories = createCategoriesArray(res[0])
-            const milestones = createMilestonesArray(res[1], categories)
-            const predictions = createPredictionsArray(res[2], milestones)
-            const outcomes = createOutcomesArray(res[3], predictions)
-            commit(PHASES_MUTATION_TYPES.SET_STATE, {
-              key: 'categories',
-              data: categories
-            })
-            commit(PHASES_MUTATION_TYPES.SET_STATE, {
-              key: 'milestones',
-              data: milestones
-            })
-            commit(PHASES_MUTATION_TYPES.SET_STATE, {
-              key: 'predictions',
-              data: predictions
-            })
-            commit(PHASES_MUTATION_TYPES.SET_STATE, {
-              key: 'outcomes',
-              data: outcomes
-            })
-          }
-          return res
-        })
-    } catch (e) {
-      console.debug(e)
-    }
+    // try {
+    const registerContract = await new rootState.wallet.web3engine.eth.Contract(MarsRegister.abi, process.env.VUE_APP_REGISTER_ADDR)
+    // const timestampS = new BigNumber(Math.floor(Date.now() / 1000))
+    await registerContract.methods.getPredictionData(Math.floor(Date.now() / 1000)).call()
+      .then(res => {
+        if (res) {
+          const categories = createCategoriesArray(res[0])
+          const milestones = createMilestonesArray(res[1], categories)
+          const predictions = createPredictionsArray(res[2], milestones)
+          const outcomes = createOutcomesArray(res[3], predictions)
+          commit(PHASES_MUTATION_TYPES.SET_STATE, {
+            key: 'categories',
+            data: categories
+          })
+          commit(PHASES_MUTATION_TYPES.SET_STATE, {
+            key: 'milestones',
+            data: milestones
+          })
+          commit(PHASES_MUTATION_TYPES.SET_STATE, {
+            key: 'predictions',
+            data: predictions
+          })
+          commit(PHASES_MUTATION_TYPES.SET_STATE, {
+            key: 'outcomes',
+            data: outcomes
+          })
+        }
+        return res
+      })
+    // } catch (e) {
+    //   console.debug(e)
+    // }
   },
   async [PHASES_ACTION_TYPES.GET_DATA] ({ commit }) {
     try {
