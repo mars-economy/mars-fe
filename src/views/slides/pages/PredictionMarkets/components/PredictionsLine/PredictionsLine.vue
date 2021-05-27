@@ -3,8 +3,8 @@
 
     <div class="predictions-line" :class="{'mobile' : isMobile}">
       <div v-for="(prediction,index) in predictions" :key="index" class="predictions-line-item">
-        <PredictionBlock :prediction="prediction"  :isMobile="isMobile"></PredictionBlock>
-        <Divider v-if="isMobile && index !== predictions.length -1" />
+        <PredictionBlock :isMobile="isMobile" :prediction="prediction"></PredictionBlock>
+        <Divider v-if="isMobile && index !== predictions.length -1"/>
       </div>
 
     </div>
@@ -31,6 +31,7 @@ export default {
   computed: {
     ...mapState(MODULE_NAMES.PHASES, {
       predictions (state) {
+        if (!state.predictions) return []
         return this.lodash.reverse(this.lodash.sortBy(state.predictions, 'predictorsNumber')).slice(0, 4)
       }
     })
@@ -44,11 +45,13 @@ export default {
     display: flex;
     justify-content: space-between;
     align-items: stretch;
+
     &:not(.mobile) {
       .predictions-line-item {
         width: 276px;
       }
     }
+
     &.mobile {
       flex-direction: column;
     }

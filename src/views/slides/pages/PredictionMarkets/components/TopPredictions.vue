@@ -26,7 +26,6 @@ export default {
   watch: {
     isMobileView: {
       async handler (val) {
-        console.log(val)
         Reveal.availableRoutes()
         Reveal.sync()
       }

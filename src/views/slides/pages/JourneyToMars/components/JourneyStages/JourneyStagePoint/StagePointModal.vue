@@ -49,7 +49,7 @@ export default {
       return moment.unix(time).utc().format('MMM, D YYYY z')
     },
     navigateToApp (milestoneId) {
-      window.open(process.env.VUE_APP_MARS_APPLICATION + '/milestones/' + milestoneId, '_blank')
+      window.open(process.env.VUE_APP_MARS_APPLICATION + '/milestone/' + milestoneId, '_blank')
     }
   }
 
