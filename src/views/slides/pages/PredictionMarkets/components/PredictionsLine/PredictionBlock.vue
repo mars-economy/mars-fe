@@ -17,7 +17,8 @@
       </div>
     </div>
     <div class="card-footer mt-auto">
-      <Button color="primary" icon name="predict now" size="block" disabled></Button>
+      <Button color="primary" icon name="predict now" size="block"
+              @click="navigateToApp(prediction.milestone.id)"></Button>
     </div>
   </flex-col>
 
@@ -50,7 +51,7 @@ export default {
       return moment.unix(time).utc().format('MMM, D YYYY z')
     },
     navigateToApp (milestoneId) {
-      window.open(process.env.VUE_APP_MARS_APPLICATION + '/milestones/' + milestoneId, '_blank')
+      window.open(process.env.VUE_APP_MARS_APPLICATION + '/milestone/' + milestoneId, '_blank')
     },
     getDirection () {
       return this.isMobile ? 'column' : 'row'
