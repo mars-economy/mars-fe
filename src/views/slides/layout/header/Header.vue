@@ -18,7 +18,7 @@
 
         <template  v-if="isMobile">
           <div class="header-application-button">
-            <Button color="light" name="Predict now" size="small" disabled></Button>
+            <Button color="light" name="Predict now" size="small" v-on:click="navigateToApp()"></Button>
           </div>
           <div class="header-application-button">
             <Button color="primary" name="Buy tokens now" size="small" v-on:click="navigateToBye()"></Button>
