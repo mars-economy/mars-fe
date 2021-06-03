@@ -60,7 +60,7 @@ export default {
             '</svg>\n',
           title: 'PancakeSwap',
           content: 'One of the most popular decentralized exchanges on Binance Smart Chain.',
-          link: 'https://exchange.pancakeswap.finance/#/swap?inputCurrency=0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c&outputCurrency=0x77dA5632d829b457cd6d0dE37768eF9d5C879A6C'
+          link: 'https://exchange.pancakeswap.finance/#/swap?inputCurrency=BNB&outputCurrency=0x77dA5632d829b457cd6d0dE37768eF9d5C879A6C'
         }
       ]
     }
