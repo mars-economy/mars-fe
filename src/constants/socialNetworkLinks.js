@@ -11,7 +11,7 @@ export const SOCIAL_NETWORKS = [
     icon: '<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">\n' +
       '<path d="M13.7767 2.478L1.95669 7.036C1.15002 7.36 1.15469 7.81 1.80869 8.01067L4.84336 8.95734L11.8647 4.52734C12.1967 4.32534 12.5 4.434 12.2507 4.65534L6.56202 9.78934H6.56069L6.56202 9.79L6.35269 12.918C6.65936 12.918 6.79469 12.7773 6.96669 12.6113L8.44069 11.178L11.5067 13.4427C12.072 13.754 12.478 13.594 12.6187 12.9193L14.6314 3.434C14.8374 2.608 14.316 2.234 13.7767 2.478Z" fill="white" fill-opacity="0.8"/>\n' +
       '</svg>\n',
-    link: 'https://t.me/marseconomy'
+    link: 'https://t.me/marseconomychat'
   },
   {
     name: 'Instagram',
