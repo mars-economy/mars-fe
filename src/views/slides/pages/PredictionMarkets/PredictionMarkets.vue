@@ -16,7 +16,7 @@
     <div v-else>
       <div class="h2">Instruction</div>
       <StepsLine :isMobile="isMobile"></StepsLine>
-      <Button name="see all predictions" color="primary" />
+      <Button color="primary" name="see all predictions" v-on:click="navigateToApp()"/>
     </div>
   </section>
 </template>
@@ -49,9 +49,11 @@ export default {
   .h4 {
     margin-bottom: 2rem;
   }
+
   .prediction-markets {
     padding: 0 7.5rem;
   }
+
   .predictions-line-title {
     margin: 2rem 0;
     font-size: 20px;
