@@ -35,6 +35,7 @@ import { CATEGORIES_POSITION, MILESTONES_POSITION } from '../../../../../constan
 import JourneyStagePoint
   from '@/views/slides/pages/JourneyToMars/components/JourneyStages/JourneyStagePoint/JourneyStagePoint'
 import JourneyToMarsGridMobile from './JourneyStages/JourneyToMarsGridMobile'
+import _ from 'lodash'
 
 export default {
   name: 'SlideImageBlock',
@@ -49,8 +50,10 @@ export default {
   },
   methods: {
     milestones (categoryId, categoryIndex) {
-      return this.$store.state.phases.milestones
+      let list = this.$store.state.phases.milestones
         .filter(item => item.category.id === categoryId)
+      list = _.orderBy(list, ['position'], ['asc'])
+      return list
         .map((value, index, arr) => {
           let predictors = 0
           let dueDate = 0
