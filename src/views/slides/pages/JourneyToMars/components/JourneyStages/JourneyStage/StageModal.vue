@@ -11,7 +11,8 @@
           <flex-col v-for="(milestone, index) in milestones" :key="index" class="milestone-list-item">
             <ModalHeader :header="milestone.name" level="2"></ModalHeader>
             <StagePointInfo :point="milestone"></StagePointInfo>
-            <Button color="primary" name="Show predictions" icon class="mr-auto ml-auto"></Button>
+            <Button class="mr-auto ml-auto" color="primary" icon name="Show predictions"
+                    v-on:click="navigateToApp(milestone.id)"></Button>
           </flex-col>
 
         </div>
